@@ -1,0 +1,42 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/SUTDTimePlannerFrontend/dist
+/SUTDTimePlannerFrontend/tmp
+/SUTDTimePlannerFrontend/out-tsc
+/SUTDTimePlannerFrontend/bazel-out
+
+# Node
+/SUTDTimePlannerFrontend/node_modules
+/SUTDTimePlannerFrontend/npm-debug.log
+/SUTDTimePlannerFrontend/yarn-error.log
+
+# IDEs and editors
+/SUTDTimePlannerFrontend/.idea/
+/SUTDTimePlannerFrontend/.project
+/SUTDTimePlannerFrontend/.classpath
+/SUTDTimePlannerFrontend/.c9/
+/SUTDTimePlannerFrontend/*.launch
+/SUTDTimePlannerFrontend/.settings/
+/SUTDTimePlannerFrontend/*.sublime-workspace
+
+# Visual Studio Code
+SUTDTimePlannerFrontend/.vscode/*
+SUTDTimePlannerFrontend/!.vscode/settings.json
+SUTDTimePlannerFrontend/!.vscode/tasks.json
+SUTDTimePlannerFrontend/!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/SUTDTimePlannerFrontend/.angular/cache
+/SUTDTimePlannerFrontend/.sass-cache/
+/SUTDTimePlannerFrontend/connect.lock
+/SUTDTimePlannerFrontend/coverage
+/SUTDTimePlannerFrontend/libpeerconnection.log
+/SUTDTimePlannerFrontendtestem/.log
+/SUTDTimePlannerFrontend/typings
+
+# System files
+/SUTDTimePlannerFrontend/.DS_Store
+/SUTDTimePlannerFrontend/Thumbs.db
