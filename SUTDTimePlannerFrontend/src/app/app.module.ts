@@ -15,6 +15,11 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+
 
 registerLocaleData(en);
 
@@ -34,6 +39,10 @@ registerLocaleData(en);
     NzSelectModule,
     NzButtonModule,
     ReactiveFormsModule,
+    NzListModule,
+    NzMessageModule,
+    NzNotificationModule,
+    NzEmptyModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }

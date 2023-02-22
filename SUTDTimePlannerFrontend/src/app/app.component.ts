@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Course } from './model/Course';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { range } from 'rxjs';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +16,8 @@ export class AppComponent implements OnInit {
 
   searchForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder,
+    private message: NzMessageService) {}
 
   // these are dummy courses only for testing purposes
   courseA: Course = {
@@ -62,6 +63,7 @@ export class AppComponent implements OnInit {
   subjectList: string[] = [];
 
   expandCourseSet = new Set<number>();
+  enrolledCourseSet = new Set<Course>();
 
   ngOnInit(): void {
     this.searchForm = this.formBuilder.group({
@@ -73,6 +75,10 @@ export class AppComponent implements OnInit {
     for (let i of this.courseList) {
       this.subjectList.push(i.subject);
     }
+
+    // for testing purpose
+    this.enrolledCourseSet.add(this.courseA);
+    this.enrolledCourseSet.add(this.courseB);
   }
 
   onCourseExpandChange(id: number, checked: boolean): void {
@@ -81,9 +87,24 @@ export class AppComponent implements OnInit {
     }else {
       this.expandCourseSet.delete(id);
     }
+    Array.from
   }
 
   resetForm(): void {
     this.searchForm.reset();
+  }
+
+  enrollCourse(selectedCourse: Course): void {
+    this.enrolledCourseSet = this.enrolledCourseSet.add(selectedCourse);
+    this.message.success(`Enroll in Course: ${selectedCourse.subject}`)
+  }
+
+  dropCourse(id: number, subject: string): void {
+    this.message.info(`Drop Course: ${subject}`);
+    this.enrolledCourseSet.forEach(course => {
+      if (course.id == id) {
+        this.enrolledCourseSet.delete(course);
+      }
+    });
   }
 }
