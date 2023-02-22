@@ -20,12 +20,14 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzNotificationModule } from 'ng-zorro-antd/notification';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 
+import { TimetableComponent } from './common/timetable/timetable.component';
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TimetableComponent
   ],
   imports: [
     BrowserModule,

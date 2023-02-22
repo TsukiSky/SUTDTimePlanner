@@ -1,0 +1,22 @@
+#timetable {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  width: 100%;
+}
+
+[nz-row] [nz-col] {
+  border-style: solid;
+  border-width: 0px 0px 1px 1px;
+  border-color: #ddd;
+  display: flex;
+  text-align: center;
+  min-height: 30px;
+}
+
+[nz-row] [nz-col] :hover {
+  background-color: #ddd;
+}
+
+span {
+  min-width: 100%;
+  display: block;
+}

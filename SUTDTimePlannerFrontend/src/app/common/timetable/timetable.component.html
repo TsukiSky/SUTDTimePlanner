@@ -1,0 +1,15 @@
+
+<div id="timetable">
+  <div nz-row nzSpan="24">
+    <div nz-col nzSpan="4" *ngFor="let head of headers">
+      <span>{{ head }}</span>
+    </div>
+  </div>
+
+
+  <div nz-row nzSpan="24" *ngFor="let row of rows">
+    <div nz-col nzSpan="4" *ngFor="let column of headers">
+      <span>{{ row[column] }}</span>
+    </div>
+  </div>
+</div>
