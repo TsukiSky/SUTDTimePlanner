@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { Course } from './model/Course';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -44,7 +44,10 @@ export class AppComponent implements OnInit {
     isCore: true,
     preRequisites: [],
     remark: '',
-    slots: []
+    slots: [{
+      subject: "Science for a Sustainable World",
+      slots: [{type:"T1", startTime:"THU08", endTime: "THU10"}, {type:"T2", startTime:"FRI15", endTime: "FRI16"}]
+    },]
   }
   courseC: Course = {
     id: 2,
@@ -57,7 +60,10 @@ export class AppComponent implements OnInit {
     isCore: false,
     preRequisites: ["10.014"],
     remark: '',
-    slots: []
+    slots: [{
+      subject: "Information Systems and Programming",
+      slots: [{type:"T1", startTime:"MON08", endTime: "MON10"}, {type:"lab1", startTime:"FRI12", endTime: "FRI14"}]
+    }]
   }
   courseList: Course[] = [this.courseA, this.courseB, this.courseC];
   subjectList: string[] = [];
@@ -95,8 +101,9 @@ export class AppComponent implements OnInit {
   }
 
   enrollCourse(selectedCourse: Course): void {
+
     this.enrolledCourseSet = this.enrolledCourseSet.add(selectedCourse);
-    this.message.success(`Enroll in Course: ${selectedCourse.subject}`)
+    this.message.success(`Enroll in Course: ${selectedCourse.subject}`);
   }
 
   dropCourse(id: number, subject: string): void {

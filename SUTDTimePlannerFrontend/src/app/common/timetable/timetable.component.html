@@ -8,7 +8,7 @@
 
 
   <div nz-row nzSpan="24" *ngFor="let row of rows">
-    <div nz-col nzSpan="4" *ngFor="let column of headers">
+    <div nz-col nzSpan="4" *ngFor="let column of headers" id="{{column+timeSlot[rows.indexOf(row)]}}">
       <span>{{ row[column] }}</span>
     </div>
   </div>
