@@ -3,6 +3,7 @@ import { Course } from './model/Course';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TimeStamp } from './model/timeStamp';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,9 @@ export class AppComponent implements OnInit {
   searchForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-    private message: NzMessageService) {}
+    private message: NzMessageService, 
+    private router: Router,
+    private route: ActivatedRoute) {}
 
   // these are dummy courses only for testing purposes
   courseA: Course = {

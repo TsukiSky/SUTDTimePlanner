@@ -44,7 +44,8 @@ export class TimetableComponent implements OnInit {
     // Extract changes to the input property by its name
     let change: SimpleChange = changes['courseSet'];
     this.courseSet = change.currentValue;
-
+    this.slotByDate = new Map();
+    console.log(change)
     this.courseSet.forEach(course => {
       course.slots.forEach(slot => {
         if (this.slotByDate.has(slot.date)) {
