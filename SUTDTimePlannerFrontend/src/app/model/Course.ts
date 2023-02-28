@@ -1,4 +1,4 @@
-import { SlotGroup } from "./SlotGroup";
+import { Slot } from "./Slot";
 
 export interface Course {
   id: number;
@@ -11,5 +11,5 @@ export interface Course {
   isCore: boolean;
   preRequisites: string[];
   remark: string;
-  slots: SlotGroup[];
+  slots: Slot[];
 }

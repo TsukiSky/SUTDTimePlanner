@@ -1,15 +1,29 @@
 
 <div id="timetable">
   <div nz-row nzSpan="24">
-    <div nz-col nzSpan="4" *ngFor="let head of headers">
-      <span>{{ head }}</span>
+    <div nz-col nzSpan="2" *ngFor="let time of times">
+      <span>{{ time }}</span>
     </div>
   </div>
 
+  <div id="timetable-content">
+    <div id="info">
+      <div nz-row nzSpan="24" *ngFor="let date of dates">
+        <div nz-col nzSpan="2"><span>{{date}}</span></div>
+        <div nz-col nzSpan="22">
+          <span>
+            <div nz-row nzSpan="22" *ngFor="let slot of slotByDate.get(date)">
 
-  <div nz-row nzSpan="24" *ngFor="let row of rows">
-    <div nz-col nzSpan="4" *ngFor="let column of headers" id="{{column+timeSlot[rows.indexOf(row)]}}">
-      <span>{{ row[column] }}</span>
+              <div nz-col class="course" [nzOffset]="22*(slot.startTime.gapInMinute(this.startTimeStamp)/660)" [nzSpan]="22*(slot.endTime.gapInMinute(slot.startTime)/660)">
+                <span>12</span>
+              </div>
+
+            </div>
+          </span>
+
+        </div>
+      </div>
     </div>
+    <!-- <div class="test" [innerHTML]="sanitizer.bypassSecurityTrustHtml(courses)" *ngFor="let courses of courseList"></div> -->
   </div>
 </div>

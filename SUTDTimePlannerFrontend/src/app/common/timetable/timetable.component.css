@@ -9,16 +9,30 @@
   border-color: #ddd;
   display: flex;
   text-align: center;
-  min-height: 30px;
+  min-height: 40px;
 }
 
 [nz-row] [nz-col] :hover {
   background-color: #ddd;
+  /* z-index: -1; */
+}
+
+#timetable-content {
+  z-index: 1;
+  display: block;
+  position: relative;
 }
 
 span {
   min-width: 100%;
   display: block;
+}
+
+.test {
+  z-index: 2;
+  position: absolute;
+  top: calc(50vh - 200px);
+  left: calc(50vw - 50px);
 }
 
 /* #MON11 {

@@ -2,6 +2,7 @@ import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { Course } from './model/Course';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { TimeStamp } from './model/timeStamp';
 
 @Component({
   selector: 'app-root',
@@ -44,10 +45,7 @@ export class AppComponent implements OnInit {
     isCore: true,
     preRequisites: [],
     remark: '',
-    slots: [{
-      subject: "Science for a Sustainable World",
-      slots: [{type:"T1", startTime:"THU08", endTime: "THU10"}, {type:"T2", startTime:"FRI15", endTime: "FRI16"}]
-    },]
+    slots: [{type:"T1", startTime:{minute: 0, hour: 8, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 0, hour: 10, gapInMinute: TimeStamp.prototype.gapInMinute}, date: "MON"}, {type:"T2", startTime:{minute: 0, hour: 15, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 0, hour: 16, gapInMinute: TimeStamp.prototype.gapInMinute}, date:"THU"}]
   }
   courseC: Course = {
     id: 2,
@@ -60,10 +58,7 @@ export class AppComponent implements OnInit {
     isCore: false,
     preRequisites: ["10.014"],
     remark: '',
-    slots: [{
-      subject: "Information Systems and Programming",
-      slots: [{type:"T1", startTime:"MON08", endTime: "MON10"}, {type:"lab1", startTime:"FRI12", endTime: "FRI14"}]
-    }]
+    slots: [{type:"T1", startTime:{minute: 0, hour: 10, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 0, hour: 12, gapInMinute: TimeStamp.prototype.gapInMinute}, date: "MON"}, {type:"lab1", startTime:{minute: 0, hour: 16, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 0, hour: 17, gapInMinute: TimeStamp.prototype.gapInMinute}, date: "MON"}]
   }
   courseList: Course[] = [this.courseA, this.courseB, this.courseC];
   subjectList: string[] = [];
@@ -85,6 +80,7 @@ export class AppComponent implements OnInit {
     // for testing purpose
     this.enrolledCourseSet.add(this.courseA);
     this.enrolledCourseSet.add(this.courseB);
+    this.enrolledCourseSet.add(this.courseC);
   }
 
   onCourseExpandChange(id: number, checked: boolean): void {
@@ -101,8 +97,8 @@ export class AppComponent implements OnInit {
   }
 
   enrollCourse(selectedCourse: Course): void {
-
     this.enrolledCourseSet = this.enrolledCourseSet.add(selectedCourse);
+    this.enrolledCourseSet = new Set([...this.enrolledCourseSet]);
     this.message.success(`Enroll in Course: ${selectedCourse.subject}`);
   }
 
@@ -113,5 +109,6 @@ export class AppComponent implements OnInit {
         this.enrolledCourseSet.delete(course);
       }
     });
+    this.enrolledCourseSet = new Set([...this.enrolledCourseSet])
   }
 }
