@@ -2,9 +2,9 @@ export class TimeStamp {
   minute: number = 0;
   hour: number = 0;
 
-  constructor(minute: number, hour: number) {
-    this.minute = minute;
+  constructor(hour: number, minute: number) {
     this.hour = hour;
+    this.minute = minute;
   }
 
   gapInMinute(timeStamp: TimeStamp): number {

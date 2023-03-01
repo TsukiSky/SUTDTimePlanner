@@ -1,29 +1,37 @@
 
 <div id="timetable">
   <div nz-row nzSpan="24">
-    <div nz-col nzSpan="2" *ngFor="let time of times">
-      <span>{{ time }}</span>
+    <div nz-col nzSpan="2" class="cell">
+      <div class="holder">
+        <span>Time</span>
+      </div>
+    </div>
+    <div nz-col nzSpan="22">
+        <div nz-row nzSpan="24">
+          <div nz-col nzSpan="2" *ngFor="let time of times" class="cell">
+            <div class="holder">
+              <span>{{ time }}</span>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
-
-  <div id="timetable-content">
-    <div id="info">
+  <div id="timetable-container">
+    <div>
       <div nz-row nzSpan="24" *ngFor="let date of dates">
-        <div nz-col nzSpan="2"><span>{{date}}</span></div>
+        <div nz-col nzSpan="2" class="cell">
+          <div class="holder">
+            <span>{{ date }}</span>
+          </div>
+        </div>
         <div nz-col nzSpan="22">
-          <span>
-            <div nz-row nzSpan="22" *ngFor="let slot of slotByDate.get(date)">
-
-              <div nz-col class="course" [nzOffset]="22*(slot.startTime.gapInMinute(this.startTimeStamp)/660)" [nzSpan]="22*(slot.endTime.gapInMinute(slot.startTime)/660)">
-                <span>12</span>
-              </div>
-
+          <div nz-row nzSpan="24" *ngFor="let slot of slotByDate.get(date)">
+            <div nz-col [nzOffset]="22*(slot.startTime.gapInMinute(this.startTimeStamp)/660)" [nzSpan]="22*(slot.endTime.gapInMinute(slot.startTime)/660)" class="cell">
+              <div class="container">12</div>
             </div>
-          </span>
-
+          </div>
         </div>
       </div>
     </div>
-    <!-- <div class="test" [innerHTML]="sanitizer.bypassSecurityTrustHtml(courses)" *ngFor="let courses of courseList"></div> -->
   </div>
 </div>

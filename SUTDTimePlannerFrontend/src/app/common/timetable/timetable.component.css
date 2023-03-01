@@ -1,9 +1,5 @@
-#timetable {
-  font-family: 'Trebuchet MS', Arial, sans-serif;
-  width: 100%;
-}
-
-[nz-row] [nz-col] {
+/* cell is for background displaying */
+[nz-row] [nz-col].cell {
   border-style: solid;
   border-width: 0px 0px 1px 1px;
   border-color: #ddd;
@@ -12,29 +8,40 @@
   min-height: 40px;
 }
 
-[nz-row] [nz-col] :hover {
-  background-color: #ddd;
-  /* z-index: -1; */
-}
-
-#timetable-content {
-  z-index: 1;
-  display: block;
-  position: relative;
-}
-
-span {
+/* holder is to hold the space */
+.holder {
   min-width: 100%;
   display: block;
 }
 
-.test {
-  z-index: 2;
-  position: absolute;
-  top: calc(50vh - 200px);
-  left: calc(50vw - 50px);
+#timetable {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  width: 100%;
 }
 
-/* #MON11 {
-  background-color: aquamarine;
+
+#timetable-container {
+  position: relative;
+}
+
+#timetable-background {
+  z-index: 0;
+  display: block;
+  position: relative;
+}
+
+#timetable-content {
+  position: absolute;
+  top: 10px;
+}
+
+/* [nz-row] [nz-col] :hover {
+  background-color: #ddd;
+} */
+
+
+
+/* span {
+  min-width: 100%;
+  display: block;
 } */

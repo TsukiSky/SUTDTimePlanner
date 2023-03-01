@@ -12,14 +12,13 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 })
 
 export class AppComponent implements OnInit {
-
+  // static variable
   termList = [1,2,3,4,5,6,7,8];
-  pillarList = ["ASD", "CSD", "DAI", "EPD", "ESD", "HASS"]
-
+  pillarList = ["ASD", "CSD", "DAI", "EPD", "ESD", "HASS"];
   searchForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-    private message: NzMessageService, 
+    private message: NzMessageService,
     private router: Router,
     private route: ActivatedRoute) {}
 
