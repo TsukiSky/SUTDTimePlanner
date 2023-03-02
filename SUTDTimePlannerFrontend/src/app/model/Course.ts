@@ -12,4 +12,5 @@ export interface Course {
   preRequisites: string[];
   remark: string;
   slots: Slot[];
+  color: string;
 }

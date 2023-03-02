@@ -19,7 +19,7 @@ export class TimetableComponent implements OnInit {
 
   @Input() courseSet: Set<Course> = new Set();
   courseSetCopy = this.courseSet;
-
+  colorMap: Map<number, string> = new Map();
   slotByDate: Map<string, Set<Slot[]>> = new Map();
 
   constructor(public sanitizer: DomSanitizer) { }
@@ -41,6 +41,7 @@ export class TimetableComponent implements OnInit {
     this.slotByDate = new Map();
     this.courseSetCopy = this.courseSet;
     this.courseSetCopy.forEach(course => {
+      this.colorMap = this.colorMap.set(course.id, course.color);
       course.slots.forEach(slot => {
         if (this.slotByDate.has(slot.date)) {
           let rowsInOneDay: Set<Slot[]> = this.slotByDate.get(slot.date)!;
@@ -71,6 +72,7 @@ export class TimetableComponent implements OnInit {
         }
       });
     });
+    console.log(this.colorMap);
   }
 
   ngOnInit() {

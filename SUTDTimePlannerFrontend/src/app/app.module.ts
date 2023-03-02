@@ -20,6 +20,9 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzNotificationModule } from 'ng-zorro-antd/notification';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 
 import { TimetableComponent } from './common/timetable/timetable.component';
 
@@ -46,7 +49,10 @@ registerLocaleData(en);
     NzMessageModule,
     NzNotificationModule,
     NzEmptyModule,
-    NzIconModule
+    NzIconModule,
+    NzCardModule,
+    NzSwitchModule,
+    NzDescriptionsModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }

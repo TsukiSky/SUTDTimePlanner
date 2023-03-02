@@ -4,6 +4,7 @@ export class Slot {
   subject: string = "";
   type: string = "";
   date: string = "";
+  courseId: number = 0;
   startTime: TimeStamp = new TimeStamp(0, 0);
   endTime: TimeStamp = new TimeStamp(0, 0);
   offset: number = 0;

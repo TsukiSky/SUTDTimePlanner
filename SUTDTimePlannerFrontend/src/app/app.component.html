@@ -94,12 +94,32 @@
     </nz-footer>
   </nz-layout>
   <nz-sider [nzCollapsible]="true" [(nzCollapsed)]="isCollapsed" [nzCollapsedWidth]='0'
-    [nzZeroTrigger]="zeroTrigger" [nzReverseArrow]="true" nzWidth="560px" id="sidebar">
+      [nzZeroTrigger]="zeroTrigger" [nzReverseArrow]="true" nzWidth="560px" id="sidebar">
     <div id="sidebar-header">
       <nz-header></nz-header>
     </div>
     <div class="sidebar-container">
-      <ul nz-list nzBordered nzSize="large" *ngIf="enrolledCourseSet.size!=0">
+      <div class="sidebar-container-header">
+        <b>Enrolled Courses</b>
+        <div id="sidebar-display-switch">
+          <span>card view </span>
+          <nz-switch [(ngModel)]="sideBarCardView"></nz-switch>
+        </div>
+      </div>
+      <nz-card *ngIf="enrolledCourseSet.size!=0 && sideBarCardView">
+        <div nz-card-grid class="course-card" *ngFor="let course of enrolledCourseSet" [style.background-color]="course.color">
+          <!-- <span class="course-card-title">{{ course.subject }}</span> -->
+          <nz-descriptions nzTitle="{{course.subject}}" nzSize="small" [nzColumn]="1">
+            <nz-descriptions-item nzTitle="Pillar">{{ course.pillar }}</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Instructors">{{ course.instructors }}</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Is Core"> {{course.isCore? "Yes": "No"}} </nz-descriptions-item>
+          </nz-descriptions>
+          <button nz-button nzType="default" (click)="dropCourse(course.id, course.subject)"><span nz-icon nzType="delete" nzTheme="outline"></span></button>
+          <button nz-button nzType="default"><span nz-icon nzType="link" nzTheme="outline"></span></button>
+
+        </div>
+      </nz-card>
+      <ul nz-list nzBordered nzSize="large" *ngIf="enrolledCourseSet.size!=0 && !sideBarCardView">
         <li nz-list-item *ngFor="let course of enrolledCourseSet" nzNoFlex>
           {{ course.subject }}
           <ul nz-list-item-actions>
@@ -107,19 +127,22 @@
               <a (click)="dropCourse(course.id, course.subject)">drop</a>
             </nz-list-item-action>
             <nz-list-item-action>
-              <a>more information</a>
+              <a>more info</a>
             </nz-list-item-action>
           </ul>
         </li>
       </ul>
+
       <nz-empty *ngIf="enrolledCourseSet.size==0" [nzNotFoundImage]="'../../assets/no-data.png'" [nzNotFoundContent]="template">
         <ng-template #template>
           <span>
-            No course selected
+            No course enrolled
           </span>
         </ng-template>
       </nz-empty>
     </div>
+
+
   </nz-sider>
 </nz-layout>
 
