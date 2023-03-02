@@ -1,12 +1,12 @@
 
 <div id="timetable">
   <div nz-row nzSpan="24">
-    <div nz-col nzSpan="2" class="cell">
+    <div nz-col nzSpan="2" id="head-cell" class="cell">
       <div class="holder">
         <span>Time</span>
       </div>
     </div>
-    <div nz-col nzSpan="22">
+    <div nz-col nzSpan="22" id="time-cell">
         <div nz-row nzSpan="24">
           <div nz-col nzSpan="2" *ngFor="let time of times" class="cell">
             <div class="holder">
@@ -18,16 +18,16 @@
   </div>
   <div id="timetable-container">
     <div>
-      <div nz-row nzSpan="24" *ngFor="let date of dates">
-        <div nz-col nzSpan="2" class="cell">
+      <div nz-row nzSpan="24" *ngFor="let date of dates" class="row">
+        <div nz-col nzSpan="2" class="cell" class="date-cell">
           <div class="holder">
             <span>{{ date }}</span>
           </div>
         </div>
         <div nz-col nzSpan="22">
           <div nz-row nzSpan="24" *ngFor="let slotSet of slotByDate.get(date)">
-            <div nz-col *ngFor="let slot of slotSet" [nzOffset]="slot.offset" [nzSpan]="22*(slot.endTime.gapInMinute(slot.startTime)/660)" class="cell">
-              <div class="container">12</div>
+            <div nz-col *ngFor="let slot of slotSet" [nzOffset]="slot.offset" [nzSpan]="22*(slot.endTime.gapInMinute(slot.startTime)/660)" class="course-box">
+              <div class="holder"><span>{{ slot.subject }}<br/>{{ slot.type }}</span></div>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { TimeStamp } from "./timeStamp";
 
 export class Slot {
+  subject: string = "";
   type: string = "";
   date: string = "";
   startTime: TimeStamp = new TimeStamp(0, 0);

@@ -18,6 +18,8 @@ export class TimetableComponent implements OnInit {
   startTimeStamp: TimeStamp = new TimeStamp(8, 0);
 
   @Input() courseSet: Set<Course> = new Set();
+  courseSetCopy = this.courseSet;
+
   slotByDate: Map<string, Set<Slot[]>> = new Map();
 
   constructor(public sanitizer: DomSanitizer) { }
@@ -37,7 +39,8 @@ export class TimetableComponent implements OnInit {
 
   refreshTimetable() {
     this.slotByDate = new Map();
-    this.courseSet.forEach(course => {
+    this.courseSetCopy = this.courseSet;
+    this.courseSetCopy.forEach(course => {
       course.slots.forEach(slot => {
         if (this.slotByDate.has(slot.date)) {
           let rowsInOneDay: Set<Slot[]> = this.slotByDate.get(slot.date)!;
@@ -71,7 +74,7 @@ export class TimetableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.refreshTimetable();
+    // this.refreshTimetable();
   }
 
   ngOnChanges(changes: { [property: string]: SimpleChange }) {
