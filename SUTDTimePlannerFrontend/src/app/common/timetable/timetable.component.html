@@ -25,8 +25,8 @@
           </div>
         </div>
         <div nz-col nzSpan="22">
-          <div nz-row nzSpan="24" *ngFor="let slot of slotByDate.get(date)">
-            <div nz-col [nzOffset]="22*(slot.startTime.gapInMinute(this.startTimeStamp)/660)" [nzSpan]="22*(slot.endTime.gapInMinute(slot.startTime)/660)" class="cell">
+          <div nz-row nzSpan="24" *ngFor="let slotSet of slotByDate.get(date)">
+            <div nz-col *ngFor="let slot of slotSet" [nzOffset]="slot.offset" [nzSpan]="22*(slot.endTime.gapInMinute(slot.startTime)/660)" class="cell">
               <div class="container">12</div>
             </div>
           </div>

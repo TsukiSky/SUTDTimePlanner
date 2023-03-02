@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChange } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { range } from 'rxjs';
 import { Course } from 'src/app/model/Course';
 import { Slot } from 'src/app/model/Slot';
 import { TimeStamp } from 'src/app/model/timeStamp';
@@ -15,44 +16,68 @@ export class TimetableComponent implements OnInit {
   timesM: string[] = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"];
   dates: string[] = ["MON", "TUE", "WED", "THU", "FRI"];
   startTimeStamp: TimeStamp = new TimeStamp(8, 0);
-  // timeSlot: string[] = ["08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18"]
-  // courseList = ["<div class='test' style='background-color: #123; width:12px; height: 13px'></div>"];
 
   @Input() courseSet: Set<Course> = new Set();
-  slotByDate: Map<string, Set<Slot>> = new Map();
+  slotByDate: Map<string, Set<Slot[]>> = new Map();
 
-  constructor(public sanitizer: DomSanitizer) {
-    console.log(22*this.startTimeStamp.gapInMinute(new TimeStamp(10, 0))/660)
+  constructor(public sanitizer: DomSanitizer) { }
+
+  refreshRow(row: Slot[]):void {
+    row.sort((a: Slot, b: Slot) => {return a.endTime.gapInMinute(this.startTimeStamp) - b.startTime.gapInMinute(this.startTimeStamp)});
+    let cumulativeOffset = 0;
+    for(let i=0; i<row.length; i++) {
+      if (i == 0) {
+        row[i].offset = 22*(row[i].startTime.gapInMinute(this.startTimeStamp)/660);
+      } else {
+        row[i].offset = 22*(row[i].startTime.gapInMinute(this.startTimeStamp)/660)-cumulativeOffset;
+      }
+      cumulativeOffset += row[i].offset + 22*(row[i].endTime.gapInMinute(row[i].startTime)/660);
+    }
   }
 
-  ngOnInit() {
-    // construct slot set classified by date
+  refreshTimetable() {
+    this.slotByDate = new Map();
     this.courseSet.forEach(course => {
       course.slots.forEach(slot => {
         if (this.slotByDate.has(slot.date)) {
-          this.slotByDate.set(slot.date, this.slotByDate.get(slot.date)!.add(slot));
+          let rowsInOneDay: Set<Slot[]> = this.slotByDate.get(slot.date)!;
+          let addNewRow: boolean = true;
+          for (let row of rowsInOneDay) {
+            let hasOverlap = false;
+            for (let embedSlot of row) {
+              if (slot.hasOverlap(embedSlot)) {
+                hasOverlap = true;
+                break;
+              }
+            }
+            if (!hasOverlap) {
+              row.push(slot);
+              this.refreshRow(row);
+              addNewRow = false;
+              break;
+            }
+          }
+          if (addNewRow) {
+            let newRow = [slot];
+            this.refreshRow(newRow);
+            rowsInOneDay = rowsInOneDay.add(newRow);
+          }
+          this.slotByDate.set(slot.date, rowsInOneDay);
         } else {
-          this.slotByDate.set(slot.date, new Set([slot]));
+          this.slotByDate.set(slot.date, new Set<Slot[]>([[slot]]));
         }
       });
     });
+  }
+
+  ngOnInit() {
+    this.refreshTimetable();
   }
 
   ngOnChanges(changes: { [property: string]: SimpleChange }) {
     // Extract changes to the input property by its name
     let change: SimpleChange = changes['courseSet'];
     this.courseSet = change.currentValue;
-
-    // refresh slotByDate
-    this.slotByDate = new Map();
-    this.courseSet.forEach(course => {
-      course.slots.forEach(slot => {
-        if (this.slotByDate.has(slot.date)) {
-          this.slotByDate.set(slot.date, this.slotByDate.get(slot.date)!.add(slot));
-        } else {
-          this.slotByDate.set(slot.date, new Set([slot]));
-        }
-      });
-    });
+    this.refreshTimetable();
   }
 }

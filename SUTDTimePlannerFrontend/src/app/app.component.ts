@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TimeStamp } from './model/timeStamp';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Slot } from './model/Slot';
 
 @Component({
   selector: 'app-root',
@@ -47,7 +48,7 @@ export class AppComponent implements OnInit {
     isCore: true,
     preRequisites: [],
     remark: '',
-    slots: [{type:"T1", startTime:{minute: 0, hour: 8, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 0, hour: 10, gapInMinute: TimeStamp.prototype.gapInMinute}, date: "MON"}, {type:"T2", startTime:{minute: 0, hour: 15, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 0, hour: 16, gapInMinute: TimeStamp.prototype.gapInMinute}, date:"THU"}]
+    slots: [{type:"T1", startTime:{minute: 0, hour: 8, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 0, hour: 10, gapInMinute: TimeStamp.prototype.gapInMinute}, date: "MON", hasOverlap: Slot.prototype.hasOverlap, offset: 0}, {type:"T2", startTime:{minute: 0, hour: 15, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 0, hour: 16, gapInMinute: TimeStamp.prototype.gapInMinute}, date:"THU", hasOverlap: Slot.prototype.hasOverlap, offset: 0}]
   }
   courseC: Course = {
     id: 2,
@@ -60,7 +61,7 @@ export class AppComponent implements OnInit {
     isCore: false,
     preRequisites: ["10.014"],
     remark: '',
-    slots: [{type:"T1", startTime:{minute: 0, hour: 10, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 0, hour: 12, gapInMinute: TimeStamp.prototype.gapInMinute}, date: "MON"}, {type:"lab1", startTime:{minute: 0, hour: 16, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 0, hour: 17, gapInMinute: TimeStamp.prototype.gapInMinute}, date: "MON"}]
+    slots: [{type:"T1", startTime:{minute: 0, hour: 10, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 0, hour: 12, gapInMinute: TimeStamp.prototype.gapInMinute}, date: "MON", hasOverlap: Slot.prototype.hasOverlap, offset: 0}, {type:"lab1", startTime:{minute: 0, hour: 16, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 0, hour: 17, gapInMinute: TimeStamp.prototype.gapInMinute}, date: "MON", hasOverlap: Slot.prototype.hasOverlap, offset: 0}]
   }
   courseList: Course[] = [this.courseA, this.courseB, this.courseC];
   subjectList: string[] = [];
@@ -91,7 +92,6 @@ export class AppComponent implements OnInit {
     }else {
       this.expandCourseSet.delete(id);
     }
-    Array.from
   }
 
   resetForm(): void {
@@ -111,6 +111,6 @@ export class AppComponent implements OnInit {
         this.enrolledCourseSet.delete(course);
       }
     });
-    this.enrolledCourseSet = new Set([...this.enrolledCourseSet])
+    this.enrolledCourseSet = new Set([...this.enrolledCourseSet]);
   }
 }
