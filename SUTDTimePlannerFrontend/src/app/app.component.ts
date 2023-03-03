@@ -38,7 +38,8 @@ export class AppComponent implements OnInit {
     preRequisites: [],
     remark: '',
     slots: [{type:"T1", courseId: 0, subject:"DTI", startTime:{minute: 30, hour: 9, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 30, hour: 10, gapInMinute: TimeStamp.prototype.gapInMinute}, date: "TUE", hasOverlap: Slot.prototype.hasOverlap, offset: 0}, {type:"lab", courseId: 0, subject:"DTI", startTime:{minute: 30, hour: 12, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 30, hour: 14, gapInMinute: TimeStamp.prototype.gapInMinute}, date:"THU", hasOverlap: Slot.prototype.hasOverlap, offset: 0}],
-    color: "#EEF0AF"
+    color: "#EEF0AF",
+    link: "http://asd.courses.sutd.edu.sg/dti/"
   }
   courseB: Course = {
     id: 1,
@@ -52,7 +53,8 @@ export class AppComponent implements OnInit {
     preRequisites: [],
     remark: '',
     slots: [{type:"T1", courseId: 1, subject:"SSW", startTime:{minute: 0, hour: 8, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 0, hour: 10, gapInMinute: TimeStamp.prototype.gapInMinute}, date: "MON", hasOverlap: Slot.prototype.hasOverlap, offset: 0}, {type:"T2", courseId: 1, subject:"SSW", startTime:{minute: 0, hour: 15, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 0, hour: 16, gapInMinute: TimeStamp.prototype.gapInMinute}, date:"THU", hasOverlap: Slot.prototype.hasOverlap, offset: 0}],
-    color: "#FBCCD4"
+    color: "#FBCCD4",
+    link: "https://smt.sutd.edu.sg/education/undergraduate/courses/10016-science-for-a-sustainable-world/"
   }
   courseC: Course = {
     id: 2,
@@ -66,7 +68,8 @@ export class AppComponent implements OnInit {
     preRequisites: ["10.014"],
     remark: '',
     slots: [{type:"T1", courseId: 2, subject: "ISP", startTime:{minute: 0, hour: 10, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 0, hour: 12, gapInMinute: TimeStamp.prototype.gapInMinute}, date: "MON", hasOverlap: Slot.prototype.hasOverlap, offset: 0}, {type:"lab1", courseId: 2, subject: "ISP", startTime:{minute: 0, hour: 16, gapInMinute: TimeStamp.prototype.gapInMinute}, endTime: {minute: 0, hour: 17, gapInMinute: TimeStamp.prototype.gapInMinute}, date: "MON", hasOverlap: Slot.prototype.hasOverlap, offset: 0}],
-    color: '#C7EBFB'
+    color: '#C7EBFB',
+    link: "https://istd.sutd.edu.sg/undergraduate/courses/50001-information-systems-programming"
   }
   courseList: Course[] = [this.courseA, this.courseB, this.courseC];
   subjectList: string[] = [];

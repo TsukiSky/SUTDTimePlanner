@@ -13,4 +13,5 @@ export interface Course {
   remark: string;
   slots: Slot[];
   color: string;
+  link: string;
 }
