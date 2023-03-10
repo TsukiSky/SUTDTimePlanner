@@ -40,3 +40,5 @@ SUTDTimePlannerFrontend/!.vscode/launch.json
 # System files
 /SUTDTimePlannerFrontend/.DS_Store
 /SUTDTimePlannerFrontend/Thumbs.db
+
+/SUTDTimePlannerBackend/
