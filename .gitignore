@@ -41,4 +41,4 @@ SUTDTimePlannerFrontend/!.vscode/launch.json
 /SUTDTimePlannerFrontend/.DS_Store
 /SUTDTimePlannerFrontend/Thumbs.db
 
-/SUTDTimePlannerBackend/
+/SUTDTimePlannerBackend/src/main/resources/application.properties
