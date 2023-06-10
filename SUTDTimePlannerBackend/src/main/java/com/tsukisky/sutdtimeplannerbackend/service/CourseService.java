@@ -18,20 +18,18 @@ public class CourseService {
         this.courseRepository = courseRepository;
     }
 
-    public Course findCourseById(Long id) throws CourseNotFoundException {
-        return courseRepository.findCourseByCourseId(id).orElseThrow(() -> new CourseNotFoundException("Course with id "+ id + " was not found"));
-    }
-
-    public List<Course> findCoursesByPillar(String pillar) {
-        return courseRepository.findAllCourseByPillar(pillar);
-    }
-
     public List<Course> findAllCourses() {
         return courseRepository.findAll();
     }
 
-    public void deleteCourse(Long id) {
-        courseRepository.deleteCourseByCourseId(id);
+    // find course by id
+    public Course findCourseByCourseId(String id) throws CourseNotFoundException {
+        return courseRepository.findCourseByCourseId(id).orElseThrow(() -> new CourseNotFoundException("Course with id: "+ id + " was not found"));
+    }
+
+    //find courses by pillar
+    public List<Course> findCoursesByPillar(String pillar) {
+        return courseRepository.findCoursesBy(pillar);
     }
 
     public void  insertCourse(Course course) {

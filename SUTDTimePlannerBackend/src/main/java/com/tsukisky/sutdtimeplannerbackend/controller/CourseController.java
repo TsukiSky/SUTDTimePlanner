@@ -25,22 +25,22 @@ public class CourseController {
         return new ResponseEntity<>(courses, HttpStatus.OK);
     }
 
-    @GetMapping("/find/{id}")
-    public ResponseEntity<Course> getCourseById(@PathVariable("id") Long id) throws CourseNotFoundException {
-        Course course = courseService.findCourseById(id);
+    @GetMapping("/find/{courseId}")
+    public ResponseEntity<Course> getCourseByCourseId(@PathVariable("courseId") String courseId) throws CourseNotFoundException {
+        Course course = courseService.findCourseByCourseId(courseId);
         return new ResponseEntity<>(course, HttpStatus.OK);
     }
 
-    @GetMapping("/find/{pillar}")
-    public ResponseEntity<List<Course>> getCourseByPillar(@PathVariable("pillar") String pillar) {
-        List<Course> course = courseService.findCoursesByPillar(pillar);
-        return new ResponseEntity<>(course, HttpStatus.OK);
-    }
+//    @GetMapping("/find/{pillar}")
+//    public ResponseEntity<List<Course>> getCourseByPillar(@PathVariable("pillar") String pillar) {
+//        List<Course> course = courseService.(pillar);
+//        return new ResponseEntity<>(course, HttpStatus.OK);
+//    }
 
-    @PostMapping("/addCourse")
-    public ResponseEntity<Course> addCourse() {
-        Course course = new Course(1, "EPD", "50.001", "Math", "Pre-enrolment only", "www.sutd.edu.sg", true, new ArrayList<>(), "");
-        courseService.insertCourse(course);
-        return new ResponseEntity<>(course, HttpStatus.OK);
-    }
+//    @PostMapping("/addCourse")
+//    public ResponseEntity<Course> addCourse() {
+//        Course course = new Course(1, "EPD", "50.001", "Math", "Pre-enrolment only", "www.sutd.edu.sg", true, new ArrayList<>(), "");
+//        courseService.insertCourse(course);
+//        return new ResponseEntity<>(course, HttpStatus.OK);
+//    }
 }

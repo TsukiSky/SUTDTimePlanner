@@ -5,18 +5,15 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "slot")
-public class Slot {
+@Table(name = "class")
+public class Class {
     @Id
-    @Column(name = "slot_id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer slotId;
-
     @Column(name = "class_id")
     private Integer classId;
 
-    @Column(name = "type")
-    private String type;
+    @Column(name = "course_id")
+    private String courseId;
 
-    public Slot() {}
+    public Class() {}
 }
