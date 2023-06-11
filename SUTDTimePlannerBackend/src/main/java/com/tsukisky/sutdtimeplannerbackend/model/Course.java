@@ -29,9 +29,9 @@ public class Course {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "prerequisite", referencedColumnName = "course_id")
-    private List<Course> prerequisites;
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "prerequisite", referencedColumnName = "course_id")
+//    private List<Course> prerequisites;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "course_id", referencedColumnName = "course_id")

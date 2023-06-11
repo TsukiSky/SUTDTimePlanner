@@ -2,6 +2,7 @@ package com.tsukisky.sutdtimeplannerbackend.service;
 
 import com.tsukisky.sutdtimeplannerbackend.exception.CourseNotFoundException;
 import com.tsukisky.sutdtimeplannerbackend.model.Course;
+import com.tsukisky.sutdtimeplannerbackend.model.Term;
 import com.tsukisky.sutdtimeplannerbackend.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,17 +23,19 @@ public class CourseService {
         return courseRepository.findAll();
     }
 
-    // find course by id
-    public Course findCourseByCourseId(String id) throws CourseNotFoundException {
-        return courseRepository.findCourseByCourseId(id).orElseThrow(() -> new CourseNotFoundException("Course with id: "+ id + " was not found"));
+    public List<Course> findCoursesByTerm(Integer term) {
+        return courseRepository.findCoursesByTerms_term(term);
     }
 
-    //find courses by pillar
+    public List<Course> findCoursesByName(String name) {
+        return courseRepository.findCoursesByName(name);
+    }
+
     public List<Course> findCoursesByPillar(String pillar) {
         return courseRepository.findCoursesByPillar(pillar);
     }
 
-    public void  insertCourse(Course course) {
+    public void  addCourse(Course course) {
         courseRepository.save(course);
     }
 }

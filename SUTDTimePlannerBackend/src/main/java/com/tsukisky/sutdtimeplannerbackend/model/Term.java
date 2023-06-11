@@ -8,9 +8,12 @@ import lombok.Data;
 @Table(name = "term")
 public class Term {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "term_id")
-    private Integer term_id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id")
+    private Integer id;
+
+    @Column(name = "term")
+    private Integer term;
 
     @Column(name = "period")
     private String period;
