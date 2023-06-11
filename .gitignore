@@ -42,3 +42,6 @@ SUTDTimePlannerFrontend/!.vscode/launch.json
 /SUTDTimePlannerFrontend/Thumbs.db
 
 /SUTDTimePlannerBackend/src/main/resources/application.properties
+
+.vscode
+.metals
