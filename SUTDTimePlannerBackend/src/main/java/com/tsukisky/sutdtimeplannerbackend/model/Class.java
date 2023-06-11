@@ -3,6 +3,8 @@ package com.tsukisky.sutdtimeplannerbackend.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Data
 @Table(name = "class")
@@ -12,8 +14,13 @@ public class Class {
     @Column(name = "class_id")
     private Integer classId;
 
-    @Column(name = "course_id")
-    private String courseId;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "class_id", referencedColumnName = "class_id")
+    private List<Slot> slots;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "class_id", referencedColumnName = "class_id")
+    private List<Lecturer> lecturers;
 
     public Class() {}
 }

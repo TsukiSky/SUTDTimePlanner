@@ -37,10 +37,9 @@ public class CourseController {
 //        return new ResponseEntity<>(course, HttpStatus.OK);
 //    }
 
-//    @PostMapping("/addCourse")
-//    public ResponseEntity<Course> addCourse() {
-//        Course course = new Course(1, "EPD", "50.001", "Math", "Pre-enrolment only", "www.sutd.edu.sg", true, new ArrayList<>(), "");
-//        courseService.insertCourse(course);
-//        return new ResponseEntity<>(course, HttpStatus.OK);
-//    }
+    @PostMapping("/addCourse")
+    public ResponseEntity<Course> addCourse(@RequestBody Course course) {
+        courseService.insertCourse(course);
+        return new ResponseEntity<>(course, HttpStatus.OK);
+    }
 }

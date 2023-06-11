@@ -3,14 +3,16 @@ package com.tsukisky.sutdtimeplannerbackend.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Data
 @Table(name = "course")
 public class Course {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "course_id")
-    private String courseId;
+    private Integer courseId;
 
     @Column(name = "name")
     private String name;
@@ -24,13 +26,20 @@ public class Course {
     @Column(name = "link")
     private String link;
 
-    public Course() {}
+    @Column(name = "description")
+    private String description;
 
-    public Course(String courseId, String name, String pillar, Integer isCore, String link) {
-        courseId = courseId;
-        name = name;
-        pillar = pillar;
-        isCore = isCore;
-        link = link;
-    }
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "prerequisite", referencedColumnName = "course_id")
+    private List<Course> prerequisites;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "course_id", referencedColumnName = "course_id")
+    private List<Class> classes;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "course_id", referencedColumnName = "course_id")
+    private List<Term> terms;
+
+    public Course() {}
 }

@@ -3,6 +3,8 @@ package com.tsukisky.sutdtimeplannerbackend.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalTime;
+
 @Entity
 @Data
 @Table(name = "slot")
@@ -12,11 +14,17 @@ public class Slot {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer slotId;
 
-    @Column(name = "class_id")
-    private Integer classId;
-
     @Column(name = "type")
     private String type;
+
+    @Column(name = "date")
+    private String date;
+
+    @Column(name = "start_time")
+    private LocalTime startTime;
+
+    @Column(name = "end_time")
+    private LocalTime endTime;
 
     public Slot() {}
 }

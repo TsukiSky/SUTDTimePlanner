@@ -29,7 +29,7 @@ public class CourseService {
 
     //find courses by pillar
     public List<Course> findCoursesByPillar(String pillar) {
-        return courseRepository.findCoursesBy(pillar);
+        return courseRepository.findCoursesByPillar(pillar);
     }
 
     public void  insertCourse(Course course) {
