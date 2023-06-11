@@ -1,0 +1,610 @@
+[
+    {
+        "name": "50.021 Artificial Intelligence",
+        "pillar": "CSD",
+        "isCore": 0,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50021-artificial-intelligence/",
+        "description": "Artificial intelligence (AI) is a rich field spanning formal systems for representing and processing symbolic information, computational models of human cognition, and a range of techniques for learning, planning and reasoning under uncertainty.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "08:30:00",
+                        "endTime": "10:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "WED",
+                        "startTime": "08:30:00",
+                        "endTime": "10:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "FRI",
+                        "startTime": "09:00:00",
+                        "endTime": "10:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Alexander Binder"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": "summer"
+            }
+        ]
+    },
+    {
+        "name": "50.007 Machine Learning",
+        "pillar": "CSD",
+        "isCore": 1,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50007-machine-learning/",
+        "description": "Machine learning is the study of algorithms that improve their performance at some task with experience.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "WED",
+                        "startTime": "12:30:00",
+                        "endTime": "13:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "13:00:00",
+                        "endTime": "15:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "FRI",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Malika Meghjani"},
+                    {"name": "Zhou Na"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "WED",
+                        "startTime": "12:30:00",
+                        "endTime": "13:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "18:00:00",
+                        "endTime": "20:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "18:00:00",
+                        "endTime": "20:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Malika Meghjani"},
+                    {"name": "Zhou Na"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": "summer"
+            }
+        ]
+    },
+    {
+        "name": "50.039 Theory and Practice of Deep Learning",
+        "pillar": "CSD",
+        "isCore": 0,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50039-theory-and-practice-of-deep-learning",
+        "description": "The course goal is to familiarize students with deep learning for vision, text, reinforcement learning and multimodal combinations thereof.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "WED",
+                        "startTime": "10:00:00",
+                        "endTime": "12:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Matthieu De Mari"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": "summer"
+            }
+        ]
+    },
+    {
+        "name": "50.017 Graphics and Visualisation",
+        "pillar": "CSD",
+        "isCore": 0,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50017-graphics-and-visualisation/",
+        "description": "Introduction to computer graphics algorithms, software and hardware.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "WED",
+                        "startTime": "10:00:00",
+                        "endTime": "12:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Peng Song"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": "summer"
+            }
+        ]
+    },
+    {
+        "name": "50.038 Computational Data Science",
+        "pillar": "CSD",
+        "isCore": 0,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50038-computational-data-science",
+        "description": "This course provides students the necessary background and experience in data science technology and concepts.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "12:00:00",
+                        "endTime": "15:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Dorien Herremans"},
+                    {"name": "Soujanya Poria"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "12:00:00",
+                        "endTime": "15:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "14:00:00",
+                        "endTime": "16:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Dorien Herremans"},
+                    {"name": "Soujanya Poria"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": "summer"
+            }
+        ]
+    },
+    {
+        "name": "50.012 Networks",
+        "pillar": "CSD",
+        "isCore": 1,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50012-networks/",
+        "description": "This course will introduce the principles and practice of computer networking, with emphasis on the Internet.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "18:00:00",
+                        "endTime": "19:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "13:30:00",
+                        "endTime": "15:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "WED",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Chen Binbin"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": "summer"
+            }
+        ]
+    },
+    {
+        "name": "50.051 Programming Language Concepts",
+        "pillar": "CSD",
+        "isCore": 0,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50051-programming-language-concepts",
+        "description": "In this module, students will learn about data representation, programming and compilation.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "18:00:00",
+                        "endTime": "19:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "WED",
+                        "startTime": "12:00:00",
+                        "endTime": "13:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "16:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Simon Perrault"},
+                    {"name": "Matthieu De Mari"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": "summer"
+            }
+        ]
+    },
+    {
+        "name": "50.043 Database Systems",
+        "pillar": "CSD",
+        "isCore": 0,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50043-database-systems",
+        "description": "Database systems manage data which is at the heart of modern computing applications.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "15:00:00",
+                        "endTime": "18:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "18:00:00",
+                        "endTime": "20:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Dorien Herremans"},
+                    {"name": "Kenny Lu"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "15:00:00",
+                        "endTime": "18:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "FRI",
+                        "startTime": "09:00:00",
+                        "endTime": "11:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Dorien Herremans"},
+                    {"name": "Kenny Lu"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "15:00:00",
+                        "endTime": "18:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "FRI",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Dorien Herremans"},
+                    {"name": "Kenny Lu"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": "summer"
+            }
+        ]
+    },
+    {
+        "name": "60.001 Applied Deep Learning",
+        "pillar": "DAI",
+        "isCore": 1,
+        "link": "https://dai.sutd.edu.sg/courses/60001-applied-deep-learning/",
+        "description": "Deep neural networks have revolutionized the landscape of modern day AI.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "11:30:00",
+                        "endTime": "14:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Roy Lee"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": "summer"
+            }
+        ]
+    },
+    {
+        "name": "60.007 Interaction Design for Cyber-Physical Artifacts",
+        "pillar": "DAI",
+        "isCore": 1,
+        "link": "https://dai.sutd.edu.sg/courses/60007-interaction-design-for-cyber-physical-artifacts/",
+        "description": "This course focuses on the human-centered design, engineering, and evaluation of interactive cyber-physical artifacts through a variety of user study and interaction prototyping techniques.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    },
+                    {
+                        "type": "Consultation",
+                        "date": "FRI",
+                        "startTime": "10:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Wang Yixiao"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": "summer"
+            }
+        ]
+    },
+    {
+        "name": "60.008 Systems Design Studio",
+        "pillar": "DAI",
+        "isCore": 1,
+        "link": "https://dai.sutd.edu.sg/courses/60008-systems-design-studio/",
+        "description": "Large systems such as manufacturing plants, hospitals, petrochemical refineries, airports, and amusement parks are characterized by processes, flows (material, patients, passengers, information), and capacity-constrained resources.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "14:00:00",
+                        "endTime": "17:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "14:30:00",
+                        "endTime": "17:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Yue Mu"},
+                    {"name": "Francisco Benita"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": "summer"
+            }
+        ]
+    },
+    {
+        "name": "20.320 Project Management in the Built Environment",
+        "pillar": "ASD",
+        "isCore": 0,
+        "link": "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20320-project-management-in-the-built-environment",
+        "description": "Project Management is a course set in the context of Singapore’s Building Construction industry.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "09:30:00",
+                        "endTime": "11:30:00"
+                    },
+                    {
+                        "type": "Lab",
+                        "date": "THU",
+                        "startTime": "09:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Zheng Kai"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": "summer"
+            }
+        ]
+    },
+    {
+        "name": "20.318 Creative Machine Learning",
+        "pillar": "ASD",
+        "isCore": 0,
+        "link": "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20318-creative-machine-learning",
+        "description": "The course provides an overview of today’s machine learning apparatus for generative design and in turn speculates on the ways in which architectural design process itself might be altered as a result of this epistemological shift towards a ‘Software 2.0’ paradigm.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "11:00:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "WED",
+                        "startTime": "10:00:00",
+                        "endTime": "13:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Immanuel Koh"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": "summer"
+            }
+        ]
+    },
+    {
+        "name": "20.111 Sustainable Design Option Studio 1",
+        "pillar": "ASD",
+        "isCore": 0,
+        "link": "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20111-sustainable-design-option-studio-1",
+        "description": "The Sustainable Design Studio Option builds upon and continues the Architectural Core Studio sequence, and explores the multi-dimensional issues of sustainable design through a variety of lenses and at diverse temporal and spatial scales.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Studio",
+                        "date": "TUE",
+                        "startTime": "13:00:00",
+                        "endTime": "18:00:00"
+                    },
+                    {
+                        "type": "Studio",
+                        "date": "THU",
+                        "startTime": "13:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": "summer"
+            }
+        ]
+    }
+]

@@ -3,7 +3,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { range } from 'rxjs';
 import { Course } from 'src/app/model/Course';
 import { Slot } from 'src/app/model/Slot';
-import { TimeStamp } from 'src/app/model/timeStamp';
+import { TimeStamp } from 'src/app/model/TimeStamp';
+import {toTimeStamp} from "../../utils/Utils";
 
 @Component({
   selector: 'app-timetable',
@@ -25,15 +26,15 @@ export class TimetableComponent implements OnInit {
   constructor(public sanitizer: DomSanitizer) { }
 
   refreshRow(row: Slot[]):void {
-    row.sort((a: Slot, b: Slot) => {return a.endTime.gapInMinute(this.startTimeStamp) - b.startTime.gapInMinute(this.startTimeStamp)});
+    row.sort((a: Slot, b: Slot) => {return toTimeStamp(a.endTime).gapInMinute(this.startTimeStamp) - toTimeStamp(b.startTime).gapInMinute(this.startTimeStamp)});
     let cumulativeOffset = 0;
     for(let i=0; i<row.length; i++) {
       if (i == 0) {
-        row[i].offset = 22*(row[i].startTime.gapInMinute(this.startTimeStamp)/660);
+        row[i].offset = 22*(toTimeStamp(row[i].startTime).gapInMinute(this.startTimeStamp)/660);
       } else {
-        row[i].offset = 22*(row[i].startTime.gapInMinute(this.startTimeStamp)/660)-cumulativeOffset;
+        row[i].offset = 22*(toTimeStamp(row[i].startTime).gapInMinute(this.startTimeStamp)/660)-cumulativeOffset;
       }
-      cumulativeOffset += row[i].offset + 22*(row[i].endTime.gapInMinute(row[i].startTime)/660);
+      cumulativeOffset += row[i].offset + 22*(toTimeStamp(row[i].endTime).gapInMinute(toTimeStamp(row[i].startTime))/660);
     }
   }
 
@@ -41,37 +42,40 @@ export class TimetableComponent implements OnInit {
     this.slotByDate = new Map();
     this.courseSetCopy = this.courseSet;
     this.courseSetCopy.forEach(course => {
-      this.colorMap = this.colorMap.set(course.id, course.color);
-      course.slots.forEach(slot => {
-        if (this.slotByDate.has(slot.date)) {
-          let rowsInOneDay: Set<Slot[]> = this.slotByDate.get(slot.date)!;
-          let addNewRow: boolean = true;
-          for (let row of rowsInOneDay) {
-            let hasOverlap = false;
-            for (let embedSlot of row) {
-              if (slot.hasOverlap(embedSlot)) {
-                hasOverlap = true;
-                break;
+      this.colorMap = this.colorMap.set(course.courseId, "#080192");
+      course.classes.forEach(clas => {
+        clas.slots.forEach(
+          slot => {
+            if (this.slotByDate.has(slot.date)) {
+              let rowsInOneDay: Set<Slot[]> = this.slotByDate.get(slot.date)!;
+              let addNewRow: boolean = true;
+              for (let row of rowsInOneDay) {
+                let hasOverlap = false;
+                for (let embedSlot of row) {
+                  if (slot.hasOverlap(embedSlot)) {
+                    hasOverlap = true;
+                    break;
+                  }
+                }
+                if (!hasOverlap) {
+                  row.push(slot);
+                  this.refreshRow(row);
+                  addNewRow = false;
+                  break;
+                }
               }
+              if (addNewRow) {
+                let newRow = [slot];
+                this.refreshRow(newRow);
+                rowsInOneDay = rowsInOneDay.add(newRow);
+              }
+              this.slotByDate.set(slot.date, rowsInOneDay);
+            } else {
+              this.slotByDate.set(slot.date, new Set<Slot[]>([[slot]]));
             }
-            if (!hasOverlap) {
-              row.push(slot);
-              this.refreshRow(row);
-              addNewRow = false;
-              break;
-            }
-          }
-          if (addNewRow) {
-            let newRow = [slot];
-            this.refreshRow(newRow);
-            rowsInOneDay = rowsInOneDay.add(newRow);
-          }
-          this.slotByDate.set(slot.date, rowsInOneDay);
-        } else {
-          this.slotByDate.set(slot.date, new Set<Slot[]>([[slot]]));
-        }
-      });
-    });
+          })
+      })
+    })
     console.log(this.colorMap);
   }
 
@@ -85,4 +89,6 @@ export class TimetableComponent implements OnInit {
     this.courseSet = change.currentValue;
     this.refreshTimetable();
   }
+
+  protected readonly toTimeStamp = toTimeStamp;
 }

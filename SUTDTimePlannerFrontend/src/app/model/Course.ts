@@ -1,17 +1,24 @@
-import { Slot } from "./Slot";
+import {Class} from "./Class";
+import {Term} from "./Term";
 
 export interface Course {
-  id: number;
-  term: number;
+  courseId: number;
+  name: string;
   pillar: string;
-  code: string;
-  subject: string;
-  instructors: string[];
-  enrolmentCategory: string;
-  isCore: boolean;
-  preRequisites: string[];
-  remark: string;
-  slots: Slot[];
-  color: string;
+  isCore: number;
   link: string;
+  description: string[];
+
+  classes: Class[];
+  terms: Term[];
+
+
+
+  // enrolmentCategory: string;
+  // isCore: boolean;
+  // preRequisites: string[];
+  // remark: string;
+  // slots: Slot[];
+  // color: string;
+  // link: string;
 }

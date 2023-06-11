@@ -40,7 +40,7 @@
                   <nz-form-control>
                     <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a course">
                       <nz-option
-                        *ngFor="let course of courseList" [nzLabel]="course.subject" [nzValue]="course.id">
+                        *ngFor="let course of courseList" [nzLabel]="course.name" [nzValue]="course.courseId">
                       </nz-option>
                     </nz-select>
                   </nz-form-control>
@@ -67,16 +67,16 @@
             <tbody>
               <ng-container *ngFor="let data of courseList">
                 <tr>
-                  <td [nzExpand]="expandCourseSet.has(data.id)" (nzExpandChange)="onCourseExpandChange(data.id, $event)"></td>
-                  <td>{{ data.term }}</td>
+                  <td [nzExpand]="expandCourseSet.has(data.courseId)" (nzExpandChange)="onCourseExpandChange(data.courseId, $event)"></td>
+                  <td>{{ data.terms }}</td>
                   <td>{{ data.pillar }}</td>
-                  <td>{{ data.subject }}</td>
-                  <td>{{ data.instructors }}</td>
+                  <td>{{ data.name }}</td>
+                  <td>{{ data.classes[0].lecturers}}</td>
                   <td>{{data.isCore? "Core": "Elective"}}</td>
                   <!-- <td>{{ data.preRequisites }}</td> -->
                   <td><a nz-button nzType="link" (click)="enrollCourse(data)" [disabled]="enrolledCourseSet.has(data)">enroll</a></td>
                 </tr>
-                <tr [nzExpand]="expandCourseSet.has(data.id)">
+                <tr [nzExpand]="expandCourseSet.has(data.courseId)">
                   <span>this is for the course descriptions</span>
                 </tr>
               </ng-container>
@@ -107,24 +107,24 @@
         </div>
       </div>
       <nz-card *ngIf="enrolledCourseSet.size!=0 && sideBarCardView">
-        <div nz-card-grid class="course-card" *ngFor="let course of enrolledCourseSet" [style.background-color]="course.color">
+        <div nz-card-grid class="course-card" *ngFor="let course of enrolledCourseSet">
           <!-- <span class="course-card-title">{{ course.subject }}</span> -->
-          <nz-descriptions nzTitle="{{course.subject}}" nzSize="small" [nzColumn]="1">
+          <nz-descriptions nzTitle="{{course.name}}" nzSize="small" [nzColumn]="1">
             <nz-descriptions-item nzTitle="Pillar">{{ course.pillar }}</nz-descriptions-item>
-            <nz-descriptions-item nzTitle="Instructors">{{ course.instructors }}</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Instructors">{{ course.classes[0].lecturers }}</nz-descriptions-item>
             <nz-descriptions-item nzTitle="Is Core"> {{course.isCore? "Yes": "No"}} </nz-descriptions-item>
           </nz-descriptions>
-          <button nz-button nzType="default" (click)="dropCourse(course.id, course.subject)"><span nz-icon nzType="delete" nzTheme="outline"></span></button>
+          <button nz-button nzType="default" (click)="dropCourse(course.courseId, course.name)"><span nz-icon nzType="delete" nzTheme="outline"></span></button>
           <button nz-button nzType="default"><a [href]="course.link" target="_blank"><span nz-icon nzType="link" nzTheme="outline"></span></a></button>
 
         </div>
       </nz-card>
       <ul nz-list nzBordered nzSize="large" *ngIf="enrolledCourseSet.size!=0 && !sideBarCardView">
         <li nz-list-item *ngFor="let course of enrolledCourseSet" nzNoFlex>
-          {{ course.subject }}
+          {{ course.name }}
           <ul nz-list-item-actions>
             <nz-list-item-action>
-              <a (click)="dropCourse(course.id, course.subject)">drop</a>
+              <a (click)="dropCourse(course.courseId, course.name)">drop</a>
             </nz-list-item-action>
             <nz-list-item-action>
               <a [href]="course.link" target="_blank">more info</a>

@@ -1,7 +1,6 @@
 package com.tsukisky.sutdtimeplannerbackend.controller;
 
 import com.tsukisky.sutdtimeplannerbackend.model.Course;
-import com.tsukisky.sutdtimeplannerbackend.model.Term;
 import com.tsukisky.sutdtimeplannerbackend.service.CourseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/course")
+@CrossOrigin
 public class CourseController {
     private final CourseService courseService;
 
@@ -24,19 +24,19 @@ public class CourseController {
         return new ResponseEntity<>(courses, HttpStatus.OK);
     }
 
-    @GetMapping("/find/{pillar}")
+    @GetMapping("/find/byPillar/{pillar}")
     public ResponseEntity<List<Course>> getCoursesByPillar(@PathVariable("pillar") String pillar) {
         List<Course> courses = courseService.findCoursesByPillar(pillar);
         return new ResponseEntity<>(courses, HttpStatus.OK);
     }
 
-    @GetMapping("/find/{term}")
+    @GetMapping("/find/byTerm/{term}")
     public ResponseEntity<List<Course>> getCoursesByTerm(@PathVariable("term") Integer termId) {
         List<Course> courses = courseService.findCoursesByTerm(termId);
         return new ResponseEntity<>(courses, HttpStatus.OK);
     }
 
-    @GetMapping("/find/{name}")
+    @GetMapping("/find/byName/{name}")
     public ResponseEntity<List<Course>> getCoursesByName(@PathVariable("name") String name) {
         List<Course> courses = courseService.findCoursesByName(name);
         return new ResponseEntity<>(courses, HttpStatus.OK);
