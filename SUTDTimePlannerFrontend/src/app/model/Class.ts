@@ -5,4 +5,5 @@ export interface Class {
   classId: number;
   slots: Slot[];
   lecturers: Lecturer[];
+  lecturersInString: string;
 }

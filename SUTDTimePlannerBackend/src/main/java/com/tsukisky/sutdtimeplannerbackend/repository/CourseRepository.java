@@ -1,7 +1,6 @@
 package com.tsukisky.sutdtimeplannerbackend.repository;
 
 import com.tsukisky.sutdtimeplannerbackend.model.Course;
-import com.tsukisky.sutdtimeplannerbackend.model.Term;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

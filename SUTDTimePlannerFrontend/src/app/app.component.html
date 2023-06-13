@@ -9,14 +9,13 @@
         <app-timetable [courseSet]="enrolledCourseSet"></app-timetable>
       </div>
       <nz-content>
-
         <div class="container">
           <form nz-form [formGroup]="searchForm" nzLayout="horizontal">
             <div nz-row nzGutter="24">
               <div nz-col nzSpan="4">
                 <nz-form-item>
                   <nz-form-control>
-                    <nz-select nzPlaceHolder="Term" nzAllowClear>
+                    <nz-select nzPlaceHolder="Term" nzAllowClear formControlName="term">
                       <nz-option
                         *ngFor="let term of termList" [nzLabel]="term" [nzValue]="term">
                       </nz-option>
@@ -27,7 +26,7 @@
               <div nz-col nzSpan="4">
                 <nz-form-item>
                   <nz-form-control>
-                    <nz-select nzPlaceHolder="Pillar" nzAllowClear>
+                    <nz-select nzPlaceHolder="Pillar" nzAllowClear formControlName="pillar">
                       <nz-option
                         *ngFor="let pillar of pillarList" [nzLabel]="pillar" [nzValue]="pillar">
                       </nz-option>
@@ -38,46 +37,51 @@
               <div nz-col nzSpan="12">
                 <nz-form-item>
                   <nz-form-control>
-                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a course">
+                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a course" formControlName="name">
                       <nz-option
-                        *ngFor="let course of courseList" [nzLabel]="course.name" [nzValue]="course.courseId">
+                        *ngFor="let course of courseList" [nzLabel]="course.name" [nzValue]="course.name">
                       </nz-option>
                     </nz-select>
                   </nz-form-control>
                 </nz-form-item>
               </div>
-              <div nz-col nzSpan="4">
-                <button nz-button id="search-button" nzType="primary" nzSize="default">Search</button>
+              <div nz-col nzSpan="2">
+                <button nz-button id="search-button" nzType="primary" nzSize="default" (click)="onSearch()">Search</button>
+              </div>
+              <div nz-col nzSpan="2">
+                <button nz-button id="clear-button" nzType="primary" nzSize="default" (click)="onReset()">Clear</button>
               </div>
             </div>
           </form>
-          <nz-table id="searchTable" nzSize="small" [nzData]="courseList" #searchTable nzShowPagination nzShowSizeChanger>
+          <nz-table id="searchTable" nzSize="small" [nzData]="filteredCourse" #searchTable nzShowPagination nzShowSizeChanger
+                    [nzPageSize]=pageSize [nzPageIndex]=currentPageIndex [nzTotal]="filteredCourse.length"
+                    (nzPageIndexChange)="onPageIndexChange($event)" (nzPageSizeChange)="onPageSizeChange($event)">
             <thead>
               <tr>
                 <th nzWidth="60px"></th>
                 <th>Term</th>
                 <th>Pillar</th>
                 <th>Subject</th>
-                <th>Instructors</th>
+                <th>Lecturers</th>
                 <th>Core/Elect</th>
                 <!-- <th>Pre-requisites</th> -->
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <ng-container *ngFor="let data of courseList">
+              <ng-container *ngFor="let course of currentPageCourse">
                 <tr>
-                  <td [nzExpand]="expandCourseSet.has(data.courseId)" (nzExpandChange)="onCourseExpandChange(data.courseId, $event)"></td>
-                  <td>{{ data.terms }}</td>
-                  <td>{{ data.pillar }}</td>
-                  <td>{{ data.name }}</td>
-                  <td>{{ data.classes[0].lecturers}}</td>
-                  <td>{{data.isCore? "Core": "Elective"}}</td>
+                  <td [nzExpand]="expandCourseSet.has(course.courseId)" (nzExpandChange)="onCourseExpandChange(course.courseId, $event)"></td>
+                  <td>{{ course.termsInString }}</td>
+                  <td>{{ course.pillar }}</td>
+                  <td>{{ course.name }}</td>
+                  <td>{{ course.classes[0].lecturersInString}}</td>
+                  <td>{{course.isCore? "Core": "Elective"}}</td>
                   <!-- <td>{{ data.preRequisites }}</td> -->
-                  <td><a nz-button nzType="link" (click)="enrollCourse(data)" [disabled]="enrolledCourseSet.has(data)">enroll</a></td>
+                  <td><a nz-button nzType="link" (click)="enrollCourse(course)" [disabled]="enrolledCourseSet.has(course)">enroll</a></td>
                 </tr>
-                <tr [nzExpand]="expandCourseSet.has(data.courseId)">
-                  <span>this is for the course descriptions</span>
+                <tr [nzExpand]="expandCourseSet.has(course.courseId)">
+                  <span>{{ course.description }}</span>
                 </tr>
               </ng-container>
             </tbody>
@@ -111,7 +115,7 @@
           <!-- <span class="course-card-title">{{ course.subject }}</span> -->
           <nz-descriptions nzTitle="{{course.name}}" nzSize="small" [nzColumn]="1">
             <nz-descriptions-item nzTitle="Pillar">{{ course.pillar }}</nz-descriptions-item>
-            <nz-descriptions-item nzTitle="Instructors">{{ course.classes[0].lecturers }}</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="Instructors">{{ course.classes[0].lecturersInString }}</nz-descriptions-item>
             <nz-descriptions-item nzTitle="Is Core"> {{course.isCore? "Yes": "No"}} </nz-descriptions-item>
           </nz-descriptions>
           <button nz-button nzType="default" (click)="dropCourse(course.courseId, course.name)"><span nz-icon nzType="delete" nzTheme="outline"></span></button>

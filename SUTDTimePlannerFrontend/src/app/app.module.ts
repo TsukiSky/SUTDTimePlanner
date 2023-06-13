@@ -25,6 +25,7 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 
 import { TimetableComponent } from './common/timetable/timetable.component';
+import {NzPaginationModule} from "ng-zorro-antd/pagination";
 
 registerLocaleData(en);
 
@@ -33,27 +34,28 @@ registerLocaleData(en);
     AppComponent,
     TimetableComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    NzLayoutModule,
-    NzTableModule,
-    NzFormModule,
-    NzSelectModule,
-    NzButtonModule,
-    ReactiveFormsModule,
-    NzListModule,
-    NzMessageModule,
-    NzNotificationModule,
-    NzEmptyModule,
-    NzIconModule,
-    NzCardModule,
-    NzSwitchModule,
-    NzDescriptionsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        NzLayoutModule,
+        NzTableModule,
+        NzFormModule,
+        NzSelectModule,
+        NzButtonModule,
+        ReactiveFormsModule,
+        NzListModule,
+        NzMessageModule,
+        NzNotificationModule,
+        NzEmptyModule,
+        NzIconModule,
+        NzCardModule,
+        NzSwitchModule,
+        NzDescriptionsModule,
+        NzPaginationModule
+    ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }
   ],

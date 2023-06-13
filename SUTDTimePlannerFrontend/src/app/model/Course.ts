@@ -12,7 +12,7 @@ export interface Course {
   classes: Class[];
   terms: Term[];
 
-
+  termsInString: string;
 
   // enrolmentCategory: string;
   // isCore: boolean;
