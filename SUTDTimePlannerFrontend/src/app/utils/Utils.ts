@@ -1,6 +1,7 @@
 import {TimeStamp} from "../model/TimeStamp";
 import {NzTableQueryParams} from "ng-zorro-antd/table";
 import {HttpParams} from "@angular/common/http";
+import {Slot} from "../model/Slot";
 
 export function toTimeStamp(time: string): TimeStamp {
   let hour: string = time.split(':')[0];
@@ -28,4 +29,26 @@ export function createTableQueryHttpParam(tableQueryParams: NzTableQueryParams, 
   return params;
 }
 
+export function isOverlap(slotA: Slot, slotB: Slot) {
+  let slotAStartHour = Number(slotA.startTime.split(':')[0]);
+  let slotAStartMinute = Number(slotA.startTime.split(':')[1]);
+  let slotAEndHour = Number(slotA.endTime.split(':')[0]);
+  let slotAEndMinute = Number(slotA.endTime.split(':')[1]);
+
+  let slotAStartTime = new TimeStamp(slotAStartHour, slotAStartMinute);
+  let slotAEndTime = new TimeStamp(slotAEndHour, slotAEndMinute);
+
+  let slotBStartHour = Number(slotB.startTime.split(':')[0]);
+  let slotBStartMinute = Number(slotB.startTime.split(':')[1]);
+  let slotBEndHour = Number(slotB.endTime.split(':')[0]);
+  let slotBEndMinute = Number(slotB.endTime.split(':')[1]);
+
+  let slotBStartTime = new TimeStamp(slotBStartHour, slotBStartMinute);
+  let slotBEndTime = new TimeStamp(slotBEndHour, slotBEndMinute);
+
+
+  let zeroTime: TimeStamp = new TimeStamp(0, 0);
+  return (slotAStartTime.gapInMinute(zeroTime) <= slotBEndTime.gapInMinute(zeroTime) && slotAEndTime.gapInMinute(zeroTime) >= slotBStartTime.gapInMinute(zeroTime))
+    || (slotBStartTime.gapInMinute(zeroTime) <= slotAEndTime.gapInMinute(zeroTime) && slotBEndTime.gapInMinute(zeroTime) >= slotAStartTime.gapInMinute(zeroTime))
+}
 

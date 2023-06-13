@@ -1,12 +1,11 @@
-import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Course } from './model/Course';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { TimeStamp } from './model/TimeStamp';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { Slot } from './model/Slot';
 import {CourseService} from "./course.service";
 import {HttpErrorResponse} from "@angular/common/http";
+import {Class} from "./model/Class";
 
 @Component({
   selector: 'app-root',
@@ -28,9 +27,14 @@ export class AppComponent implements OnInit {
 
   expandCourseSet = new Set<number>();
   enrolledCourseSet = new Set<Course>();
+  enrolledClassSet = new Set<Class>();
 
   currentPageIndex = 1;
   pageSize = 10;
+
+  colors: Array<string> = ["#C7EBFB", "#EEF0AF", "#CAFFB9", "#F5DEC2", "#E3E6C7", "#FBCCD4", "#C6E6D5", "#C4C691"];
+  usedColors: Array<string> = [];
+
 
   getAllCourses(): void {
     this.courseService.getAllCourses().subscribe(
@@ -40,6 +44,11 @@ export class AppComponent implements OnInit {
           course.termsInString = course.terms.map(term => term.term).join(', ');  // set up termsInString
           for (let clas of course.classes) {
             clas.lecturersInString = clas.lecturers.map(lecturer => lecturer.name).join(', ');
+            clas.timeInString = clas.slots.map(slot => `${slot.type}: ${slot.date} ${slot.startTime} to ${slot.endTime}`).join(' | ')
+            clas.courseName = course.name;
+            for (let slot of clas.slots) {
+              slot.courseName = course.name;
+            }
           }
         }
         this.filterCourse();
@@ -117,27 +126,77 @@ export class AppComponent implements OnInit {
   onSearch(): void {
     this.currentPageIndex = 1;
     this.filterCourse();
-    console.log("haha");
+    this.expandCourseSet.clear();
   }
 
   onReset(): void {
     this.searchForm.reset();
     this.onSearch();
+    this.expandCourseSet.clear();
   }
 
   enrollCourse(selectedCourse: Course): void {
-    this.enrolledCourseSet = this.enrolledCourseSet.add(selectedCourse);
+    if (selectedCourse.classes.length > 1) {
+      this.message.warning(`${selectedCourse.name} has multiple time slots available. Please choose a time slot to continue.`, { nzDuration: 6000 });
+      this.onCourseExpandChange(selectedCourse.courseId, true);
+    } else {
+      this.enrollClass(selectedCourse, 0);
+    }
+  }
+
+  enrollClass(course: Course, classIndex: number): void {
+    let clas = course.classes[classIndex];
+    this.assignColorToCourse(course);
+    this.enrolledCourseSet = this.enrolledCourseSet.add(course);
     this.enrolledCourseSet = new Set([...this.enrolledCourseSet]);
-    this.message.success(`Enroll in Course: ${selectedCourse.name}`);
+    this.enrolledClassSet = this.enrolledClassSet.add(clas);
+    this.enrolledClassSet = new Set([...this.enrolledClassSet]);
+    this.message.success(`Enroll in Course: ${course.name}`, { nzDuration: 1500 });
+    this.onEnrollCourse(course);
   }
 
   dropCourse(id: number, subject: string): void {
-    this.message.info(`Drop Course: ${subject}`);
+    this.message.info(`Drop Course: ${subject}`, { nzDuration: 1500 });
     this.enrolledCourseSet.forEach(course => {
       if (course.courseId == id) {
+        this.recoverColorFromCourse(course);
         this.enrolledCourseSet.delete(course);
       }
     });
     this.enrolledCourseSet = new Set([...this.enrolledCourseSet]);
+
+    this.enrolledClassSet.forEach(clas => {
+      if (clas.courseName == subject) {
+        this.enrolledClassSet.delete(clas);
+      }
+    })
+    this.enrolledClassSet = new Set([...this.enrolledClassSet]);
+  }
+
+  assignColorToCourse(course: Course) {
+    for (const color of this.colors) {
+      if (!this.usedColors.includes(color)) {
+        course.color = color;
+        course.classes.forEach(clas => {
+          clas.slots.forEach(slot => {
+            slot.courseColor = color;
+          });
+        });
+        this.usedColors.push(color);
+        break;
+      }
+    }
+  }
+
+  onEnrollCourse(course: Course) {
+    if (this.expandCourseSet.has(course.courseId)) {
+      this.onCourseExpandChange(course.courseId, false);
+    }
+  }
+
+  recoverColorFromCourse(course: Course) {
+    this.usedColors = this.usedColors.filter(color => color !== course.color);
+    this.colors.push(course.color);
+    course.color = "";
   }
 }

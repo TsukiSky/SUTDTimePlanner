@@ -6,7 +6,7 @@
     </nz-header>
     <div id="body">
       <div class="container">
-        <app-timetable [courseSet]="enrolledCourseSet"></app-timetable>
+        <app-timetable [classSet]="enrolledClassSet"></app-timetable>
       </div>
       <nz-content>
         <div class="container">
@@ -45,17 +45,18 @@
                   </nz-form-control>
                 </nz-form-item>
               </div>
-              <div nz-col nzSpan="2">
+              <div nz-col nzSpan="4">
                 <button nz-button id="search-button" nzType="primary" nzSize="default" (click)="onSearch()">Search</button>
               </div>
-              <div nz-col nzSpan="2">
-                <button nz-button id="clear-button" nzType="primary" nzSize="default" (click)="onReset()">Clear</button>
-              </div>
+<!--              <div nz-col nzSpan="2">-->
+<!--                <button nz-button id="clear-button" nzType="primary" nzSize="default" (click)="onReset()">Clear</button>-->
+<!--              </div>-->
             </div>
           </form>
-          <nz-table id="searchTable" nzSize="small" [nzData]="filteredCourse" #searchTable nzShowPagination nzShowSizeChanger
+          <nz-table id="searchTable" nzSize="middle" [nzData]="filteredCourse" #searchTable nzShowPagination nzShowSizeChanger
                     [nzPageSize]=pageSize [nzPageIndex]=currentPageIndex [nzTotal]="filteredCourse.length"
-                    (nzPageIndexChange)="onPageIndexChange($event)" (nzPageSizeChange)="onPageSizeChange($event)">
+                    (nzPageIndexChange)="onPageIndexChange($event)" (nzPageSizeChange)="onPageSizeChange($event)"
+                    [nzNoResult]="no_course_found_template">
             <thead>
               <tr>
                 <th nzWidth="60px"></th>
@@ -81,11 +82,32 @@
                   <td><a nz-button nzType="link" (click)="enrollCourse(course)" [disabled]="enrolledCourseSet.has(course)">enroll</a></td>
                 </tr>
                 <tr [nzExpand]="expandCourseSet.has(course.courseId)">
+                  <nz-table #classTable [nzData]="course.classes" nzSize="small" nzShowPagination="false">
+<!--                    <thead>-->
+<!--                      <tr>-->
+<!--                        <th>Class</th>-->
+<!--                        <th>Slots Time</th>-->
+<!--                        <th>Action</th>-->
+<!--                      </tr>-->
+<!--                    </thead>-->
+                    <tbody>
+                    <tr *ngFor="let clas of classTable.data">
+                      <td>{{ classTable.data.indexOf(clas) + 1 }}</td>
+                      <td>{{ clas.timeInString }}</td>
+                      <td><a nz-button nzType="link" (click)="enrollClass(course, classTable.data.indexOf(clas))" [disabled]="enrolledCourseSet.has(course)">enroll</a></td>
+                    </tr>
+                    </tbody>
+                  </nz-table>
+                  <p></p>
                   <span>{{ course.description }}</span>
+                  <p></p>
                 </tr>
               </ng-container>
             </tbody>
           </nz-table>
+        <ng-template #no_course_found_template>
+          <nz-empty [nzNotFoundImage]="'../../assets/no-data.png'" nzNotFoundContent="Oops... No eligible course found"></nz-empty>
+        </ng-template>
         </div>
       </nz-content>
     </div>
@@ -111,7 +133,7 @@
         </div>
       </div>
       <nz-card *ngIf="enrolledCourseSet.size!=0 && sideBarCardView">
-        <div nz-card-grid class="course-card" *ngFor="let course of enrolledCourseSet">
+        <div nz-card-grid class="course-card" *ngFor="let course of enrolledCourseSet" [style.background-color]="course.color">
           <!-- <span class="course-card-title">{{ course.subject }}</span> -->
           <nz-descriptions nzTitle="{{course.name}}" nzSize="small" [nzColumn]="1">
             <nz-descriptions-item nzTitle="Pillar">{{ course.pillar }}</nz-descriptions-item>
@@ -120,7 +142,6 @@
           </nz-descriptions>
           <button nz-button nzType="default" (click)="dropCourse(course.courseId, course.name)"><span nz-icon nzType="delete" nzTheme="outline"></span></button>
           <button nz-button nzType="default"><a [href]="course.link" target="_blank"><span nz-icon nzType="link" nzTheme="outline"></span></a></button>
-
         </div>
       </nz-card>
       <ul nz-list nzBordered nzSize="large" *ngIf="enrolledCourseSet.size!=0 && !sideBarCardView">
@@ -136,17 +157,14 @@
           </ul>
         </li>
       </ul>
-
-      <nz-empty *ngIf="enrolledCourseSet.size==0" [nzNotFoundImage]="'../../assets/no-data.png'" [nzNotFoundContent]="template">
-        <ng-template #template>
+      <nz-empty *ngIf="enrolledCourseSet.size==0" [nzNotFoundImage]="'../../assets/no-data.png'" [nzNotFoundContent]="no_course_enrolled_template">
+        <ng-template #no_course_enrolled_template>
           <span>
             No course enrolled
           </span>
         </ng-template>
       </nz-empty>
     </div>
-
-
   </nz-sider>
 </nz-layout>
 

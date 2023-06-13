@@ -6,4 +6,6 @@ export interface Class {
   slots: Slot[];
   lecturers: Lecturer[];
   lecturersInString: string;
+  timeInString: string;
+  courseName: string;
 }

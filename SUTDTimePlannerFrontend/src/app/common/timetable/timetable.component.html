@@ -26,8 +26,8 @@
         </div>
         <div nz-col nzSpan="22">
           <div nz-row nzSpan="24" *ngFor="let slotSet of slotByDate.get(date)">
-            <div nz-col *ngFor="let slot of slotSet" [nzOffset]="slot.offset" [nzSpan]="22*(toTimeStamp(slot.endTime).gapInMinute(toTimeStamp(slot.startTime))/660)" class="course-box" [style.background-color]="colorMap.get(slot.slotId)">
-              <div class="holder"><span>{{ slot.type }}<br/>{{ slot.type }}</span></div>
+            <div nz-col *ngFor="let slot of slotSet" [nzOffset]="slot.offset" [nzSpan]="22*(toTimeStamp(slot.endTime).gapInMinute(toTimeStamp(slot.startTime))/660)" class="course-box" [style.background-color]="slot.courseColor">
+              <div class="holder"><span>{{ slot.courseName }}<br/>{{ slot.type }}</span></div>
             </div>
           </div>
         </div>

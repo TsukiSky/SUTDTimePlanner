@@ -13,12 +13,5 @@ export interface Course {
   terms: Term[];
 
   termsInString: string;
-
-  // enrolmentCategory: string;
-  // isCore: boolean;
-  // preRequisites: string[];
-  // remark: string;
-  // slots: Slot[];
-  // color: string;
-  // link: string;
+  color: string;
 }
