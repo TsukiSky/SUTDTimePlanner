@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Course } from './model/Course';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {CourseService} from "./course.service";
 import {HttpErrorResponse} from "@angular/common/http";
 import {Class} from "./model/Class";
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
   currentPageIndex = 1;
   pageSize = 10;
 
-  colors: Array<string> = ["#C7EBFB", "#EEF0AF", "#CAFFB9", "#F5DEC2", "#E3E6C7", "#FBCCD4", "#C6E6D5", "#C4C691"];
+  colors: Array<string> = ["#A6CFE2", "#FDF06F", "#CAFFB9", "#FBCCD4", "#FF9966", "#ABCEE2", "#C7EBFB", "#77EEDF"];
   usedColors: Array<string> = [];
 
 
@@ -151,12 +151,12 @@ export class AppComponent implements OnInit {
     this.enrolledCourseSet = new Set([...this.enrolledCourseSet]);
     this.enrolledClassSet = this.enrolledClassSet.add(clas);
     this.enrolledClassSet = new Set([...this.enrolledClassSet]);
-    this.message.success(`Enroll in Course: ${course.name}`, { nzDuration: 1500 });
+    this.message.success(`Enroll in Course: ${course.name}`, { nzDuration: 1200 });
     this.onEnrollCourse(course);
   }
 
   dropCourse(id: number, subject: string): void {
-    this.message.info(`Drop Course: ${subject}`, { nzDuration: 1500 });
+    this.message.info(`Drop Course: ${subject}`, { nzDuration: 1200 });
     this.enrolledCourseSet.forEach(course => {
       if (course.courseId == id) {
         this.recoverColorFromCourse(course);

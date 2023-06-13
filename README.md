@@ -1,5 +1,3 @@
-# ###Don't touch this project yet, it still has some bugs.###
-
 # SUTDTimePlanner
 
 The SUTD Time Planner is a web application designed to help SUTD students search for courses and arrange their course schedules efficiently before the semester starts.
@@ -22,7 +20,7 @@ The SUTD Time Planner is a web application designed to help SUTD students search
 2. Enter the frontend directory `SUTDTimePlanner/SUTDTimePlannerFrontend`
 3. Install the required dependencies: `npm install`
 4. Start the server: `npm start`
-5. If you want to check the backend as well, enter the backend directory `SUTDTimePlanner/SUTDTimePlannerBacktend` and compile the code using JAVA 17. Note that you have to set up a local database connection manually, a sample dataset can be found here in json format.
+5. If you want to check the backend as well, enter the backend directory `SUTDTimePlanner/SUTDTimePlannerBacktend` and compile the code using JAVA 17. Note that you have to set up a local database connection manually, a sample dataset can be found [here](/SUTDTimePlannerBackend/sample_data.json)  in json format.
 6. Open the website in your browser at `http://localhost:4200/`
 
 ## Contribution Guidelines
