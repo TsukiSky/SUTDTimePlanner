@@ -65,6 +65,8 @@ export class TimetableComponent implements OnInit {
           }
           this.slotByDate.set(slot.date, rowsInOneDay);
         } else {
+          let newRow = [slot];
+          this.refreshRow(newRow);
           this.slotByDate.set(slot.date, new Set<Slot[]>([[slot]]));
         }
       });
