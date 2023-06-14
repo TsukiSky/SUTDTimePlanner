@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
   expandCourseSet = new Set<number>();
   enrolledCourseSet = new Set<Course>();
   enrolledClassSet = new Set<Class>();
+  starredCourseSet = new Set<Course>();
 
   currentPageIndex = 1;
   pageSize = 10;
@@ -41,6 +42,7 @@ export class AppComponent implements OnInit {
       (response: Course[]) => {
         this.courseList = response;
         for (let course of this.courseList) {
+          course.isStarred = false;
           course.termsInString = course.terms.map(term => term.term).join(', ');  // set up termsInString
           for (let clas of course.classes) {
             clas.lecturersInString = clas.lecturers.map(lecturer => lecturer.name).join(', ');
@@ -129,6 +131,18 @@ export class AppComponent implements OnInit {
     this.expandCourseSet.clear();
   }
 
+  onStar(course: Course): void {
+    if (course.isStarred) {
+      this.message.warning(`Unstarred course ${course.name}`, { nzDuration: 1200 });
+      this.starredCourseSet.delete(course);
+    } else {
+      this.message.success(`Starred course ${course.name}`, { nzDuration: 1200 });
+      this.starredCourseSet.add(course);
+    }
+    course.isStarred = !course.isStarred;
+
+  }
+
   onReset(): void {
     this.searchForm.reset();
     this.onSearch();
@@ -137,7 +151,7 @@ export class AppComponent implements OnInit {
 
   enrollCourse(selectedCourse: Course): void {
     if (selectedCourse.classes.length > 1) {
-      this.message.warning(`${selectedCourse.name} has multiple time slots available. Please choose a time slot to continue.`, { nzDuration: 6000 });
+      this.message.error(`${selectedCourse.name} has multiple time slots available. Please choose a time slot to continue.`, { nzDuration: 6000 });
       this.onCourseExpandChange(selectedCourse.courseId, true);
     } else {
       this.enrollClass(selectedCourse, 0);

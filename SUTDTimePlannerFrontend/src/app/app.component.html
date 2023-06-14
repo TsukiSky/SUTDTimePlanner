@@ -79,7 +79,11 @@
                   <td>{{ course.classes[0].lecturersInString}}</td>
                   <td>{{course.isCore? "Core": "Elective"}}</td>
                   <!-- <td>{{ data.preRequisites }}</td> -->
-                  <td><a nz-button nzType="link" (click)="enrollCourse(course)" [disabled]="enrolledCourseSet.has(course)">enroll</a></td>
+                  <td>
+                    <button nz-button nzType="link" (click)="enrollCourse(course)" [disabled]="enrolledCourseSet.has(course)">enroll</button>
+                    <span class="star-button main-table-star-button" nz-icon nzType="star" [nzTheme]="course.isStarred? 'fill': 'outline'" (click)="onStar(course)" [style.color] = "'#FAE746'"></span>
+                  </td>
+                  <span></span>
                 </tr>
                 <tr [nzExpand]="expandCourseSet.has(course.courseId)">
                   <nz-table #classTable [nzData]="course.classes" nzSize="small" nzShowPagination="false">
@@ -127,7 +131,7 @@
     <div class="sidebar-container">
       <div class="sidebar-container-header">
         <b>Enrolled Courses</b>
-        <div id="sidebar-display-switch">
+        <div class="sidebar-display-switch">
           <span>card view </span>
           <nz-switch [(ngModel)]="sideBarCardView"></nz-switch>
         </div>
@@ -142,6 +146,7 @@
           </nz-descriptions>
           <button nz-button nzType="default" (click)="dropCourse(course.courseId, course.name)"><span nz-icon nzType="delete" nzTheme="outline"></span></button>
           <button nz-button nzType="default"><a [href]="course.link" target="_blank"><span nz-icon nzType="link" nzTheme="outline"></span></a></button>
+<!--          <button nz-button nzType="default"><span class="star-button" nz-icon nzType="star" [nzTheme]="course.isStarred? 'fill': 'outline'" (click)="onStar(course)" [style.color] = "'#FAE746'"></span></button>-->
         </div>
       </nz-card>
       <ul nz-list nzBordered nzSize="large" *ngIf="enrolledCourseSet.size!=0 && !sideBarCardView">
@@ -151,16 +156,48 @@
             <nz-list-item-action>
               <a (click)="dropCourse(course.courseId, course.name)">drop</a>
             </nz-list-item-action>
+<!--            <nz-list-item-action>-->
+<!--              <span class="star-button" nz-icon nzType="star" [nzTheme]="course.isStarred? 'fill': 'outline'" (click)="onStar(course)" [style.color] = "'#FAE746'"></span>-->
+<!--            </nz-list-item-action>-->
             <nz-list-item-action>
               <a [href]="course.link" target="_blank">more info</a>
             </nz-list-item-action>
           </ul>
         </li>
       </ul>
-      <nz-empty *ngIf="enrolledCourseSet.size==0" [nzNotFoundImage]="'../../assets/no-data.png'" [nzNotFoundContent]="no_course_enrolled_template">
+      <nz-empty *ngIf="enrolledCourseSet.size==0" [nzNotFoundImage]="'../../assets/no-course-enrolled.png'" [nzNotFoundContent]="no_course_enrolled_template">
         <ng-template #no_course_enrolled_template>
           <span>
             No course enrolled
+          </span>
+        </ng-template>
+      </nz-empty>
+    </div>
+
+    <div class="sidebar-container">
+      <div class="sidebar-container-header">
+        <b>Starred Courses</b>
+      </div>
+      <ul nz-list nzBordered nzSize="large" *ngIf="starredCourseSet.size!=0">
+        <li nz-list-item *ngFor="let course of starredCourseSet" nzNoFlex>
+          {{ course.name }}
+          <ul nz-list-item-actions>
+            <nz-list-item-action>
+              <button nz-button nzType="link" (click)="enrollCourse(course)" [disabled]="enrolledCourseSet.has(course)">enroll</button>
+            </nz-list-item-action>
+            <nz-list-item-action>
+              <span class="star-button" nz-icon nzType="star" [nzTheme]="course.isStarred? 'fill': 'outline'" (click)="onStar(course)" [style.color] = "'#FAE746'"></span>
+            </nz-list-item-action>
+            <nz-list-item-action>
+              <a [href]="course.link" target="_blank">more info</a>
+            </nz-list-item-action>
+          </ul>
+        </li>
+      </ul>
+      <nz-empty *ngIf="starredCourseSet.size==0" [nzNotFoundImage]="'../../assets/no-course-starred.png'" [nzNotFoundContent]="no_course_starred_template">
+        <ng-template #no_course_starred_template>
+          <span>
+            No course starred
           </span>
         </ng-template>
       </nz-empty>
@@ -171,5 +208,3 @@
 <ng-template #zeroTrigger>
   <i nz-icon nzType="account-book" nzTheme="fill"></i>
 </ng-template>
-
-

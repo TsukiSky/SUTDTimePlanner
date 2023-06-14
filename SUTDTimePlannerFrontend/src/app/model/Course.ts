@@ -14,4 +14,5 @@ export interface Course {
 
   termsInString: string;
   color: string;
+  isStarred: boolean;
 }
