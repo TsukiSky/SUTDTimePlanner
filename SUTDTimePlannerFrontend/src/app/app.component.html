@@ -150,7 +150,7 @@
         </div>
       </nz-card>
       <ul nz-list nzBordered nzSize="large" *ngIf="enrolledCourseSet.size!=0 && !sideBarCardView">
-        <li nz-list-item *ngFor="let course of enrolledCourseSet" nzNoFlex>
+        <li nz-list-item *ngFor="let course of enrolledCourseSet" [style.background-color]="course.color" nzNoFlex>
           {{ course.name }}
           <ul nz-list-item-actions>
             <nz-list-item-action>
@@ -176,10 +176,37 @@
 
     <div class="sidebar-container">
       <div class="sidebar-container-header">
+        <b>Course Conflicts</b>
+      </div>
+      <ul nz-list class="course-conflict-list" nzBordered nzSize="large" *ngFor="let courseCroup of conflictCourseGroups">
+        <li nz-list-item *ngFor="let course of courseCroup" nzNoFlex [style.background-color]="course.color">
+          {{ course.name }}
+          <ul nz-list-item-actions>
+            <nz-list-item-action>
+              <a (click)="dropCourse(course.courseId, course.name)">drop</a>
+            </nz-list-item-action>
+            <nz-list-item-action>
+              <a [href]="course.link" target="_blank">more info</a>
+            </nz-list-item-action>
+          </ul>
+        </li>
+      </ul>
+
+      <nz-empty *ngIf="conflictCourseGroups.length==0" [nzNotFoundImage]="'../../assets/no-course-conflicts.png'" [nzNotFoundContent]="no_course_conflicts_template">
+        <ng-template #no_course_conflicts_template>
+          <span>
+            No conflicts!
+          </span>
+        </ng-template>
+      </nz-empty>
+    </div>
+
+    <div class="sidebar-container">
+      <div class="sidebar-container-header">
         <b>Starred Courses</b>
       </div>
       <ul nz-list nzBordered nzSize="large" *ngIf="starredCourseSet.size!=0">
-        <li nz-list-item *ngFor="let course of starredCourseSet" nzNoFlex>
+        <li nz-list-item *ngFor="let course of starredCourseSet" [style.background-color]="course.color" nzNoFlex>
           {{ course.name }}
           <ul nz-list-item-actions>
             <nz-list-item-action>

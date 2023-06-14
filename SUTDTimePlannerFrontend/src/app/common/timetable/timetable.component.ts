@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, SimpleChange } from '@a
 import { DomSanitizer } from '@angular/platform-browser';
 import { Slot } from 'src/app/model/Slot';
 import { TimeStamp } from 'src/app/model/TimeStamp';
-import { isOverlap, toTimeStamp } from "../../utils/Utils";
+import { isOverlapped, toTimeStamp } from "../../utils/Utils";
 import {Class} from "../../model/Class";
 
 @Component({
@@ -12,13 +12,13 @@ import {Class} from "../../model/Class";
 })
 export class TimetableComponent implements OnInit {
   // static information
-  times: string[] = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
+  times: string[] = ["08:00-09:00", "09:00-10:00", "10:00-11:00", "11:00-12:00", "12:00-13:00", "13:00-14:00", "14:00-15:00", "15:00-16:00", "16:00-17:00", "17:00-18:00", "18:00-19:00", "19:00-20:00"];
   dates: string[] = ["MON", "TUE", "WED", "THU", "FRI"];
   startTimeStamp: TimeStamp = new TimeStamp(8, 0);
 
   @Input() classSet: Set<Class> = new Set();
   classSetCopy = this.classSet;
-  slotByDate: Map<string, Set<Slot[]>> = new Map();
+  slotByDate: Map<string, Array<Slot[]>> = new Map();
 
   constructor(public sanitizer: DomSanitizer) {}
 
@@ -41,12 +41,12 @@ export class TimetableComponent implements OnInit {
     this.classSetCopy.forEach(clas => {
       clas.slots.forEach(slot => {
         if (this.slotByDate.has(slot.date)) {
-          let rowsInOneDay: Set<Slot[]> = this.slotByDate.get(slot.date)!;
+          let rowsInOneDay: Array<Slot[]> = this.slotByDate.get(slot.date)!;
           let addNewRow: boolean = true;
           for (let row of rowsInOneDay) {
             let hasOverlap = false;
             for (let embedSlot of row) {
-              if (isOverlap(slot, embedSlot)) {
+              if (isOverlapped(slot, embedSlot)) {
                 hasOverlap = true;
                 break;
               }
@@ -61,13 +61,13 @@ export class TimetableComponent implements OnInit {
           if (addNewRow) {
             let newRow = [slot];
             this.refreshRow(newRow);
-            rowsInOneDay = rowsInOneDay.add(newRow);
+            rowsInOneDay.push(newRow);
           }
           this.slotByDate.set(slot.date, rowsInOneDay);
         } else {
           let newRow = [slot];
           this.refreshRow(newRow);
-          this.slotByDate.set(slot.date, new Set<Slot[]>([[slot]]));
+          this.slotByDate.set(slot.date, new Array<Slot[]>([slot]));
         }
       });
     });

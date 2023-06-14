@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import {CourseService} from "./course.service";
 import {HttpErrorResponse} from "@angular/common/http";
 import {Class} from "./model/Class";
+import {isOverlapped} from "./utils/Utils";
 
 @Component({
   selector: 'app-root',
@@ -29,6 +30,8 @@ export class AppComponent implements OnInit {
   enrolledCourseSet = new Set<Course>();
   enrolledClassSet = new Set<Class>();
   starredCourseSet = new Set<Course>();
+  conflictCourseGroups: Array<Set<Course>> = new Array<Set<Course>>();
+
 
   currentPageIndex = 1;
   pageSize = 10;
@@ -116,7 +119,6 @@ export class AppComponent implements OnInit {
     this.currentPageCourse = this.filteredCourse.slice(startIndex, endIndex);
   }
 
-
   onCourseExpandChange(id: number, checked: boolean): void {
     if (checked) {
       this.expandCourseSet.add(id);
@@ -160,19 +162,26 @@ export class AppComponent implements OnInit {
 
   enrollClass(course: Course, classIndex: number): void {
     let clas = course.classes[classIndex];
+
+    this.updateTimeConflict(course, clas);
+
     this.assignColorToCourse(course);
     this.enrolledCourseSet = this.enrolledCourseSet.add(course);
     this.enrolledCourseSet = new Set([...this.enrolledCourseSet]);
     this.enrolledClassSet = this.enrolledClassSet.add(clas);
     this.enrolledClassSet = new Set([...this.enrolledClassSet]);
     this.message.success(`Enroll in Course: ${course.name}`, { nzDuration: 1200 });
-    this.onEnrollCourse(course);
+
+    if (this.expandCourseSet.has(course.courseId)) {
+      this.onCourseExpandChange(course.courseId, false);
+    }
   }
 
   dropCourse(id: number, subject: string): void {
     this.message.info(`Drop Course: ${subject}`, { nzDuration: 1200 });
     this.enrolledCourseSet.forEach(course => {
       if (course.courseId == id) {
+        this.dropTimeConflict(course);
         this.recoverColorFromCourse(course);
         this.enrolledCourseSet.delete(course);
       }
@@ -202,15 +211,76 @@ export class AppComponent implements OnInit {
     }
   }
 
-  onEnrollCourse(course: Course) {
-    if (this.expandCourseSet.has(course.courseId)) {
-      this.onCourseExpandChange(course.courseId, false);
-    }
-  }
-
   recoverColorFromCourse(course: Course) {
     this.usedColors = this.usedColors.filter(color => color !== course.color);
     this.colors.push(course.color);
     course.color = "";
+  }
+
+  updateTimeConflict(newCourse: Course, newClas: Class) {
+    /*
+    * update the time conflict sets
+    * the implementation of this function is very bad and to be improved
+    * */
+    let conflictFound = false;
+    for (const clas of this.enrolledClassSet) {
+      for (const slot of clas.slots) {
+        for (const newSlot of newClas.slots) {
+          if (isOverlapped(slot, newSlot)) {
+            // two slots are overlapped
+            conflictFound = true;
+            // this.conflictCourses.add(newCourse);
+
+            // add course to the conflicting group
+            let groupFounded = false;
+            for (const group of this.conflictCourseGroups) {
+              for (const course of group) {
+                if (course.name == slot.courseName) {
+                  group.add(newCourse);
+                  groupFounded = true;
+                  break;
+                }
+              }
+              if (groupFounded) {
+                break;
+              }
+            }
+            if (!groupFounded) {
+              for (const course of this.enrolledCourseSet) {
+                if (course.name == slot.courseName) {
+                  this.conflictCourseGroups.push(new Set<Course>([course, newCourse]));
+                  break;
+                }
+              }
+            }
+            break;
+          }
+        }
+        if (conflictFound) {
+          break;
+        }
+      }
+      if (conflictFound) {
+        break;
+      }
+    }
+  }
+
+  dropTimeConflict(dropCourse: Course) {
+    let removeIndex = 0;
+    let groupDropped = false;
+    for (const group of this.conflictCourseGroups) {
+      if (group.has(dropCourse)) {
+        group.delete(dropCourse);
+        if (group.size <= 1) {
+          removeIndex = this.conflictCourseGroups.indexOf(group);
+          groupDropped = true;
+          break;
+        }
+      }
+    }
+    if (groupDropped) {
+      this.conflictCourseGroups.splice(removeIndex, 1);
+    }
   }
 }

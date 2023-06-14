@@ -29,7 +29,7 @@ export function createTableQueryHttpParam(tableQueryParams: NzTableQueryParams, 
   return params;
 }
 
-export function isOverlap(slotA: Slot, slotB: Slot) {
+export function isOverlapped(slotA: Slot, slotB: Slot) {
   let slotAStartHour = Number(slotA.startTime.split(':')[0]);
   let slotAStartMinute = Number(slotA.startTime.split(':')[1]);
   let slotAEndHour = Number(slotA.endTime.split(':')[0]);
