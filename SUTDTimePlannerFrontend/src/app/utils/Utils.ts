@@ -30,6 +30,10 @@ export function createTableQueryHttpParam(tableQueryParams: NzTableQueryParams, 
 }
 
 export function isOverlapped(slotA: Slot, slotB: Slot) {
+  if (slotA.date != slotB.date) {
+    return false;
+  }
+
   let slotAStartHour = Number(slotA.startTime.split(':')[0]);
   let slotAStartMinute = Number(slotA.startTime.split(':')[1]);
   let slotAEndHour = Number(slotA.endTime.split(':')[0]);

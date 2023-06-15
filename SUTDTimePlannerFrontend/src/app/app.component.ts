@@ -164,6 +164,7 @@ export class AppComponent implements OnInit {
     let clas = course.classes[classIndex];
 
     this.updateTimeConflict(course, clas);
+    console.log(this.conflictCourseGroups);
 
     this.assignColorToCourse(course);
     this.enrolledCourseSet = this.enrolledCourseSet.add(course);
@@ -220,67 +221,61 @@ export class AppComponent implements OnInit {
   updateTimeConflict(newCourse: Course, newClas: Class) {
     /*
     * update the time conflict sets
-    * the implementation of this function is very bad and to be improved
     * */
-    let conflictFound = false;
     for (const clas of this.enrolledClassSet) {
+      let clasConflictFound = false;
       for (const slot of clas.slots) {
         for (const newSlot of newClas.slots) {
           if (isOverlapped(slot, newSlot)) {
-            // two slots are overlapped
-            conflictFound = true;
-            // this.conflictCourses.add(newCourse);
-
-            // add course to the conflicting group
-            let groupFounded = false;
-            for (const group of this.conflictCourseGroups) {
-              for (const course of group) {
+            console.log(slot);
+            console.log(newSlot);
+            // update conflict courses set
+            clasConflictFound = true;
+            let groupUpdated = false;
+            for (const conflictGroup of this.conflictCourseGroups) {
+              for (const course of conflictGroup) {
                 if (course.name == slot.courseName) {
-                  group.add(newCourse);
-                  groupFounded = true;
+                  // conflict group found
+                  conflictGroup.add(newCourse);
+                  groupUpdated = true;
                   break;
                 }
               }
-              if (groupFounded) {
+              if (groupUpdated) {
                 break;
               }
             }
-            if (!groupFounded) {
+            if (!groupUpdated) {
+              // add a new group
+              let conflictedCourse: Course;
               for (const course of this.enrolledCourseSet) {
                 if (course.name == slot.courseName) {
-                  this.conflictCourseGroups.push(new Set<Course>([course, newCourse]));
+                  conflictedCourse = course;
                   break;
                 }
               }
+              let newGroup = new Set<Course>([conflictedCourse!, newCourse]);
+              this.conflictCourseGroups.push(newGroup);
             }
+          }
+          if (clasConflictFound) {
             break;
           }
         }
-        if (conflictFound) {
+        if (clasConflictFound) {
           break;
         }
-      }
-      if (conflictFound) {
-        break;
       }
     }
   }
 
   dropTimeConflict(dropCourse: Course) {
-    let removeIndex = 0;
-    let groupDropped = false;
     for (const group of this.conflictCourseGroups) {
       if (group.has(dropCourse)) {
         group.delete(dropCourse);
-        if (group.size <= 1) {
-          removeIndex = this.conflictCourseGroups.indexOf(group);
-          groupDropped = true;
-          break;
-        }
+
       }
     }
-    if (groupDropped) {
-      this.conflictCourseGroups.splice(removeIndex, 1);
-    }
+    this.conflictCourseGroups = this.conflictCourseGroups.filter(set => set.size >= 2);
   }
 }
