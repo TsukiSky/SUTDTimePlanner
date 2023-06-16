@@ -26,6 +26,7 @@ import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 
 import { TimetableComponent } from './common/timetable/timetable.component';
 import {NzPaginationModule} from "ng-zorro-antd/pagination";
+import {NzMenuModule} from "ng-zorro-antd/menu";
 
 registerLocaleData(en);
 
@@ -54,7 +55,8 @@ registerLocaleData(en);
         NzCardModule,
         NzSwitchModule,
         NzDescriptionsModule,
-        NzPaginationModule
+        NzPaginationModule,
+        NzMenuModule
     ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }
