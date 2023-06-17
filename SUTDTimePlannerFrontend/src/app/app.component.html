@@ -4,16 +4,16 @@
     <p class="title"># SUTD Time Planner</p>
   </nz-header>
   <nz-layout>
-    <nz-sider id="left-sidebar" [(nzCollapsed)]="!isCollapsed" nzWidth="200px">
+    <nz-sider id="left-sidebar" [(nzCollapsed)]="!isCollapsed" [nzCollapsedWidth]="50" nzWidth="14%">
       <ul nz-menu nzMode="inline">
-        <li nz-menu-item>
-          <span nz-icon nzType="file"></span>
+        <li nz-menu-item nzSelected>
+          <span nz-icon nzType="calendar" nzTheme="outline"></span>
           <span>Timetable</span>
         </li>
-        <li nz-menu-item>
-          <span nz-icon nzType="file"></span>
-          <span>Courses</span>
-        </li>
+<!--        <li nz-menu-item>-->
+<!--          <span nz-icon nzType="read" nzTheme="outline"></span>-->
+<!--          <span>Courses</span>-->
+<!--        </li>-->
       </ul>
     </nz-sider>
     <nz-content>
@@ -129,10 +129,12 @@
     </nz-content>
 
     <nz-sider [nzCollapsible]="true" [(nzCollapsed)]="isCollapsed" [nzCollapsedWidth]='0'
-              [nzZeroTrigger]="zeroTrigger" [nzReverseArrow]="true" nzWidth="34%" id="sidebar">
+              [nzZeroTrigger]="leftSidebarTrigger" [nzReverseArrow]="true" nzWidth="36%" id="sidebar">
 <!--      <div id="sidebar-header">-->
 <!--        <nz-header></nz-header>-->
 <!--      </div>-->
+
+
       <div id="sidebar-main-container">
         <div class="sidebar-container">
           <div class="sidebar-container-header">
@@ -247,7 +249,9 @@
   </nz-footer>
 </nz-layout>
 
-<ng-template #zeroTrigger>
-  <i nz-icon nzType="account-book" nzTheme="fill"></i>
-<!--  <span>Expand palette</span>-->
+<ng-template #leftSidebarTrigger>
+  <div id="leftSidebarTrigger">
+    <span nz-icon nzType="double-left" nzTheme="outline" *ngIf="isCollapsed"></span>
+    <span nz-icon nzType="double-right" nzTheme="outline" *ngIf="!isCollapsed"></span>
+  </div>
 </ng-template>

@@ -12,7 +12,7 @@ import {Class} from "../../model/Class";
 })
 export class TimetableComponent implements OnInit {
   // static information
-  times: string[] = ["08:00-09:00", "09:00-10:00", "10:00-11:00", "11:00-12:00", "12:00-13:00", "13:00-14:00", "14:00-15:00", "15:00-16:00", "16:00-17:00", "17:00-18:00", "18:00-19:00", "19:00-20:00"];
+  times: string[] = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
   dates: string[] = ["MON", "TUE", "WED", "THU", "FRI"];
   startTimeStamp: TimeStamp = new TimeStamp(8, 0);
 

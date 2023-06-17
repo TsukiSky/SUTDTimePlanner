@@ -1,16 +1,13 @@
 
 <div id="timetable">
-  <div nz-row nzSpan="24">
-    <div nz-col nzSpan="2" id="head-cell" class="cell">
-      <div class="holder">
-        <span>Time</span>
-      </div>
+  <div nz-row nzSpan="24" id="timetable-time-row">
+    <div nz-col nzSpan="2" id="head-cell">
     </div>
-    <div nz-col nzSpan="22" id="time-cell">
+    <div nz-col nzSpan="22">
         <div nz-row nzSpan="24">
-          <div nz-col nzSpan="2" *ngFor="let time of times" class="cell">
-            <div class="holder">
-              <span>{{ time }}</span>
+          <div nz-col nzSpan="2" *ngFor="let time of times" class="time-cell">
+            <div>
+              <span class="time-holder">{{ time }}</span>
             </div>
           </div>
         </div>
@@ -19,12 +16,12 @@
   <div id="timetable-container">
     <div>
       <div nz-row nzSpan="24" *ngFor="let date of dates" class="row">
-        <div nz-col nzSpan="2" class="cell" class="date-cell">
+        <div nz-col nzSpan="2" class="cell date-cell">
           <div class="holder">
             <span>{{ date }}</span>
           </div>
         </div>
-        <div nz-col nzSpan="22">
+        <div nz-col nzSpan="22" class="row-courses">
           <div nz-row nzSpan="24" *ngFor="let slotSet of slotByDate.get(date)">
             <div nz-col *ngFor="let slot of slotSet" [nzOffset]="slot.offset" [nzSpan]="22*(toTimeStamp(slot.endTime).gapInMinute(toTimeStamp(slot.startTime))/660)" class="course-box" [style.background-color]="slot.courseColor" [style.border-color]="slotByDate.get(date)?.indexOf(slotSet) == 0? '': '#FF5F6D'">
               <div class="holder"><span><b>{{ slot.courseName }}</b><br/>({{ slot.type }})</span></div>
