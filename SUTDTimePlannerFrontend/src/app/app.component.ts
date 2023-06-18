@@ -279,7 +279,7 @@ export class AppComponent implements OnInit {
     this.conflictCourseGroups = this.conflictCourseGroups.filter(set => set.size >= 2);
   }
 
-  onDownload() {
-    downloadImage("timetable");
+  onDownload(ratio: string) {
+    downloadImage("timetable", ratio);
   }
 }

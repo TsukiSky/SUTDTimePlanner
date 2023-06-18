@@ -1,7 +1,7 @@
 <nz-layout>
   <nz-header class="header">
     <div id="logo">
-      <img id="logo-img" src="../assets/logo.png">
+      <img id="logo-img" src="../assets/logo.png" alt="logo">
     </div>
   </nz-header>
 </nz-layout>
@@ -27,7 +27,13 @@
           <app-timetable [classSet]="enrolledClassSet" id="timetable"></app-timetable>
         </div>
         <div class="container">
-          <button nz-button nzType="primary" (click)="onDownload()"><span nz-icon nzType="download" nzTheme="outline"></span>Download</button>
+          <div id="function-btn-container">
+          <div id="time-info-box">
+            2022-2023 Summer
+          </div>
+          <button nz-button nzType="primary" class="function-btn" (click)="onDownload('16:9')"><span nz-icon nzType="download" nzTheme="outline"></span>Download (16:9)</button>
+          <button nz-button nzType="primary" class="function-btn" (click)="onDownload('2048×1080')"><span nz-icon nzType="download" nzTheme="outline"></span>Download (2048×1080)</button>
+          </div>
         </div>
         <div class="container">
           <form nz-form [formGroup]="searchForm" nzLayout="horizontal">

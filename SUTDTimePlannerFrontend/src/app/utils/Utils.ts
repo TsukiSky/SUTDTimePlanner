@@ -57,10 +57,41 @@ export function isOverlapped(slotA: Slot, slotB: Slot) {
     || (slotBStartTime.gapInMinute(zeroTime) <= slotAEndTime.gapInMinute(zeroTime) && slotBEndTime.gapInMinute(zeroTime) >= slotAStartTime.gapInMinute(zeroTime))
 }
 
-export function downloadImage(elementId: string) {
+
+function preprocessImage(element: HTMLElement, aspectRatio: number) {
+  const height = 1800;
+  const width = height * aspectRatio;
+  element.style.width = width + 'px';
+  element.style.height = height + 'px';
+  element.style.fontSize = '36px'
+  const rows = element.querySelectorAll(".row");
+  rows.forEach(row => {
+    const rowHTMLElement = row as HTMLElement;
+    rowHTMLElement.style.minHeight = '280px';
+  });
+
+  const courseBoxes = element.querySelectorAll(".course-box");
+  courseBoxes.forEach(box => {
+    const boxHTMLElement = box as HTMLElement;
+    boxHTMLElement.style.minHeight = '136px'
+  });
+}
+
+export function downloadImage(elementId: string, format: string) {
   const element = document.getElementById(elementId);
   if (element) {
-    html2canvas(element).then(canvas => {
+    const clonedElement = element.cloneNode(true) as HTMLElement;
+    let aspectRatio = 1;
+    if (format == "16:9") {
+      aspectRatio = 16 / 9;
+    } else if (format == "2048×1080") {
+      aspectRatio = 2048 / 1080;
+    }
+
+    preprocessImage(clonedElement, aspectRatio);
+
+    document.body.appendChild(clonedElement);
+    html2canvas(clonedElement).then(canvas => {
       const dataURL = canvas.toDataURL('image/png');
 
       // Create a link element
@@ -68,7 +99,7 @@ export function downloadImage(elementId: string) {
       link.href = dataURL;
       link.download = `${elementId}.png`;
       link.click();
+      clonedElement.remove();
     })
   }
 }
-

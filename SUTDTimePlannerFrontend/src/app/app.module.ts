@@ -27,8 +27,13 @@ import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 import { TimetableComponent } from './common/timetable/timetable.component';
 import {NzPaginationModule} from "ng-zorro-antd/pagination";
 import {NzMenuModule} from "ng-zorro-antd/menu";
+import {NZ_CONFIG, NzConfig} from "ng-zorro-antd/core/config";
 
 registerLocaleData(en);
+
+const ngZorroConfig: NzConfig = {
+  message: {nzTop: 60}
+}
 
 @NgModule({
   declarations: [
@@ -59,7 +64,8 @@ registerLocaleData(en);
         NzMenuModule
     ],
   providers: [
-    { provide: NZ_I18N, useValue: en_US }
+    { provide: NZ_I18N, useValue: en_US },
+    { provide: NZ_CONFIG, useValue: ngZorroConfig }
   ],
   bootstrap: [AppComponent]
 })

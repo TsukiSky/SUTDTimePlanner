@@ -3,14 +3,27 @@
   width: 100%;
   float: left;
   line-height: 60px;
+  display: flex;
+  align-items: center;
+  //justify-content: center;
 }
 
 #logo-img {
   height: 60%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 #header-placeholder {
   height: 60px;
+}
+
+
+.function-btn {
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header {
@@ -53,6 +66,24 @@
   padding-bottom: 10px;
   border-radius: 3px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#function-btn-container {
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 3px solid #808080;
+  height: 100%;
+}
+
+#time-info-box {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: #808080;
+  padding: 8px 20px;
+  color: #F7F7F7;
 }
 
 .course-card {
@@ -160,7 +191,7 @@ app-timetable {
 }
 
 .sidebar-enroll-btn {
-  padding: 0px 0px;
+  padding: 0 0;
   height: auto;
 }
 
