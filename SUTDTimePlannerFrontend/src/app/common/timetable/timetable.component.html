@@ -23,7 +23,7 @@
         </div>
         <div nz-col nzSpan="22" class="row-courses">
           <div nz-row nzSpan="24" *ngFor="let slotSet of slotByDate.get(date)">
-            <div nz-col *ngFor="let slot of slotSet" [nzOffset]="slot.offset" [nzSpan]="22*(toTimeStamp(slot.endTime).gapInMinute(toTimeStamp(slot.startTime))/660)" class="course-box" [style.background-color]="slot.courseColor" [style.border-color]="slotByDate.get(date)?.indexOf(slotSet) == 0? '': '#FF5F6D'">
+            <div nz-col *ngFor="let slot of slotSet" [nzOffset]="slot.offset" [nzSpan]="22*(toTimeStamp(slot.endTime).gapInMinute(toTimeStamp(slot.startTime))/660)" class="course-box" [style.background-color]="slot.courseBgColor" [style.border-color]="slotByDate.get(date)?.indexOf(slotSet) == 0? '': '#FF5F6D'">
               <div class="holder"><span><b>{{ slot.courseName }}</b><br/>({{ slot.type }})</span></div>
             </div>
           </div>

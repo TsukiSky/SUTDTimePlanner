@@ -13,6 +13,6 @@ export interface Course {
   terms: Term[];
 
   termsInString: string;
-  color: string;
+  bgColor: string;
   isStarred: boolean;
 }

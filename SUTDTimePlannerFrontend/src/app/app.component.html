@@ -22,6 +22,10 @@
           <app-timetable [classSet]="enrolledClassSet"></app-timetable>
         </div>
         <div class="container">
+          <button nz-button nzType="primary"><span nz-icon nzType="download" nzTheme="outline"></span>Download</button>
+
+        </div>
+        <div class="container">
           <form nz-form [formGroup]="searchForm" nzLayout="horizontal">
             <div nz-row nzGutter="24">
               <div nz-col nzSpan="4">
@@ -145,7 +149,7 @@
             </div>
           </div>
           <nz-card *ngIf="enrolledCourseSet.size!=0 && sideBarCardView">
-            <div nz-card-grid class="course-card" *ngFor="let course of enrolledCourseSet" [style.background-color]="course.color">
+            <div nz-card-grid class="course-card" *ngFor="let course of enrolledCourseSet" [style.background-color]="course.bgColor">
               <!-- <span class="course-card-title">{{ course.subject }}</span> -->
               <nz-descriptions nzTitle="{{course.name}}" nzSize="small" [nzColumn]="1">
                 <nz-descriptions-item nzTitle="Pillar">{{ course.pillar }}</nz-descriptions-item>
@@ -158,7 +162,7 @@
             </div>
           </nz-card>
           <ul nz-list nzBordered nzSize="large" *ngIf="enrolledCourseSet.size!=0 && !sideBarCardView">
-            <li nz-list-item *ngFor="let course of enrolledCourseSet" [style.background-color]="course.color" nzNoFlex>
+            <li nz-list-item *ngFor="let course of enrolledCourseSet" [style.background-color]="course.bgColor" nzNoFlex>
               {{ course.name }}
               <ul nz-list-item-actions>
                 <nz-list-item-action>
@@ -187,7 +191,7 @@
             <b>Course Conflicts</b>
           </div>
           <ul nz-list class="course-conflict-list" nzBordered nzSize="large" *ngFor="let courseCroup of conflictCourseGroups">
-            <li nz-list-item *ngFor="let course of courseCroup" nzNoFlex [style.background-color]="course.color">
+            <li nz-list-item *ngFor="let course of courseCroup" nzNoFlex [style.background-color]="course.bgColor">
               {{ course.name }}
               <ul nz-list-item-actions>
                 <nz-list-item-action>
@@ -214,11 +218,11 @@
             <b>Starred Courses</b>
           </div>
           <ul nz-list nzBordered nzSize="large" *ngIf="starredCourseSet.size!=0">
-            <li nz-list-item *ngFor="let course of starredCourseSet" [style.background-color]="course.color" nzNoFlex>
+            <li nz-list-item *ngFor="let course of starredCourseSet" [style.background-color]="course.bgColor" nzNoFlex>
               {{ course.name }}
               <ul nz-list-item-actions>
                 <nz-list-item-action>
-                  <button nz-button nzType="link" (click)="enrollCourse(course)" [disabled]="enrolledCourseSet.has(course)">enroll</button>
+                  <button nz-button class="sidebar-enroll-btn" nzType="link" (click)="enrollCourse(course)" [disabled]="enrolledCourseSet.has(course)">enroll</button>
                 </nz-list-item-action>
                 <nz-list-item-action>
                   <span class="star-button" nz-icon nzType="star" [nzTheme]="course.isStarred? 'fill': 'outline'" (click)="onStar(course)" [style.color] = "'#FAE746'"></span>

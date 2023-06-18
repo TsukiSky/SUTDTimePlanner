@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
   currentPageIndex = 1;
   pageSize = 10;
 
-  colors: Array<string> = ["#A6CFE2", "#FDF06F", "#CAFFB9", "#FBCCD4", "#FF9966", "#ABCEE2", "#C7EBFB", "#77EEDF"];
+  bgColors: Array<string> = ["#A6CFE2", "#FDF06F", "#CAFFB9", "#FBCCD4", "#FF9966", "#ABCEE2", "#C7EBFB", "#77EEDF"];
   usedColors: Array<string> = [];
 
 
@@ -198,12 +198,12 @@ export class AppComponent implements OnInit {
   }
 
   assignColorToCourse(course: Course) {
-    for (const color of this.colors) {
+    for (const color of this.bgColors) {
       if (!this.usedColors.includes(color)) {
-        course.color = color;
+        course.bgColor = color;
         course.classes.forEach(clas => {
           clas.slots.forEach(slot => {
-            slot.courseColor = color;
+            slot.courseBgColor = color;
           });
         });
         this.usedColors.push(color);
@@ -213,9 +213,9 @@ export class AppComponent implements OnInit {
   }
 
   recoverColorFromCourse(course: Course) {
-    this.usedColors = this.usedColors.filter(color => color !== course.color);
-    this.colors.push(course.color);
-    course.color = "";
+    this.usedColors = this.usedColors.filter(color => color !== course.bgColor);
+    this.bgColors.push(course.bgColor);
+    course.bgColor = "";
   }
 
   updateTimeConflict(newCourse: Course, newClas: Class) {

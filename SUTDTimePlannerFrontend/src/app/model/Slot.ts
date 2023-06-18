@@ -6,5 +6,5 @@ export interface Slot {
   endTime: string;
   offset: number;
   courseName: string;
-  courseColor: string;
+  courseBgColor: string;
 }
