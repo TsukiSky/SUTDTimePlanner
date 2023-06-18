@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import {CourseService} from "./course.service";
 import {HttpErrorResponse} from "@angular/common/http";
 import {Class} from "./model/Class";
-import {isOverlapped} from "./utils/Utils";
+import {downloadImage, isOverlapped} from "./utils/Utils";
 
 @Component({
   selector: 'app-root',
@@ -277,5 +277,9 @@ export class AppComponent implements OnInit {
       }
     }
     this.conflictCourseGroups = this.conflictCourseGroups.filter(set => set.size >= 2);
+  }
+
+  onDownload() {
+    downloadImage("timetable");
   }
 }

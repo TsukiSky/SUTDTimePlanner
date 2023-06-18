@@ -2,6 +2,7 @@ import {TimeStamp} from "../model/TimeStamp";
 import {NzTableQueryParams} from "ng-zorro-antd/table";
 import {HttpParams} from "@angular/common/http";
 import {Slot} from "../model/Slot";
+import html2canvas from "html2canvas";
 
 export function toTimeStamp(time: string): TimeStamp {
   let hour: string = time.split(':')[0];
@@ -54,5 +55,20 @@ export function isOverlapped(slotA: Slot, slotB: Slot) {
   let zeroTime: TimeStamp = new TimeStamp(0, 0);
   return (slotAStartTime.gapInMinute(zeroTime) <= slotBEndTime.gapInMinute(zeroTime) && slotAEndTime.gapInMinute(zeroTime) >= slotBStartTime.gapInMinute(zeroTime))
     || (slotBStartTime.gapInMinute(zeroTime) <= slotAEndTime.gapInMinute(zeroTime) && slotBEndTime.gapInMinute(zeroTime) >= slotAStartTime.gapInMinute(zeroTime))
+}
+
+export function downloadImage(elementId: string) {
+  const element = document.getElementById(elementId);
+  if (element) {
+    html2canvas(element).then(canvas => {
+      const dataURL = canvas.toDataURL('image/png');
+
+      // Create a link element
+      const link = document.createElement('a');
+      link.href = dataURL;
+      link.download = `${elementId}.png`;
+      link.click();
+    })
+  }
 }
 
