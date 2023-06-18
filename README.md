@@ -1,6 +1,6 @@
 # SUTDTimePlanner
 
-![SUTD Time Planner](.\SUTDTimePlannerFrontend\src\assets\logo.png)
+![SUTD Time Planner](./SUTDTimePlannerFrontend/src/assets/logo.png)
 
 The SUTD Time Planner is a web application designed to help SUTD students search for courses and arrange their course schedules efficiently before the semester starts.
 
