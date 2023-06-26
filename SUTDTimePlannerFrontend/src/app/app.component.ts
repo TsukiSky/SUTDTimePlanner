@@ -96,19 +96,19 @@ export class AppComponent implements OnInit {
     const searchName = this.searchForm.value.name;
 
     if (searchTerm !== null) {
-      this.filteredCourse = this.courseList.filter(course =>
+      this.filteredCourse = this.filteredCourse.filter(course =>
         course.termsInString.includes(`${searchTerm}`)
       );
     }
 
     if (searchPillar !== null) {
-      this.filteredCourse = this.courseList.filter(course =>
+      this.filteredCourse = this.filteredCourse.filter(course =>
         course.pillar.includes(`${searchPillar}`)
       );
     }
 
     if (searchName !== null) {
-      this.filteredCourse = this.courseList.filter(course =>
+      this.filteredCourse = this.filteredCourse.filter(course =>
         course.name.includes(`${searchName}`)
       );
     }
@@ -164,7 +164,6 @@ export class AppComponent implements OnInit {
     let clas = course.classes[classIndex];
 
     this.updateTimeConflict(course, clas);
-    console.log(this.conflictCourseGroups);
 
     this.assignColorToCourse(course);
     this.enrolledCourseSet = this.enrolledCourseSet.add(course);
@@ -227,8 +226,6 @@ export class AppComponent implements OnInit {
       for (const slot of clas.slots) {
         for (const newSlot of newClas.slots) {
           if (isOverlapped(slot, newSlot)) {
-            console.log(slot);
-            console.log(newSlot);
             // update conflict courses set
             clasConflictFound = true;
             let groupUpdated = false;
