@@ -37,7 +37,6 @@ export class TimetableComponent implements OnInit {
   }
 
   refreshTimetable() {
-    console.log(this.alternativeClasses)
     this.slotByDate = new Map();
     this.classSet.forEach(clas => {
       clas.slots.forEach(slot => {
@@ -107,7 +106,6 @@ export class TimetableComponent implements OnInit {
   }
 
   onSlotClick(slot: Slot) {
-    console.log(this.isAltering(slot))
     if (this.isAltering(slot)) {
       // change slots
       let newClass: Class;
