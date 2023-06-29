@@ -17,8 +17,10 @@ export class TimetableComponent implements OnInit {
   startTimeStamp: TimeStamp = new TimeStamp(8, 0);
 
   @Input() classSet: Set<Class> = new Set();
-  classSetCopy = this.classSet;
+  @Input() alternativeClasses: Map<Class, Class[]> = new Map<Class, Class[]>();
+  @Output() classSetChanged = new EventEmitter<Class>();
   slotByDate: Map<string, Array<Slot[]>> = new Map();
+  alteringSlots: Slot[] = [];
 
   constructor(public sanitizer: DomSanitizer) {}
 
@@ -36,21 +38,33 @@ export class TimetableComponent implements OnInit {
   }
 
   refreshTimetable() {
+    console.log(this.alternativeClasses)
     this.slotByDate = new Map();
-    this.classSetCopy = this.classSet;
-    this.classSetCopy.forEach(clas => {
+    this.classSet.forEach(clas => {
       clas.slots.forEach(slot => {
         if (this.slotByDate.has(slot.date)) {
           let rowsInOneDay: Array<Slot[]> = this.slotByDate.get(slot.date)!;
           let addNewRow: boolean = true;
+          let sameCourse: boolean = false;
           for (let row of rowsInOneDay) {
             let hasOverlap = false;
             for (let embedSlot of row) {
+              if (slot.courseName == embedSlot.courseName && slot.type == "lecture") {
+                // same course different classes
+                sameCourse = true;
+                break;
+              }
+
               if (isOverlapped(slot, embedSlot)) {
                 hasOverlap = true;
                 break;
               }
             }
+
+            if (sameCourse) {
+              break;
+            }
+
             if (!hasOverlap) {
               row.push(slot);
               this.refreshRow(row);
@@ -58,12 +72,15 @@ export class TimetableComponent implements OnInit {
               break;
             }
           }
-          if (addNewRow) {
-            let newRow = [slot];
-            this.refreshRow(newRow);
-            rowsInOneDay.push(newRow);
+
+          if (!sameCourse) {
+            if (addNewRow) {
+              let newRow = [slot];
+              this.refreshRow(newRow);
+              rowsInOneDay.push(newRow);
+            }
+            this.slotByDate.set(slot.date, rowsInOneDay);
           }
-          this.slotByDate.set(slot.date, rowsInOneDay);
         } else {
           let newRow = [slot];
           this.refreshRow(newRow);
@@ -73,8 +90,94 @@ export class TimetableComponent implements OnInit {
     });
   }
 
+  isAltering(slot: Slot) {
+    for (const classes of this.alternativeClasses.values()) {
+      for (const clas of classes) {
+        for (const slt of clas.slots) {
+          if (slt.slotId == slot.slotId) {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+
   ngOnInit() {
     // this.refreshTimetable();
+  }
+
+  onSlotClick(slot: Slot) {
+    if (this.isAltering(slot)) {
+      // change slots
+      let newClass: Class;
+      let newAlterClasses: Class[];
+      let classToDelete: Class[] = [];
+
+      for (const clas of this.alternativeClasses.keys()) {
+        for (const targetClass of this.alternativeClasses.get(clas)!) {
+          if (targetClass.slots.includes(slot)) {
+            newClass = targetClass;
+            newAlterClasses = this.alternativeClasses.get(clas)!;
+            newAlterClasses = newAlterClasses.filter(element => element.classId != targetClass.classId);
+            newAlterClasses.push(clas);
+            classToDelete = newAlterClasses;
+            break;
+          }
+        }
+      }
+
+      for (const clas of classToDelete) {
+        this.alternativeClasses.delete(clas);
+        this.classSet.delete(clas)
+      }
+      this.alternativeClasses.set(newClass!, newAlterClasses!);
+      this.classSet.add(newClass!)
+      this.classSetChanged.emit(newClass!);
+
+    } else {
+      if (this.alteringSlots.indexOf(slot) != -1) {
+        // stop altering
+        let classToDelete: Class[] = [];
+
+        this.alteringSlots = this.alteringSlots.filter(element => element.slotId != slot.slotId);
+        for (const clas of this.alternativeClasses.keys()) {
+          if (clas.courseName == slot.courseName) {
+            classToDelete = this.alternativeClasses.get(clas)!;
+            break;
+          }
+        }
+        for (const clas of classToDelete) {
+          this.classSet.delete(clas);
+        }
+      } else {
+        this.alteringSlots.push(slot);
+        for (const clas of this.alternativeClasses.keys()) {
+          let courseName = clas.courseName;
+          if (slot.courseName == courseName && slot.type == "Class") {
+            for (const alterClas of this.alternativeClasses.get(clas)!) {
+              this.classSet.add(alterClas);
+            }
+            break;
+          }
+        }
+      }
+    }
+
+    this.refreshTimetable();
+  }
+
+  isAlterable(slot: Slot): boolean {
+    if (slot.type != "Class" && slot.type != "tutorial") {
+      return false;
+    } else {
+      for (const clas of this.alternativeClasses.keys()) {
+        if (clas.courseName == slot.courseName) {
+          return true;
+        }
+      }
+      return false;
+    }
   }
 
   ngOnChanges(changes: { [property: string]: SimpleChange }) {

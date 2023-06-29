@@ -24,7 +24,7 @@
     <nz-content>
       <div id="body">
         <div class="container">
-          <app-timetable [classSet]="enrolledClassSet" id="timetable"></app-timetable>
+          <app-timetable (classSetChanged)="onClassSetChange($event)" [classSet]="enrolledClassSet" [alternativeClasses]="alternativeClasses" id="timetable"></app-timetable>
         </div>
         <div class="container">
           <div id="function-btn-container">

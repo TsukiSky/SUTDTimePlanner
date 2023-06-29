@@ -38,6 +38,7 @@ export class AppComponent implements OnInit {
 
   bgColors: Array<string> = ["#A6CFE2", "#FDF06F", "#CAFFB9", "#FBCCD4", "#FF9966", "#ABCEE2", "#C7EBFB", "#77EEDF"];
   usedColors: Array<string> = [];
+  alternativeClasses: Map<Class, Class[]> = new Map<Class, Class[]>()
 
 
   getAllCourses(): void {
@@ -175,6 +176,10 @@ export class AppComponent implements OnInit {
     if (this.expandCourseSet.has(course.courseId)) {
       this.onCourseExpandChange(course.courseId, false);
     }
+
+    if (course.classes.length > 1) {
+      this.alternativeClasses.set(clas, course.classes.filter(element => element.classId != clas.classId))
+    }
   }
 
   dropCourse(id: number, subject: string): void {
@@ -252,7 +257,9 @@ export class AppComponent implements OnInit {
                 }
               }
               let newGroup = new Set<Course>([conflictedCourse!, newCourse]);
-              this.conflictCourseGroups.push(newGroup);
+              if (newGroup.size > 1) {
+                this.conflictCourseGroups.push(newGroup);
+              }
             }
           }
           if (clasConflictFound) {
@@ -274,6 +281,18 @@ export class AppComponent implements OnInit {
       }
     }
     this.conflictCourseGroups = this.conflictCourseGroups.filter(set => set.size >= 2);
+  }
+
+  onClassSetChange(newClas: Class) {
+    let enrolledCourse: Course;
+    for (const enrolledCourseSetElement of this.enrolledCourseSet) {
+      if (enrolledCourseSetElement.name == newClas.courseName) {
+        enrolledCourse = enrolledCourseSetElement;
+        break;
+      }
+    }
+    this.dropTimeConflict(enrolledCourse!)
+    this.updateTimeConflict(enrolledCourse!, newClas);
   }
 
   onDownload(ratio: string) {

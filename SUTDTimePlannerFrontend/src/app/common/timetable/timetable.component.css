@@ -27,24 +27,33 @@ span {
   border-radius: 2px;
   min-height: 60px;
   display: flex;
+  cursor: not-allowed;
 }
 
 .date-cell {
   border-style: solid;
-  border-width: 0px 1px 0px 1px;
+  border-width: 0 1px 0 1px;
   border-color: #ddd;
   display: flex;
   text-align: center;
   min-height: 60px;
 }
 
+.alterable-class {
+  cursor: pointer;
+}
+
 #time-cell .cell {
   border-style: solid;
-  border-width: 0px 0px 0px 1px;
+  border-width: 0 0 0 1px;
   border-color: #ddd;
   display: flex;
   text-align: center;
   min-height: 60px;
+}
+
+.altering-class {
+  opacity: 40%;
 }
 
 #head-cell {
@@ -53,14 +62,14 @@ span {
 
 #timetable-container .row {
   border-style: solid;
-  border-width: 1px 0px 0px 0px;
+  border-width: 1px 0 0 0;
   border-color: #ddd;
 }
 
 .row-courses {
   background: linear-gradient(90deg, #F5F7F9 50%,transparent 0);
   background-size: 16.6666% 16.6666%;
-  border-width: 0px 1px 0px 0px;
+  border-width: 0 1px 0 0;
   border-color: #ddd;
   border-style: solid;
 }
@@ -69,7 +78,7 @@ span {
 #timetable {
   font-family: 'Trebuchet MS', Arial, sans-serif;
   width: 100%;
-  border-width: 0px 0px 1px 0px;
+  border-width: 0 0 1px 0;
   border-color: #ddd;
   border-style: solid;
 }
