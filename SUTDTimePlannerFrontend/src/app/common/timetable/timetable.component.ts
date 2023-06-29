@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChange } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { Slot } from 'src/app/model/Slot';
 import { TimeStamp } from 'src/app/model/TimeStamp';
 import { isOverlapped, toTimeStamp } from "../../utils/Utils";
@@ -22,7 +21,7 @@ export class TimetableComponent implements OnInit {
   slotByDate: Map<string, Array<Slot[]>> = new Map();
   alteringSlots: Slot[] = [];
 
-  constructor(public sanitizer: DomSanitizer) {}
+  constructor() {}
 
   refreshRow(row: Slot[]):void {
     row.sort((a: Slot, b: Slot) => {return toTimeStamp(a.endTime).gapInMinute(this.startTimeStamp) - toTimeStamp(b.startTime).gapInMinute(this.startTimeStamp)});
@@ -108,6 +107,7 @@ export class TimetableComponent implements OnInit {
   }
 
   onSlotClick(slot: Slot) {
+    console.log(this.isAltering(slot))
     if (this.isAltering(slot)) {
       // change slots
       let newClass: Class;
@@ -126,15 +126,14 @@ export class TimetableComponent implements OnInit {
           }
         }
       }
-
       for (const clas of classToDelete) {
         this.alternativeClasses.delete(clas);
         this.classSet.delete(clas)
       }
-      this.alternativeClasses.set(newClass!, newAlterClasses!);
-      this.classSet.add(newClass!)
+      this.alternativeClasses = this.alternativeClasses.set(newClass!, newAlterClasses!);
+      this.classSet = this.classSet.add(newClass!)
       this.classSetChanged.emit(newClass!);
-
+      this.alteringSlots = this.alteringSlots.filter(element => element.slotId != slot.slotId);
     } else {
       if (this.alteringSlots.indexOf(slot) != -1) {
         // stop altering
@@ -151,19 +150,21 @@ export class TimetableComponent implements OnInit {
           this.classSet.delete(clas);
         }
       } else {
+        // start altering
         this.alteringSlots.push(slot);
+
+
         for (const clas of this.alternativeClasses.keys()) {
           let courseName = clas.courseName;
           if (slot.courseName == courseName && slot.type == "Class") {
             for (const alterClas of this.alternativeClasses.get(clas)!) {
-              this.classSet.add(alterClas);
+              this.classSet = this.classSet.add(alterClas);
             }
             break;
           }
         }
       }
     }
-
     this.refreshTimetable();
   }
 
