@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import {CourseService} from "./course.service";
 import {HttpErrorResponse} from "@angular/common/http";
 import {Class} from "./model/Class";
-import {downloadImage, isOverlapped} from "./utils/Utils";
+import {downloadImage, getData, isOverlapped, storeData} from "./utils/Utils";
 
 @Component({
   selector: 'app-root',
@@ -41,6 +41,34 @@ export class AppComponent implements OnInit {
   alternativeClasses: Map<Class, Class[]> = new Map<Class, Class[]>()
 
 
+  loadLocalStorage() {
+    let starredCourseIds = getData("starredCourseSet");
+    let enrolledCourseIds = getData("enrolledCourseSet")
+    let enrolledClassIds = getData("enrolledClassSet")
+    for (let course of this.courseList) {
+      // load starred courses
+      if (starredCourseIds.includes(course.courseId)) {
+        this.onStar(course);
+      }
+
+      // load enrolled classes
+      if (enrolledCourseIds.includes(course.courseId)) {
+        // course is enrolled
+        for (let i = 0; i < course.classes.length; i++) {
+          if (enrolledClassIds.includes(course.classes[i].classId)) {
+            // class is enrolled
+            this.enrollClass(course, i);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+
+
+
   getAllCourses(): void {
     this.courseService.getAllCourses().subscribe(
       (response: Course[]) => {
@@ -58,6 +86,7 @@ export class AppComponent implements OnInit {
           }
         }
         this.filterCourse();
+        this.loadLocalStorage();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
@@ -66,9 +95,7 @@ export class AppComponent implements OnInit {
   }
   constructor(private formBuilder: FormBuilder,
     private message: NzMessageService,
-    private courseService: CourseService,
-    private router: Router,
-    private route: ActivatedRoute) {}
+    private courseService: CourseService) {}
 
   ngOnInit(): void {
     this.searchForm = this.formBuilder.group({
@@ -143,7 +170,7 @@ export class AppComponent implements OnInit {
       this.starredCourseSet.add(course);
     }
     course.isStarred = !course.isStarred;
-
+    storeData("starredCourseSet", Array.from(this.starredCourseSet).map(course => course.courseId));
   }
 
   onReset(): void {
@@ -173,6 +200,9 @@ export class AppComponent implements OnInit {
     this.enrolledClassSet = new Set([...this.enrolledClassSet]);
     this.message.success(`Enroll in Course: ${course.name}`, { nzDuration: 1200 });
 
+    storeData("enrolledCourseSet", Array.from(this.enrolledCourseSet).map(course => course.courseId));
+    storeData("enrolledClassSet", Array.from(this.enrolledClassSet).map(clas => clas.classId));
+
     if (this.expandCourseSet.has(course.courseId)) {
       this.onCourseExpandChange(course.courseId, false);
     }
@@ -196,6 +226,7 @@ export class AppComponent implements OnInit {
     this.enrolledClassSet.forEach(clas => {
       if (clas.courseName == subject) {
         this.enrolledClassSet.delete(clas);
+        this.alternativeClasses.delete(clas);
       }
     })
     this.enrolledClassSet = new Set([...this.enrolledClassSet]);

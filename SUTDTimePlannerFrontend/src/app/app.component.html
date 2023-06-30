@@ -2,6 +2,20 @@
   <nz-header class="header">
     <div id="logo">
       <img id="logo-img" src="../assets/logo.png" alt="logo">
+      <button nz-button [nzDropdownMenu]="menu" nz-dropdown nzType="primary" id="setting-icon" nzShape="circle" nzSize="large"><span nz-icon nzType="setting" nzTheme="outline" nzSpin="false" style="font-size: 24px"></span></button>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+          <li nz-submenu nzTitle="Theme">
+            <ul>
+              <li nz-menu-item>Ocean</li>
+              <li nz-menu-item>Dark</li>
+              <li nz-menu-item>Brightness</li>
+              <li nz-menu-item>In The Mood</li>
+            </ul>
+          </li>
+          <li nz-menu-divider></li>
+        </ul>
+      </nz-dropdown-menu>
     </div>
   </nz-header>
 </nz-layout>
@@ -9,18 +23,18 @@
   <nz-header id="header-placeholder">
   </nz-header>
   <nz-layout>
-    <nz-sider id="left-sidebar" [(nzCollapsed)]="!isCollapsed" [nzCollapsedWidth]="50" nzWidth="14%">
-      <ul nz-menu nzMode="inline">
-        <li nz-menu-item nzSelected>
-          <span nz-icon nzType="calendar" nzTheme="outline"></span>
-          <span>Timetable</span>
-        </li>
-<!--        <li nz-menu-item>-->
-<!--          <span nz-icon nzType="read" nzTheme="outline"></span>-->
-<!--          <span>Courses</span>-->
+<!--    <nz-sider id="left-sidebar" [(nzCollapsed)]="!isCollapsed" [nzCollapsedWidth]="50" nzWidth="14%">-->
+<!--      <ul nz-menu nzMode="inline">-->
+<!--        <li nz-menu-item nzSelected>-->
+<!--          <span nz-icon nzType="calendar" nzTheme="outline"></span>-->
+<!--          <span>Timetable</span>-->
 <!--        </li>-->
-      </ul>
-    </nz-sider>
+<!--&lt;!&ndash;        <li nz-menu-item>&ndash;&gt;-->
+<!--&lt;!&ndash;          <span nz-icon nzType="read" nzTheme="outline"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;          <span>Courses</span>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--      </ul>-->
+<!--    </nz-sider>-->
     <nz-content>
       <div id="body">
         <div class="container">
@@ -32,7 +46,7 @@
         <div class="container">
           <div id="function-btn-container">
           <div id="time-info-box">
-            2022-2023 Summer
+            <b>2022-2023 Summer</b>
           </div>
           <button nz-button nzType="primary" class="function-btn" (click)="onDownload('16:9')"><span nz-icon nzType="download" nzTheme="outline"></span>Download (16:9)</button>
           <button nz-button nzType="primary" class="function-btn" (click)="onDownload('2048×1080')"><span nz-icon nzType="download" nzTheme="outline"></span>Download (2048×1080)</button>
@@ -144,6 +158,7 @@
         </div>
       </div>
     </nz-content>
+
 
     <nz-sider [nzCollapsible]="true" [(nzCollapsed)]="isCollapsed" [nzCollapsedWidth]='0'
               [nzZeroTrigger]="leftSidebarTrigger" [nzReverseArrow]="true" nzWidth="36%" id="sidebar">

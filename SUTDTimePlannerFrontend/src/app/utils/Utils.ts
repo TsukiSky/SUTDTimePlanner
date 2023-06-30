@@ -103,3 +103,13 @@ export function downloadImage(elementId: string, format: string) {
     })
   }
 }
+
+export function storeData(name: string, ids: any) {
+    const dataArray = JSON.stringify(ids);
+    localStorage.setItem(name, dataArray);
+}
+
+export function getData(itemName: string) {
+  return JSON.parse(localStorage.getItem(itemName) == null? "": localStorage.getItem(itemName)!);
+}
+
