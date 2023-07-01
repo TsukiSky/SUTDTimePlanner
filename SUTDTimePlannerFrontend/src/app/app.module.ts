@@ -25,10 +25,11 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 
 import { TimetableComponent } from './common/timetable/timetable.component';
-import {NzPaginationModule} from "ng-zorro-antd/pagination";
-import {NzMenuModule} from "ng-zorro-antd/menu";
-import {NZ_CONFIG, NzConfig} from "ng-zorro-antd/core/config";
-import {NzDropDownModule} from "ng-zorro-antd/dropdown";
+import { NzPaginationModule } from "ng-zorro-antd/pagination";
+import { NzMenuModule } from "ng-zorro-antd/menu";
+import { NZ_CONFIG, NzConfig } from "ng-zorro-antd/core/config";
+import { NzDropDownModule } from "ng-zorro-antd/dropdown";
+import { NzModalModule } from "ng-zorro-antd/modal";
 
 registerLocaleData(en);
 
@@ -63,7 +64,8 @@ const ngZorroConfig: NzConfig = {
         NzDescriptionsModule,
         NzPaginationModule,
         NzMenuModule,
-        NzDropDownModule
+        NzDropDownModule,
+        NzModalModule
     ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

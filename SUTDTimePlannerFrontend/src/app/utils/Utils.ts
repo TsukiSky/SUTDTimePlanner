@@ -113,3 +113,7 @@ export function getData(itemName: string) {
   return JSON.parse(localStorage.getItem(itemName) == null? "": localStorage.getItem(itemName)!);
 }
 
+export function clearData() {
+  localStorage.clear();
+}
+

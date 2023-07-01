@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Course } from './model/Course';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { ActivatedRoute, Router } from '@angular/router';
 import {CourseService} from "./course.service";
 import {HttpErrorResponse} from "@angular/common/http";
 import {Class} from "./model/Class";
-import {downloadImage, getData, isOverlapped, storeData} from "./utils/Utils";
+import {clearData, downloadImage, getData, isOverlapped, storeData} from "./utils/Utils";
+import { NzModalService } from "ng-zorro-antd/modal";
 
 @Component({
   selector: 'app-root',
@@ -95,7 +95,8 @@ export class AppComponent implements OnInit {
   }
   constructor(private formBuilder: FormBuilder,
     private message: NzMessageService,
-    private courseService: CourseService) {}
+    private courseService: CourseService,
+    private modal: NzModalService) {}
 
   ngOnInit(): void {
     this.searchForm = this.formBuilder.group({
@@ -176,7 +177,12 @@ export class AppComponent implements OnInit {
   onReset(): void {
     this.searchForm.reset();
     this.onSearch();
-    this.expandCourseSet.clear();
+    this.expandCourseSet = new Set<number>();
+    this.enrolledCourseSet = new Set<Course>();
+    this.starredCourseSet = new Set<Course>();
+    this.enrolledClassSet = new Set<Class>();
+    this.alternativeClasses = new Map<Class, Class[]>();
+    this.conflictCourseGroups = new Array<Set<Course>>();
   }
 
   enrollCourse(selectedCourse: Course): void {
@@ -230,6 +236,9 @@ export class AppComponent implements OnInit {
       }
     })
     this.enrolledClassSet = new Set([...this.enrolledClassSet]);
+    storeData("enrolledCourseSet", Array.from(this.enrolledCourseSet).map(course => course.courseId));
+    storeData("enrolledClassSet", Array.from(this.enrolledClassSet).map(clas => clas.classId));
+
   }
 
   assignColorToCourse(course: Course) {
@@ -328,5 +337,17 @@ export class AppComponent implements OnInit {
 
   onDownload(ratio: string) {
     downloadImage("timetable", ratio);
+  }
+
+  clearCache() {
+    this.modal.confirm({
+      nzTitle: '<i>Do you want to clear all local caches?</i>',
+      nzContent: '<b>All enrolled courses and starred courses will be cleaned up.</b>',
+      nzOnOk: () => {
+        clearData()
+        this.onReset()
+      },
+      nzStyle: {top: '30%'}
+    })
   }
 }
