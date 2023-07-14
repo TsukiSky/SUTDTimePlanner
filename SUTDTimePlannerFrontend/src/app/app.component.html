@@ -5,15 +5,16 @@
       <button nz-button [nzDropdownMenu]="menu" nz-dropdown nzType="primary" id="setting-icon" nzShape="circle" nzSize="large"><span nz-icon nzType="setting" nzTheme="outline" nzSpin="false" style="font-size: 24px"></span></button>
       <nz-dropdown-menu #menu="nzDropdownMenu">
         <ul nz-menu>
-          <li nz-submenu nzTitle="Theme">
-            <ul>
-              <li nz-menu-item>Ocean</li>
-              <li nz-menu-item>Dark</li>
-              <li nz-menu-item>Brightness</li>
-              <li nz-menu-item>In The Mood</li>
-            </ul>
-          </li>
-          <li nz-menu-divider></li>
+<!--    Theme Change - to be implemented in future      -->
+<!--          <li nz-submenu nzTitle="Theme">-->
+<!--            <ul>-->
+<!--              <li nz-menu-item>Ocean</li>-->
+<!--              <li nz-menu-item>Dark</li>-->
+<!--              <li nz-menu-item>Brightness</li>-->
+<!--              <li nz-menu-item>In The Mood</li>-->
+<!--            </ul>-->
+<!--          </li>-->
+<!--          <li nz-menu-divider></li>-->
           <li nz-menu-item (click)="clearCache()">Clear cache</li>
         </ul>
       </nz-dropdown-menu>
@@ -24,16 +25,13 @@
   <nz-header id="header-placeholder">
   </nz-header>
   <nz-layout>
+<!--  Left sidebar  -->
 <!--    <nz-sider id="left-sidebar" [(nzCollapsed)]="!isCollapsed" [nzCollapsedWidth]="50" nzWidth="14%">-->
 <!--      <ul nz-menu nzMode="inline">-->
 <!--        <li nz-menu-item nzSelected>-->
 <!--          <span nz-icon nzType="calendar" nzTheme="outline"></span>-->
 <!--          <span>Timetable</span>-->
 <!--        </li>-->
-<!--&lt;!&ndash;        <li nz-menu-item>&ndash;&gt;-->
-<!--&lt;!&ndash;          <span nz-icon nzType="read" nzTheme="outline"></span>&ndash;&gt;-->
-<!--&lt;!&ndash;          <span>Courses</span>&ndash;&gt;-->
-<!--&lt;!&ndash;        </li>&ndash;&gt;-->
 <!--      </ul>-->
 <!--    </nz-sider>-->
     <nz-content>
@@ -92,9 +90,6 @@
               <div nz-col nzSpan="4">
                 <button nz-button id="search-button" nzType="primary" nzSize="default" (click)="onSearch()">Search</button>
               </div>
-  <!--              <div nz-col nzSpan="2">-->
-  <!--                <button nz-button id="clear-button" nzType="primary" nzSize="default" (click)="onReset()">Clear</button>-->
-  <!--              </div>-->
             </div>
           </form>
           <nz-table id="searchTable" nzSize="middle" [nzData]="filteredCourse" #searchTable nzShowPagination nzShowSizeChanger
@@ -131,13 +126,6 @@
                 </tr>
                 <tr [nzExpand]="expandCourseSet.has(course.courseId)">
                   <nz-table #classTable [nzData]="course.classes" nzSize="small" nzShowPagination="false">
-  <!--                    <thead>-->
-  <!--                      <tr>-->
-  <!--                        <th>Class</th>-->
-  <!--                        <th>Slots Time</th>-->
-  <!--                        <th>Action</th>-->
-  <!--                      </tr>-->
-  <!--                    </thead>-->
                     <tbody>
                     <tr *ngFor="let clas of classTable.data">
                       <td>{{ classTable.data.indexOf(clas) + 1 }}</td>
@@ -159,15 +147,8 @@
         </div>
       </div>
     </nz-content>
-
-
     <nz-sider [nzCollapsible]="true" [(nzCollapsed)]="isCollapsed" [nzCollapsedWidth]='0'
               [nzZeroTrigger]="leftSidebarTrigger" [nzReverseArrow]="true" nzWidth="36%" id="sidebar">
-<!--      <div id="sidebar-header">-->
-<!--        <nz-header></nz-header>-->
-<!--      </div>-->
-
-
       <div id="sidebar-main-container">
         <div class="sidebar-container">
           <div class="sidebar-container-header">
@@ -192,18 +173,21 @@
           </nz-card>
           <ul nz-list nzBordered nzSize="large" *ngIf="enrolledCourseSet.size!=0 && !sideBarCardView">
             <li nz-list-item *ngFor="let course of enrolledCourseSet" [style.background-color]="course.bgColor" nzNoFlex>
-              {{ course.name }}
-              <ul nz-list-item-actions>
-                <nz-list-item-action>
-                  <a (click)="dropCourse(course.courseId, course.name)">drop</a>
-                </nz-list-item-action>
-                <!--            <nz-list-item-action>-->
-                <!--              <span class="star-button" nz-icon nzType="star" [nzTheme]="course.isStarred? 'fill': 'outline'" (click)="onStar(course)" [style.color] = "'#FAE746'"></span>-->
-                <!--            </nz-list-item-action>-->
-                <nz-list-item-action>
-                  <a [href]="course.link" target="_blank">more info</a>
-                </nz-list-item-action>
-              </ul>
+              <nz-row>
+                <nz-col nzSpan="16">
+                  <span>{{ course.name }}</span>
+                </nz-col>
+                <nz-col nzSpan="8" class="list-item-bar-container">
+                  <ul nz-list-item-actions>
+                    <nz-list-item-action>
+                      <a (click)="dropCourse(course.courseId, course.name)">drop</a>
+                    </nz-list-item-action>
+                    <nz-list-item-action>
+                      <a [href]="course.link" target="_blank">more info</a>
+                    </nz-list-item-action>
+                  </ul>
+                </nz-col>
+              </nz-row>
             </li>
           </ul>
           <nz-empty *ngIf="enrolledCourseSet.size==0" [nzNotFoundImage]="'../../assets/no-course-enrolled.png'" [nzNotFoundContent]="no_course_enrolled_template">
@@ -214,25 +198,29 @@
             </ng-template>
           </nz-empty>
         </div>
-
         <div class="sidebar-container">
           <div class="sidebar-container-header">
             <b>Course Conflicts</b>
           </div>
           <ul nz-list class="course-conflict-list" nzBordered nzSize="large" *ngFor="let courseCroup of conflictCourseGroups">
-            <li nz-list-item *ngFor="let course of courseCroup" nzNoFlex [style.background-color]="course.bgColor">
-              {{ course.name }}
-              <ul nz-list-item-actions>
-                <nz-list-item-action>
-                  <a (click)="dropCourse(course.courseId, course.name)">drop</a>
-                </nz-list-item-action>
-                <nz-list-item-action>
-                  <a [href]="course.link" target="_blank">more info</a>
-                </nz-list-item-action>
-              </ul>
+            <li nz-list-item *ngFor="let course of courseCroup" [style.background-color]="course.bgColor" nzNoFlex>
+              <nz-row>
+                <nz-col nzSpan="16">
+                  <span>{{ course.name }}</span>
+                </nz-col>
+                <nz-col nzSpan="8" class="list-item-bar-container">
+                  <ul nz-list-item-actions>
+                    <nz-list-item-action>
+                      <a (click)="dropCourse(course.courseId, course.name)">drop</a>
+                    </nz-list-item-action>
+                    <nz-list-item-action>
+                      <a [href]="course.link" target="_blank">more info</a>
+                    </nz-list-item-action>
+                  </ul>
+                </nz-col>
+              </nz-row>
             </li>
           </ul>
-
           <nz-empty *ngIf="conflictCourseGroups.length==0" [nzNotFoundImage]="'../../assets/no-course-conflicts.png'" [nzNotFoundContent]="no_course_conflicts_template">
             <ng-template #no_course_conflicts_template>
           <span>
@@ -241,25 +229,30 @@
             </ng-template>
           </nz-empty>
         </div>
-
         <div class="sidebar-container">
           <div class="sidebar-container-header">
             <b>Starred Courses</b>
           </div>
           <ul nz-list nzBordered nzSize="large" *ngIf="starredCourseSet.size!=0">
             <li nz-list-item *ngFor="let course of starredCourseSet" [style.background-color]="course.bgColor" nzNoFlex>
-              {{ course.name }}
-              <ul nz-list-item-actions>
-                <nz-list-item-action>
-                  <button nz-button class="sidebar-enroll-btn" nzType="link" (click)="enrollCourse(course)" [disabled]="enrolledCourseSet.has(course)">enroll</button>
-                </nz-list-item-action>
-                <nz-list-item-action>
-                  <span class="star-button" nz-icon nzType="star" [nzTheme]="course.isStarred? 'fill': 'outline'" (click)="onStar(course)" [style.color] = "'#FAE746'"></span>
-                </nz-list-item-action>
-                <nz-list-item-action>
-                  <a [href]="course.link" target="_blank">more info</a>
-                </nz-list-item-action>
-              </ul>
+              <nz-row>
+                <nz-col nzSpan="12">
+                  <span>{{ course.name }}</span>
+                </nz-col>
+                <nz-col nzSpan="12" class="list-item-bar-container">
+                  <ul nz-list-item-actions>
+                    <nz-list-item-action>
+                      <button nz-button class="sidebar-enroll-btn" nzType="link" (click)="enrollCourse(course)" [disabled]="enrolledCourseSet.has(course)">enroll</button>
+                    </nz-list-item-action>
+                    <nz-list-item-action>
+                      <span class="star-button" nz-icon nzType="star" [nzTheme]="course.isStarred? 'fill': 'outline'" (click)="onStar(course)" [style.color] = "'#FAE746'"></span>
+                    </nz-list-item-action>
+                    <nz-list-item-action>
+                      <a [href]="course.link" target="_blank">more info</a>
+                    </nz-list-item-action>
+                  </ul>
+                </nz-col>
+              </nz-row>
             </li>
           </ul>
           <nz-empty *ngIf="starredCourseSet.size==0" [nzNotFoundImage]="'../../assets/no-course-starred.png'" [nzNotFoundContent]="no_course_starred_template">
@@ -274,10 +267,10 @@
     </nz-sider>
   </nz-layout>
   <nz-footer>
-    <div class="footer-text">
-      SUTD Singapore University of Technology and Design<br>
-      Copyright © 2023&nbsp;&nbsp;|&nbsp;&nbsp;
-      <a href="https://sutd.edu.sg/Privacy-Statement" target="_blank">Privacy Statement</a>
+    <div class="footer-container">
+      <a class="footer-text" href="https://github.com/TsukiSky/SUTDTimePlanner" target="_blank"><b>Github</b></a>
+      <b>&nbsp;|&nbsp;</b>
+      <a class="footer-text" (click)="onAboutTimePlanner()"><b>About SUTDTimePlanner</b></a>
     </div>
   </nz-footer>
 </nz-layout>

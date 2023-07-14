@@ -32,19 +32,17 @@ export class AppComponent implements OnInit {
   starredCourseSet = new Set<Course>();
   conflictCourseGroups: Array<Set<Course>> = new Array<Set<Course>>();
 
-
   currentPageIndex = 1;
   pageSize = 10;
 
   bgColors: Array<string> = ["#A6CFE2", "#FDF06F", "#CAFFB9", "#FBCCD4", "#FF9966", "#ABCEE2", "#C7EBFB", "#77EEDF"];
   usedColors: Array<string> = [];
-  alternativeClasses: Map<Class, Class[]> = new Map<Class, Class[]>()
-
+  alternativeClasses: Map<Class, Class[]> = new Map<Class, Class[]>();
 
   loadLocalStorage() {
     let starredCourseIds = getData("starredCourseSet");
-    let enrolledCourseIds = getData("enrolledCourseSet")
-    let enrolledClassIds = getData("enrolledClassSet")
+    let enrolledCourseIds = getData("enrolledCourseSet");
+    let enrolledClassIds = getData("enrolledClassSet");
     for (let course of this.courseList) {
       // load starred courses
       if (starredCourseIds.includes(course.courseId)) {
@@ -63,11 +61,7 @@ export class AppComponent implements OnInit {
         }
       }
     }
-
   }
-
-
-
 
   getAllCourses(): void {
     this.courseService.getAllCourses().subscribe(
@@ -78,7 +72,7 @@ export class AppComponent implements OnInit {
           course.termsInString = course.terms.map(term => term.term).join(', ');  // set up termsInString
           for (let clas of course.classes) {
             clas.lecturersInString = clas.lecturers.map(lecturer => lecturer.name).join(', ');
-            clas.timeInString = clas.slots.map(slot => `${slot.type}: ${slot.date} ${slot.startTime} to ${slot.endTime}`).join(' | ')
+            clas.timeInString = clas.slots.map(slot => `${slot.type}: ${slot.date} ${slot.startTime} to ${slot.endTime}`).join(' | ');
             clas.courseName = course.name;
             for (let slot of clas.slots) {
               slot.courseName = course.name;
@@ -183,6 +177,7 @@ export class AppComponent implements OnInit {
     this.enrolledClassSet = new Set<Class>();
     this.alternativeClasses = new Map<Class, Class[]>();
     this.conflictCourseGroups = new Array<Set<Course>>();
+    this.usedColors = new Array<string>();
   }
 
   enrollCourse(selectedCourse: Course): void {
@@ -214,7 +209,7 @@ export class AppComponent implements OnInit {
     }
 
     if (course.classes.length > 1) {
-      this.alternativeClasses.set(clas, course.classes.filter(element => element.classId != clas.classId))
+      this.alternativeClasses.set(clas, course.classes.filter(element => element.classId != clas.classId));
     }
   }
 
@@ -234,11 +229,10 @@ export class AppComponent implements OnInit {
         this.enrolledClassSet.delete(clas);
         this.alternativeClasses.delete(clas);
       }
-    })
+    });
     this.enrolledClassSet = new Set([...this.enrolledClassSet]);
     storeData("enrolledCourseSet", Array.from(this.enrolledCourseSet).map(course => course.courseId));
     storeData("enrolledClassSet", Array.from(this.enrolledClassSet).map(clas => clas.classId));
-
   }
 
   assignColorToCourse(course: Course) {
@@ -317,7 +311,6 @@ export class AppComponent implements OnInit {
     for (const group of this.conflictCourseGroups) {
       if (group.has(dropCourse)) {
         group.delete(dropCourse);
-
       }
     }
     this.conflictCourseGroups = this.conflictCourseGroups.filter(set => set.size >= 2);
@@ -331,7 +324,7 @@ export class AppComponent implements OnInit {
         break;
       }
     }
-    this.dropTimeConflict(enrolledCourse!)
+    this.dropTimeConflict(enrolledCourse!);
     this.updateTimeConflict(enrolledCourse!, newClas);
   }
 
@@ -342,12 +335,27 @@ export class AppComponent implements OnInit {
   clearCache() {
     this.modal.confirm({
       nzTitle: '<i>Do you want to clear all local caches?</i>',
-      nzContent: '<b>All enrolled courses and starred courses will be cleaned up.</b>',
+      nzContent: '<b>All tracks of enrolled courses and starred courses will be cleaned.</b>',
       nzOnOk: () => {
-        clearData()
-        this.onReset()
+        clearData();
+        this.onReset();
+        this.message.success("All local caches are cleaned", { nzDuration: 1200 });
       },
       nzStyle: {top: '30%'}
+    });
+  }
+
+  onAboutTimePlanner() {
+    this.modal.info({
+      nzTitle: '<i>About SUTD Time Planner</i>',
+      nzContent: "<span><b><i>SUTD Time Planner</i></b> is a web application designed to assist SUTD students streamlining their course selection process and make informed decisions about academic schedules in a semester. <br><br>"
+      + "This web tool is developed in collaboration with <b>SUTD Admin Office</b>, leveraging their direct provision of course data. We extend our sincere appreciation for their invaluable support and assistance. Their contribution has been instrumental in making this tool possible.<br><br>"
+      + "For more information or to contribute, please see <a href='https://github.com/TsukiSky/SUTDTimePlanner' target=\"_blank\">https://github.com/TsukiSky/SUTDTimePlanner</a></span>",
+
+      nzStyle: {
+        top: '30%',
+        width: '600px'
+      }
     })
   }
 }

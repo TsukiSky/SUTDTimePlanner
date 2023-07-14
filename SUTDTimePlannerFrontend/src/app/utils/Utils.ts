@@ -26,7 +26,6 @@ export function createTableQueryHttpParam(tableQueryParams: NzTableQueryParams, 
         params = params.append(key, value as any);
       });
   }
-
   return params;
 }
 
@@ -51,19 +50,17 @@ export function isOverlapped(slotA: Slot, slotB: Slot) {
   let slotBStartTime = new TimeStamp(slotBStartHour, slotBStartMinute);
   let slotBEndTime = new TimeStamp(slotBEndHour, slotBEndMinute);
 
-
   let zeroTime: TimeStamp = new TimeStamp(0, 0);
   return (slotAStartTime.gapInMinute(zeroTime) <= slotBEndTime.gapInMinute(zeroTime) && slotAEndTime.gapInMinute(zeroTime) >= slotBStartTime.gapInMinute(zeroTime))
     || (slotBStartTime.gapInMinute(zeroTime) <= slotAEndTime.gapInMinute(zeroTime) && slotBEndTime.gapInMinute(zeroTime) >= slotAStartTime.gapInMinute(zeroTime))
 }
-
 
 function preprocessImage(element: HTMLElement, aspectRatio: number) {
   const height = 1800;
   const width = height * aspectRatio;
   element.style.width = width + 'px';
   element.style.height = height + 'px';
-  element.style.fontSize = '36px'
+  element.style.fontSize = '36px';
   const rows = element.querySelectorAll(".row");
   rows.forEach(row => {
     const rowHTMLElement = row as HTMLElement;
@@ -73,7 +70,7 @@ function preprocessImage(element: HTMLElement, aspectRatio: number) {
   const courseBoxes = element.querySelectorAll(".course-box");
   courseBoxes.forEach(box => {
     const boxHTMLElement = box as HTMLElement;
-    boxHTMLElement.style.minHeight = '136px'
+    boxHTMLElement.style.minHeight = '136px';
   });
 }
 
@@ -116,4 +113,3 @@ export function getData(itemName: string) {
 export function clearData() {
   localStorage.clear();
 }
-

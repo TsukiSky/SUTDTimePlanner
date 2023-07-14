@@ -126,10 +126,10 @@ export class TimetableComponent implements OnInit {
       }
       for (const clas of classToDelete) {
         this.alternativeClasses.delete(clas);
-        this.classSet.delete(clas)
+        this.classSet.delete(clas);
       }
       this.alternativeClasses = this.alternativeClasses.set(newClass!, newAlterClasses!);
-      this.classSet = this.classSet.add(newClass!)
+      this.classSet = this.classSet.add(newClass!);
       this.classSetChanged.emit(newClass!);
       this.alteringSlots = this.alteringSlots.filter(element => element.slotId != slot.slotId);
     } else {
@@ -150,7 +150,6 @@ export class TimetableComponent implements OnInit {
       } else {
         // start altering
         this.alteringSlots.push(slot);
-
 
         for (const clas of this.alternativeClasses.keys()) {
           let courseName = clas.courseName;

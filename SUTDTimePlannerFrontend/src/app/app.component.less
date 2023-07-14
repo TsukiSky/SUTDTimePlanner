@@ -5,7 +5,6 @@
   line-height: 60px;
   display: flex;
   align-items: center;
-  //justify-content: center;
 }
 
 #logo-img {
@@ -43,7 +42,6 @@
   position: absolute;
   right: 0;
   margin-right: 20px;
-  //font-size: 34px;
   color: #f7f7f7;
 }
 
@@ -64,14 +62,8 @@
 
 .sidebar-container {
   background-color: white;
-  margin-top: 10px;
-  margin-bottom: 16px;
-  margin-left: 2%;
-  margin-right: 2%;
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin: 10px 2% 16px;
+  padding: 10px 3%;
   border-radius: 3px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -105,32 +97,32 @@ nz-content {
 
 .container {
   background-color: white;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  margin: 20px 5%;
+  padding: 20px 5%;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .footer-text {
-  font-family: GothamBook;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', Helvetica, sans-serif;
+  font-size: 14px;
+  color: #808080;
+}
+
+.footer-container {
+  font-family: 'Gotham SSm A', 'Gotham SSm B', Helvetica, sans-serif;
+  color: #808080;
   font-size: 14px;
   text-align: center;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sidebar-container-header {
   margin-top: 4px;
   margin-bottom: 4px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 6px 5px;
 }
 
 .sidebar-display-switch span {
@@ -148,10 +140,7 @@ nz-content {
 }
 
 .time-board {
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 10%;
 }
 
 #body {
@@ -178,14 +167,8 @@ app-timetable {
 
 #sidebar-main-container {
   background-color: white;
-  margin-left: 10px;
-  margin-right: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin: 20px 20px 20px 10px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -219,3 +202,8 @@ app-timetable {
   margin-top: 0;
 }
 
+.list-item-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
