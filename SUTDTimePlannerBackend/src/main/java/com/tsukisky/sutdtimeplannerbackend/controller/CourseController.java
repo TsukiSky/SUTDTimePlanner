@@ -47,4 +47,10 @@ public class CourseController {
         courseService.addCourse(course);
         return new ResponseEntity<>(course, HttpStatus.OK);
     }
+
+    @PostMapping("/addCourses")
+    public ResponseEntity<List<Course>> addCourses(@RequestBody List<Course> courses) {
+        courseService.addCourses(courses);
+        return new ResponseEntity<>(courses, HttpStatus.OK);
+    }
 }

@@ -38,4 +38,10 @@ public class CourseService {
     public void  addCourse(Course course) {
         courseRepository.save(course);
     }
+
+    public void addCourses(List<Course> courses) {
+        for (Course course: courses) {
+            addCourse(course);
+        }
+    }
 }
