@@ -34,6 +34,7 @@ export class AppComponent implements OnInit {
 
   currentPageIndex = 1;
   pageSize = 10;
+  tableIsLoading = false;
 
   bgColors: Array<string> = ["#A6CFE2", "#FDF06F", "#CAFFB9", "#FBCCD4", "#FF9966", "#ABCEE2", "#C7EBFB", "#77EEDF"];
   usedColors: Array<string> = [];
@@ -98,6 +99,7 @@ export class AppComponent implements OnInit {
       pillar: [null, null],
       name: [null, null]
     });
+    this.tableIsLoading = true;
     this.getAllCourses();
   }
 
@@ -140,6 +142,7 @@ export class AppComponent implements OnInit {
     const startIndex = (this.currentPageIndex-1) * this.pageSize;
     const endIndex = startIndex + this.pageSize;
     this.currentPageCourse = this.filteredCourse.slice(startIndex, endIndex);
+    this.tableIsLoading = false;
   }
 
   onCourseExpandChange(id: number, checked: boolean): void {
@@ -151,6 +154,7 @@ export class AppComponent implements OnInit {
   }
 
   onSearch(): void {
+    this.tableIsLoading = true;
     this.currentPageIndex = 1;
     this.filterCourse();
     this.expandCourseSet.clear();

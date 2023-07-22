@@ -95,7 +95,7 @@
           <nz-table id="searchTable" nzSize="middle" [nzData]="filteredCourse" #searchTable nzShowPagination nzShowSizeChanger
                     [nzPageSize]=pageSize [nzPageIndex]=currentPageIndex [nzTotal]="filteredCourse.length"
                     (nzPageIndexChange)="onPageIndexChange($event)" (nzPageSizeChange)="onPageSizeChange($event)"
-                    [nzNoResult]="no_course_found_template">
+                    [nzNoResult]="no_course_found_template" [nzLoading]="tableIsLoading">
             <thead>
               <tr>
                 <th nzWidth="60px"></th>
