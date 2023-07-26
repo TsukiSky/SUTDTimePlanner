@@ -1,11 +1,11 @@
 import {Slot} from "./Slot";
-import {Lecturer} from "./Lecturer";
+// import {Lecturer} from "./Lecturer";
 
 export interface Class {
   classId: number;
   slots: Slot[];
-  lecturers: Lecturer[];
-  lecturersInString: string;
+  // lecturers: Lecturer[];
+  // lecturersInString: string;
   timeInString: string;
   courseName: string;
 }

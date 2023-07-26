@@ -18,9 +18,9 @@ public class Class {
     @JoinColumn(name = "class_id", referencedColumnName = "class_id")
     private List<Slot> slots;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "class_id", referencedColumnName = "class_id")
-    private List<Lecturer> lecturers;
+    // @OneToMany(cascade = CascadeType.ALL)
+    // @JoinColumn(name = "class_id", referencedColumnName = "class_id")
+    // private List<Lecturer> lecturers;
 
     public Class() {}
 }

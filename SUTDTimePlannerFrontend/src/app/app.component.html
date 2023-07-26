@@ -102,8 +102,8 @@
                 <th>Term</th>
                 <th>Pillar</th>
                 <th>Subject</th>
-                <th>Lecturers</th>
-                <th>Core/Elect</th>
+                <!-- <th>Lecturers</th> -->
+                <!-- <th>Core/Elect</th> -->
                 <!-- <th>Pre-requisites</th> -->
                 <th>Action</th>
               </tr>
@@ -115,8 +115,8 @@
                   <td>{{ course.termsInString }}</td>
                   <td>{{ course.pillar }}</td>
                   <td>{{ course.name }}</td>
-                  <td>{{ course.classes[0].lecturersInString}}</td>
-                  <td>{{course.isCore? "Core": "Elective"}}</td>
+                  <!-- <td>{{ course.classes[0].lecturersInString}}</td> -->
+                  <!-- <td>{{course.isCore? "Core": "Elective"}}</td> -->
                   <!-- <td>{{ data.preRequisites }}</td> -->
                   <td>
                     <button nz-button nzType="link" (click)="enrollCourse(course)" [disabled]="enrolledCourseSet.has(course)">enroll</button>
@@ -163,8 +163,8 @@
               <!-- <span class="course-card-title">{{ course.subject }}</span> -->
               <nz-descriptions nzTitle="{{course.name}}" nzSize="small" [nzColumn]="1">
                 <nz-descriptions-item nzTitle="Pillar">{{ course.pillar }}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Instructors">{{ course.classes[0].lecturersInString }}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Is Core"> {{course.isCore? "Yes": "No"}} </nz-descriptions-item>
+                <!-- <nz-descriptions-item nzTitle="Instructors">{{ course.classes[0].lecturersInString }}</nz-descriptions-item> -->
+                <!-- <nz-descriptions-item nzTitle="Is Core"> {{course.isCore? "Yes": "No"}} </nz-descriptions-item> -->
               </nz-descriptions>
               <button nz-button nzType="default" (click)="dropCourse(course.courseId, course.name)"><span nz-icon nzType="delete" nzTheme="outline"></span></button>
               <button nz-button nzType="default"><a [href]="course.link" target="_blank"><span nz-icon nzType="link" nzTheme="outline"></span></a></button>

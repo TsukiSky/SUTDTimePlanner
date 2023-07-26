@@ -5,7 +5,7 @@ export interface Course {
   courseId: number;
   name: string;
   pillar: string;
-  isCore: number;
+  // isCore: number;
   link: string;
   description: string[];
 
