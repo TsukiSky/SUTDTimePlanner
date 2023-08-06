@@ -26,8 +26,8 @@ public class Course {
     @Column(name = "link")
     private String link;
 
-    @Column(name = "description")
-    private String description;
+    // @Column(name = "description")
+    // private String description;
 
 //    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "prerequisite", referencedColumnName = "course_id")

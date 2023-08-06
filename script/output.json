@@ -1,0 +1,1555 @@
+{
+  "name": "60.008 Systems Design Studio",
+  "pillar": "DAI",
+  "link": "https://dai.sutd.edu.sg/courses/60008-systems-design-studio/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "14:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "14:30:00",
+          "endTime": "17:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "60.007 Interaction Design for Cyber-Physical Artifacts",
+  "pillar": "DAI",
+  "link": "https://dai.sutd.edu.sg/courses/60007-interaction-design-for-cyber-physical-artifacts/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "lecture",
+          "date": "FRI",
+          "startTime": "10:30:00",
+          "endTime": "11:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "60.003 Product Design Studio",
+  "pillar": "DAI",
+  "link": "https://dai.sutd.edu.sg/courses/60003-product-design-studio/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "15:00:00",
+          "endTime": "18:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "13:00:00",
+          "endTime": "16:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "60.002 AI applications in Design",
+  "pillar": "DAI",
+  "link": "https://dai.sutd.edu.sg/courses/60002-ai-applications-in-design/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "MON",
+          "startTime": "09:30:00",
+          "endTime": "12:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "09:00:00",
+          "endTime": "11:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "60.001 Applied Deep Learning",
+  "pillar": "DAI",
+  "link": "https://dai.sutd.edu.sg/courses/60001-applied-deep-learning/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "MON",
+          "startTime": "11:30:00",
+          "endTime": "14:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "50.053 Software Testing and Verification",
+  "pillar": "CSD",
+  "link": "https://istd.sutd.edu.sg/undergraduate/courses/50053-software-testing-and-verification/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "12:00:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "08:30:00",
+          "endTime": "10:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "14:00:00",
+          "endTime": "16:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "50.051 Programming Language Concepts",
+  "pillar": "CSD",
+  "link": "https://istd.sutd.edu.sg/undergraduate/courses/50051-programming-language-concepts/#:~:text=In%20this%20module%2C%20students%20will,programming%20works%20behind%20the%20scenes.",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "18:00:00",
+          "endTime": "19:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "12:00:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "16:00:00",
+          "endTime": "18:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "50.043 Database Systems",
+  "pillar": "CSD",
+  "link": "https://istd.sutd.edu.sg/undergraduate/courses/50043-database-systems/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "18:00:00",
+          "endTime": "20:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "FRI",
+          "startTime": "09:00:00",
+          "endTime": "11:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "FRI",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "lecture",
+          "date": "TUE",
+          "startTime": "15:00:00",
+          "endTime": "18:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "50.039 Theory and Practice of Deep Learning",
+  "pillar": "CSD",
+  "link": "https://istd.sutd.edu.sg/undergraduate/courses/50039-theory-and-practice-of-deep-learning/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "MON",
+          "startTime": "10:30:00",
+          "endTime": "12:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "10:30:00",
+          "endTime": "12:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "10:00:00",
+          "endTime": "12:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "50.038 Computational Data Science",
+  "pillar": "CSD",
+  "link": "https://istd.sutd.edu.sg/undergraduate/courses/50038-computational-data-science/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "14:00:00",
+          "endTime": "16:00:00"
+        },
+        {
+          "type": "lecture",
+          "date": "MON",
+          "startTime": "12:00:00",
+          "endTime": "15:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "50.021 Artificial Intelligence",
+  "pillar": "CSD",
+  "link": "https://istd.sutd.edu.sg/undergraduate/courses/50021-artificial-intelligence/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "08:30:00",
+          "endTime": "10:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "FRI",
+          "startTime": "09:00:00",
+          "endTime": "10:30:00"
+        },
+        {
+          "type": "lecture",
+          "date": "MON",
+          "startTime": "08:30:00",
+          "endTime": "10:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "50.017 Graphics and Visualisation",
+  "pillar": "CSD",
+  "link": "https://istd.sutd.edu.sg/undergraduate/courses/50017-graphics-and-visualisation/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "MON",
+          "startTime": "10:30:00",
+          "endTime": "12:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "10:30:00",
+          "endTime": "12:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "10:00:00",
+          "endTime": "12:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "50.012 Networks",
+  "pillar": "CSD",
+  "link": "https://istd.sutd.edu.sg/undergraduate/courses/50012-networks/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "MON",
+          "startTime": "18:00:00",
+          "endTime": "19:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "13:30:00",
+          "endTime": "15:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "50.007 Machine Learning",
+  "pillar": "CSD",
+  "link": "https://istd.sutd.edu.sg/undergraduate/courses/50007-machine-learning/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "13:00:00",
+          "endTime": "15:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "18:00:00",
+          "endTime": "20:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "18:00:00",
+          "endTime": "20:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "FRI",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "lecture",
+          "date": "WED",
+          "startTime": "12:30:00",
+          "endTime": "13:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "50.004 Algorithms",
+  "pillar": "CSD",
+  "link": "https://istd.sutd.edu.sg/undergraduate/courses/50004-algorithms/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "FRI",
+          "startTime": "09:30:00",
+          "endTime": "11:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "09:00:00",
+          "endTime": "11:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "15:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "type": "lecture",
+          "date": "MON",
+          "startTime": "13:30:00",
+          "endTime": "15:00:00"
+        },
+        {
+          "type": "lecture",
+          "date": "TUE",
+          "startTime": "12:30:00",
+          "endTime": "14:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "50.002 Computation Structures",
+  "pillar": "CSD",
+  "link": "https://istd.sutd.edu.sg/undergraduate/courses/50002-computation-structures/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "09:00:00",
+          "endTime": "11:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "15:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "type": "lecture",
+          "date": "MON",
+          "startTime": "09:00:00",
+          "endTime": "10:30:00"
+        },
+        {
+          "type": "lecture",
+          "date": "TUE",
+          "startTime": "10:30:00",
+          "endTime": "12:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "50.001 Information Systems & Programming",
+  "pillar": "CSD",
+  "link": "https://istd.sutd.edu.sg/undergraduate/courses/50001-information-systems-programming/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "09:00:00",
+          "endTime": "11:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "15:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "type": "lecture",
+          "date": "MON",
+          "startTime": "11:00:00",
+          "endTime": "12:30:00"
+        },
+        {
+          "type": "lecture",
+          "date": "TUE",
+          "startTime": "15:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "type": "lecture",
+          "date": "TUE",
+          "startTime": "15:00:00",
+          "endTime": "16:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "40.324 Fundamentals of Investing (for non-ESD students only)",
+  "pillar": "ESD",
+  "link": "https://esd.sutd.edu.sg/courses/40324-fundamentals-of-investing/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "18:00:00",
+          "endTime": "20:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "18:00:00",
+          "endTime": "20:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "40.319 Statistical and Machine Learning",
+  "pillar": "ESD",
+  "link": "https://esd.sutd.edu.sg/courses/40319-statistical-and-machine-learning/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "MON",
+          "startTime": "08:30:00",
+          "endTime": "10:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "08:30:00",
+          "endTime": "10:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "40.260 Supply Chain Management",
+  "pillar": "ESD",
+  "link": "https://esd.sutd.edu.sg/courses/40260-supply-chain-management/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "MON",
+          "startTime": "11:00:00",
+          "endTime": "13:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "FRI",
+          "startTime": "09:30:00",
+          "endTime": "11:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "40.240 Investment Science (for ESD students only)",
+  "pillar": "ESD",
+  "link": "https://esd.sutd.edu.sg/courses/40240-investment-science/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "15:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "15:00:00",
+          "endTime": "17:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "40.017 Probability and Statistics",
+  "pillar": "ESD",
+  "link": "https://esd.sutd.edu.sg/courses/40017-probability-and-statistics/#:~:text=This%20course%20builds%20upon%20the,uncertainty%20and%20building%20statistical%20models.",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "15:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "15:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "type": "lecture",
+          "date": "FRI",
+          "startTime": "09:30:00",
+          "endTime": "10:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "40.015 Simulation Modelling and Analysis",
+  "pillar": "ESD",
+  "link": "https://esd.sutd.edu.sg/courses/40015-simulation-modelling-analysis/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "10:30:00",
+          "endTime": "12:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "40.011 Data and Business Analytics (for ESD students only)",
+  "pillar": "ESD",
+  "link": "https://esd.sutd.edu.sg/courses/40011-data-business-analytics/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "MON",
+          "startTime": "13:00:00",
+          "endTime": "15:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "40.002 Optimisation",
+  "pillar": "ESD",
+  "link": "https://esd.sutd.edu.sg/courses/40002-optimisation/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "MON",
+          "startTime": "10:00:00",
+          "endTime": "12:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "MON",
+          "startTime": "13:00:00",
+          "endTime": "15:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "09:00:00",
+          "endTime": "11:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "lecture",
+          "date": "FRI",
+          "startTime": "10:30:00",
+          "endTime": "11:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "30.316 Digital Biomimetics: Sustainable Materials and Manufacturing",
+  "pillar": "EPD",
+  "link": "https://epd.sutd.edu.sg/undergraduate-courses/undergraduate-core-elective/epd-core-elective-t6/30316-digital-biomimetics-sustainable-materials-manufacturing/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "MON",
+          "startTime": "12:30:00",
+          "endTime": "15:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "FRI",
+          "startTime": "09:00:00",
+          "endTime": "11:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "30.203 Topics in Biomedical and Healthcare Engineering",
+  "pillar": "EPD",
+  "link": "https://epd.sutd.edu.sg/undergraduate-courses/30203-topics-in-biomedical-healthcare-engineering/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "10:30:00",
+          "endTime": "13:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "12:30:00",
+          "endTime": "15:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "30.111 Entrepreneurship",
+  "pillar": "EPD",
+  "link": "https://epd.sutd.edu.sg/undergraduate-courses/30111-entrepreneurship/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "18:00:00",
+          "endTime": "20:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "18:00:00",
+          "endTime": "20:30:00"
+        },
+        {
+          "type": "lecture",
+          "date": "MON",
+          "startTime": "18:00:00",
+          "endTime": "20:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "30.110 Digital Systems Laboratory",
+  "pillar": "EPD",
+  "link": "https://epd.sutd.edu.sg/undergraduate-courses/30110-digital-systems-laboratory/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "15:30:00",
+          "endTime": "18:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "15:30:00",
+          "endTime": "18:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "30.109 Thermal Systems For Power & Environment",
+  "pillar": "EPD",
+  "link": "https://epd.sutd.edu.sg/undergraduate-courses/30109-thermal-systems-for-power-environment/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "15:30:00",
+          "endTime": "18:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "15:30:00",
+          "endTime": "18:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "30.108 Material Science",
+  "pillar": "EPD",
+  "link": "https://epd.sutd.edu.sg/undergraduate-courses/30108-material-science/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "08:30:00",
+          "endTime": "11:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "MON",
+          "startTime": "08:30:00",
+          "endTime": "11:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "30.107 Power Electronics",
+  "pillar": "EPD",
+  "link": "https://epd.sutd.edu.sg/undergraduate-courses/30107-power-electronics/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "MON",
+          "startTime": "12:30:00",
+          "endTime": "15:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "MON",
+          "startTime": "18:00:00",
+          "endTime": "20:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "11:30:00",
+          "endTime": "12:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "30.106 Microelectronics Circuits and Devices",
+  "pillar": "EPD",
+  "link": "https://epd.sutd.edu.sg/undergraduate-courses/30106-microelectronics-circuits-and-devices/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "MON",
+          "startTime": "09:00:00",
+          "endTime": "11:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "09:00:00",
+          "endTime": "11:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "30.105 Machine Element Design",
+  "pillar": "EPD",
+  "link": "https://epd.sutd.edu.sg/undergraduate-courses/30105-machine-element-design/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "FRI",
+          "startTime": "09:00:00",
+          "endTime": "11:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "FRI",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "lecture",
+          "date": "MON",
+          "startTime": "11:00:00",
+          "endTime": "12:30:00"
+        },
+        {
+          "type": "lecture",
+          "date": "TUE",
+          "startTime": "13:30:00",
+          "endTime": "15:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "30.104 Dynamics",
+  "pillar": "EPD",
+  "link": "https://epd.sutd.edu.sg/undergraduate-courses/30104-dynamics/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "10:30:00",
+          "endTime": "13:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "12:30:00",
+          "endTime": "15:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "30.007 Engineering Design Innovation",
+  "pillar": "EPD",
+  "link": "https://epd.sutd.edu.sg/undergraduate-courses/30007-engineering-design-innovation/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "14:30:00",
+          "endTime": "17:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "08:30:00",
+          "endTime": "11:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "11:30:00",
+          "endTime": "14:30:00"
+        },
+        {
+          "type": "lecture",
+          "date": "MON",
+          "startTime": "11:00:00",
+          "endTime": "12:00:00"
+        },
+        {
+          "type": "lecture",
+          "date": "FRI",
+          "startTime": "10:30:00",
+          "endTime": "11:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "30.002 Circuits & Electronics",
+  "pillar": "EPD",
+  "link": "https://epd.sutd.edu.sg/undergraduate-courses/30002-circuits-electronics/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "15:30:00",
+          "endTime": "17:30:00"
+        },
+        {
+          "type": "lecture",
+          "date": "MON",
+          "startTime": "13:30:00",
+          "endTime": "15:00:00"
+        },
+        {
+          "type": "lecture",
+          "date": "TUE",
+          "startTime": "12:30:00",
+          "endTime": "14:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "30.001 Structures & Materials",
+  "pillar": "EPD",
+  "link": "https://epd.sutd.edu.sg/undergraduate-courses/30001-structures-materials/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "11:30:00",
+          "endTime": "13:30:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "15:30:00",
+          "endTime": "17:30:00"
+        },
+        {
+          "type": "lecture",
+          "date": "MON",
+          "startTime": "09:00:00",
+          "endTime": "10:30:00"
+        },
+        {
+          "type": "lecture",
+          "date": "TUE",
+          "startTime": "10:30:00",
+          "endTime": "12:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "20.320 Project Management in the Built Environment",
+  "pillar": "ASD",
+  "link": "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20320-project-management-in-the-built-environment/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "09:30:00",
+          "endTime": "11:30:00"
+        },
+        {
+          "type": "lecture",
+          "date": "MON",
+          "startTime": "09:30:00",
+          "endTime": "11:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "20.318 Creative Machine Learning",
+  "pillar": "ASD",
+  "link": "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20318-creative-machine-learning/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "WED",
+          "startTime": "10:00:00",
+          "endTime": "13:00:00"
+        },
+        {
+          "type": "lecture",
+          "date": "TUE",
+          "startTime": "11:00:00",
+          "endTime": "12:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "20.221 Traditions: World history connections to vernacular architecture (HTC)",
+  "pillar": "ASD",
+  "link": "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20221-history-theory-and-culture-1/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "FRI",
+          "startTime": "09:00:00",
+          "endTime": "11:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "FRI",
+          "startTime": "11:00:00",
+          "endTime": "13:00:00"
+        },
+        {
+          "type": "lecture",
+          "date": "WED",
+          "startTime": "09:00:00",
+          "endTime": "10:30:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "20.211 Introduction to Design Computation",
+  "pillar": "ASD",
+  "link": "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20211-introduction-to-design-computation/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "09:00:00",
+          "endTime": "12:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "14:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "type": "lecture",
+          "date": "MON",
+          "startTime": "16:00:00",
+          "endTime": "17:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "20.201 Architecture Science & Technology",
+  "pillar": "ASD",
+  "link": "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20201-architecture-science-technology/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "09:00:00",
+          "endTime": "12:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "14:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "type": "lecture",
+          "date": "MON",
+          "startTime": "14:00:00",
+          "endTime": "16:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "20.111 Sustainable Design Option Studio 1",
+  "pillar": "ASD",
+  "link": "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20111-sustainable-design-option-studio-1/",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "TUE",
+          "startTime": "13:00:00",
+          "endTime": "18:00:00"
+        },
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "13:00:00",
+          "endTime": "18:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+},{
+  "name": "20.101 Architecture Core Studio 1",
+  "pillar": "ASD",
+  "link": "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20101-architecture-core-studio-1",
+  "classes": [
+    {
+      "slots": [
+        {
+          "type": "Class",
+          "date": "THU",
+          "startTime": "09:00:00",
+          "endTime": "18:00:00"
+        },
+        {
+          "type": "lecture",
+          "date": "MON",
+          "startTime": "09:00:00",
+          "endTime": "12:00:00"
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": 6,
+      "period": "summer"
+    }
+  ]
+}

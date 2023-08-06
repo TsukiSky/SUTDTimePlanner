@@ -7,7 +7,7 @@ export interface Course {
   pillar: string;
   // isCore: number;
   link: string;
-  description: string[];
+  // description: string[];
 
   classes: Class[];
   terms: Term[];
