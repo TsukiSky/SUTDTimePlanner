@@ -60,18 +60,18 @@ dic_num_of_row = dic_sheet.max_row
 # for i in range(6, ori_num_of_rows+1):
 #     if ori_sheet.cell(row=i, column=7).value[0]=='C':
 #         for j in range(1, 10):
-#             if j == 7:
-#                 c_sheet.cell(row=i-5, column=j).value = 'Class'
+#             # if j == 7:
+#             #     c_sheet.cell(row=i-5, column=j).value = 'Class'
 #             # elif j == 2: continue
-#             else:
-#                 c_sheet.cell(row=i-5, column=j).value = ori_sheet.cell(row=i, column=j).value
+#             # else:
+#             c_sheet.cell(row=i-5, column=j).value = ori_sheet.cell(row=i, column=j).value
 #     else:
 #         for j in range(1, 10):
-#             if j == 7:
-#                 l_sheet.cell(row=i-5, column=j).value = 'lecture'
+#             # if j == 7:
+#             #     l_sheet.cell(row=i-5, column=j).value = 'lecture'
 #             # elif j == 2: continue
-#             else:
-#                 l_sheet.cell(row=i-5, column=j).value = ori_sheet.cell(row=i, column=j).value
+#             # else:
+#             l_sheet.cell(row=i-5, column=j).value = ori_sheet.cell(row=i, column=j).value
 
 # c_index_row = []
 # l_index_row = []
@@ -89,12 +89,13 @@ dic_num_of_row = dic_sheet.max_row
 #     l_sheet.delete_rows(idx=l_index_row[row_del], amount=1)
 #     l_index_row = list(map(lambda k: k-1, l_index_row))
 
+# # delete date and course_id columns
 # # extract weekly classes
 # c_rows = []
 # c_results = []
 # for i in range(1, c_sheet.max_row+1):
-#     row = [[] for _ in range(9)]
-#     for j in range(1, 9):
+#     row = [[] for _ in range(8)]
+#     for j in range(1, 8):
 #         row[j] = c_sheet.cell(row=i, column=j).value
 #     c_rows.append(row)
 # for row in c_rows:
@@ -109,8 +110,8 @@ dic_num_of_row = dic_sheet.max_row
 l_rows = []
 l_results = []
 for i in range(1, l_sheet.max_row+1):
-    row = [[] for _ in range(9)]
-    for j in range(1, 9):
+    row = [[] for _ in range(8)]
+    for j in range(1, 8):
         row[j] = l_sheet.cell(row=i, column=j).value
     l_rows.append(row)
 for row in l_rows:

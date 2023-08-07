@@ -2,12 +2,15 @@ import json
 import openpyxl
 
 # static variables
-ORI_FILE_PATH = 'script/2023 Trimester 1 - T4T6 (revamped).xlsx'
-SHEET = 'after'
+ORI_FILE_PATH = '2023 Trimester 1 - T4T6 (revamped).xlsx'
+SHEET = 'c_after'
+L_SHEET = 'l_after'
 
 ori_workbook = openpyxl.load_workbook(ORI_FILE_PATH)
 sheet = ori_workbook[SHEET]
+l_sheet = ori_workbook[L_SHEET]
 num_of_rows = sheet.max_row
+l_num_rows = l_sheet.max_row
 
 full_list = []
 for i in range(1, num_of_rows+1):
@@ -16,21 +19,34 @@ for i in range(1, num_of_rows+1):
         excel_row.append(sheet.cell(row=i, column=j).value)
     full_list.append(excel_row)
 
+# full_list = []
+# for i in range(1, l_num_rows+1):
+#     excel_row = []
+#     for j in range(1, 8):
+#         excel_row.append(l_sheet.cell(row=i, column=j).value)
+#     full_list.append(excel_row)
+
 # Sample Excel data
 # excel_row = [
 #     "THU",
 #     "09:00:00",
 #     "18:00:00",
 #     "20.101 Architecture Core Studio 1",
-#     "Class",
+#     "CA01",
 #     "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20101-architecture-core-studio-1",
 #     "ASD"
 # ]
 
+def lec_or_cohort(section):
+    if section[0] == 'L':
+        return 'lecture'
+    else:
+        return 'Class'
+
 result = []
 
 # Create the nested JSON
-pre = full_list[0][3]
+pre = full_list[0] #cur row
 pre_json = {
         "name": full_list[0][3],
         "pillar": full_list[0][6],
@@ -39,7 +55,7 @@ pre_json = {
             {
                 "slots": [
                     {
-                        "type": full_list[0][4],
+                        "type": lec_or_cohort(full_list[0][4]),
                         "date": full_list[0][0],
                         "startTime": full_list[0][1],
                         "endTime": full_list[0][2]
@@ -65,19 +81,36 @@ with open('output.json', 'a') as json_file:
     json_file.write(',')
 
 for i in range(1, num_of_rows):
-    if full_list[i][3] == pre:
-        print(pre)
-        print(full_list[i][3])
-        pre_json["classes"][0]['slots'].append(
+    if full_list[i][3] == pre[3]: #same course
+        print(pre[3])
+        if full_list[i][4] == pre[4]:  #same section
+            print(pre[4])
+            pre_json["classes"][0]['slots'].append(
             {
-                "type": full_list[i][4],
+                "type": lec_or_cohort(full_list[i][4]),
                 "date": full_list[i][0],
                 "startTime": full_list[i][1],
                 "endTime": full_list[i][2]
             }
-        )
-        result[0] = pre_json
-        print('-----------'+str(result[0]))
+            )
+            result[0] = pre_json
+            print(result[0])
+        else:
+            pre_json['classes'].append(
+            {
+                "slots": [
+                    {
+                        "type": lec_or_cohort(full_list[i][4]),
+                        "date": full_list[i][0],
+                        "startTime": full_list[i][1],
+                        "endTime": full_list[i][2]
+                    }
+                ]
+            } 
+            )
+            result[0] = pre_json
+            pre[4] = full_list[i][4]
+            print(pre[4])
     else:
         json_data = {
             "name": full_list[i][3],
@@ -87,7 +120,7 @@ for i in range(1, num_of_rows):
                 {
                     "slots": [
                         {
-                            "type": full_list[i][4],
+                            "type": lec_or_cohort(full_list[i][4]),
                             "date": full_list[i][0],
                             "startTime": full_list[i][1],
                             "endTime": full_list[i][2]
@@ -102,9 +135,12 @@ for i in range(1, num_of_rows):
                 }
             ]
         }
-        pre = full_list[i][3]
+        pre[3] = full_list[i][3]
+        pre[4] = full_list[i][4]
         result.insert(0, json_data)
         pre_json = json_data
+
+
 for data in result:
     # Convert the Python dictionary to JSON
     json_string = json.dumps(data, indent=2)

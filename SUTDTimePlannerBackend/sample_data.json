@@ -207,10 +207,6 @@
                         "startTime": "11:30:00",
                         "endTime": "13:30:00"
                     }
-                ],
-                "lecturers": [
-                    {"name": "Dorien Herremans"},
-                    {"name": "Soujanya Poria"}
                 ]
             },
             {
@@ -227,10 +223,6 @@
                         "startTime": "14:00:00",
                         "endTime": "16:00:00"
                     }
-                ],
-                "lecturers": [
-                    {"name": "Dorien Herremans"},
-                    {"name": "Soujanya Poria"}
                 ]
             }
         ],
