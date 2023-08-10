@@ -19,24 +19,6 @@ for i in range(1, num_of_rows+1):
         excel_row.append(sheet.cell(row=i, column=j).value)
     full_list.append(excel_row)
 
-# full_list = []
-# for i in range(1, l_num_rows+1):
-#     excel_row = []
-#     for j in range(1, 8):
-#         excel_row.append(l_sheet.cell(row=i, column=j).value)
-#     full_list.append(excel_row)
-
-# Sample Excel data
-# excel_row = [
-#     "THU",
-#     "09:00:00",
-#     "18:00:00",
-#     "20.101 Architecture Core Studio 1",
-#     "CA01",
-#     "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20101-architecture-core-studio-1",
-#     "ASD"
-# ]
-
 def lec_or_cohort(section):
     if section[0] == 'L':
         return 'lecture'
@@ -151,3 +133,9 @@ for data in result:
         json.dump(data, json_file, indent=2)
         if i!=len(result)-1:
             json_file.write(',')
+
+for i in range(1, l_num_rows+1):
+    with open('output.json', 'r') as file:
+        # read JSON data
+        data = json.load(file)
+        print(data)
