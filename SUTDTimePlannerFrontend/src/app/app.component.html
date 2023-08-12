@@ -99,13 +99,13 @@
             <thead>
               <tr>
                 <th nzWidth="60px"></th>
-                <th>Term</th>
-                <th>Pillar</th>
-                <th>Subject</th>
+                <th nzWidth="20%">Term</th>
+                <th nzWidth="20%">Pillar</th>
+                <th nzWidth="40%">Subject</th>
                 <!-- <th>Lecturers</th> -->
                 <!-- <th>Core/Elect</th> -->
                 <!-- <th>Pre-requisites</th> -->
-                <th>Action</th>
+                <th nzWidth="20%">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -153,10 +153,10 @@
         <div class="sidebar-container">
           <div class="sidebar-container-header">
             <b>Enrolled Courses</b>
-            <div class="sidebar-display-switch">
-              <span>card view </span>
-              <nz-switch [(ngModel)]="sideBarCardView"></nz-switch>
-            </div>
+<!--            <div class="sidebar-display-switch">-->
+<!--              <span>card view </span>-->
+<!--              <nz-switch [(ngModel)]="sideBarCardView"></nz-switch>-->
+<!--            </div>-->
           </div>
           <nz-card *ngIf="enrolledCourseSet.size!=0 && sideBarCardView">
             <div nz-card-grid class="course-card" *ngFor="let course of enrolledCourseSet" [style.background-color]="course.bgColor">
