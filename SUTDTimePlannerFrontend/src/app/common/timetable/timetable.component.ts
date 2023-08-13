@@ -7,7 +7,7 @@ import {Class} from "../../model/Class";
 @Component({
   selector: 'app-timetable',
   templateUrl: './timetable.component.html',
-  styleUrls: ['./timetable.component.css']
+  styleUrls: ['./timetable.component.less']
 })
 export class TimetableComponent implements OnInit {
   // static information

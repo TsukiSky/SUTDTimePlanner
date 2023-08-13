@@ -92,7 +92,7 @@
               </div>
             </div>
           </form>
-          <nz-table id="searchTable" nzSize="middle" [nzData]="filteredCourse" #searchTable nzShowPagination nzShowSizeChanger
+          <nz-table id="search-table" nzSize="middle" [nzData]="filteredCourse" #searchTable nzShowPagination nzShowSizeChanger
                     [nzPageSize]=pageSize [nzPageIndex]=currentPageIndex [nzTotal]="filteredCourse.length"
                     (nzPageIndexChange)="onPageIndexChange($event)" (nzPageSizeChange)="onPageSizeChange($event)"
                     [nzNoResult]="no_course_found_template">
