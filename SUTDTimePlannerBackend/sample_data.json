@@ -4,7 +4,7 @@
         "pillar": "CSD",
         "isCore": 0,
         "link": "https://istd.sutd.edu.sg/undergraduate/courses/50021-artificial-intelligence/",
-        "description": "Artificial intelligence (AI) is a rich field spanning formal systems for representing and processing symbolic information, computational models of human cognition, and a range of techniques for learning, planning and reasoning under uncertainty.",
+        "description": "Artificial intelligence (AI) is a rich field spanning, planning and reasoning under uncertainty.",
         "classes": [
             {
                 "slots": [
@@ -44,7 +44,7 @@
         "pillar": "CSD",
         "isCore": 1,
         "link": "https://istd.sutd.edu.sg/undergraduate/courses/50007-machine-learning/",
-        "description": "Machine learning is the study of algorithms that improve their performance at some task with experience.",
+        "description": "Machine leence.",
         "classes": [
             {
                 "slots": [
@@ -111,7 +111,7 @@
         "pillar": "CSD",
         "isCore": 0,
         "link": "https://istd.sutd.edu.sg/undergraduate/courses/50039-theory-and-practice-of-deep-learning",
-        "description": "The course goal is to familiarize students with deep learning for vision, text, reinforcement learning and multimodal combinations thereof.",
+        "description": "The cof.",
         "classes": [
             {
                 "slots": [
@@ -191,7 +191,7 @@
         "pillar": "CSD",
         "isCore": 0,
         "link": "https://istd.sutd.edu.sg/undergraduate/courses/50038-computational-data-science",
-        "description": "This course provides students the necessary background and experience in data science technology and concepts.",
+        "description": "This course poncepts.",
         "classes": [
             {
                 "slots": [
@@ -207,10 +207,6 @@
                         "startTime": "11:30:00",
                         "endTime": "13:30:00"
                     }
-                ],
-                "lecturers": [
-                    {"name": "Dorien Herremans"},
-                    {"name": "Soujanya Poria"}
                 ]
             },
             {
@@ -227,10 +223,6 @@
                         "startTime": "14:00:00",
                         "endTime": "16:00:00"
                     }
-                ],
-                "lecturers": [
-                    {"name": "Dorien Herremans"},
-                    {"name": "Soujanya Poria"}
                 ]
             }
         ],
@@ -246,7 +238,7 @@
         "pillar": "CSD",
         "isCore": 1,
         "link": "https://istd.sutd.edu.sg/undergraduate/courses/50012-networks/",
-        "description": "This course will introduce the principles and practice of computer networking, with emphasis on the Internet.",
+        "description": "This coure Internet.",
         "classes": [
             {
                 "slots": [
@@ -436,7 +428,7 @@
         "pillar": "DAI",
         "isCore": 1,
         "link": "https://dai.sutd.edu.sg/courses/60007-interaction-design-for-cyber-physical-artifacts/",
-        "description": "This course focuses on the human-centered design, engineering, and evaluation of interactive cyber-physical artifacts through a variety of user study and interaction prototyping techniques.",
+        "description": "This course focusesal artifacts through a variety of user study and interaction prototyping techniques.",
         "classes": [
             {
                 "slots": [
@@ -476,7 +468,7 @@
         "pillar": "DAI",
         "isCore": 1,
         "link": "https://dai.sutd.edu.sg/courses/60008-systems-design-studio/",
-        "description": "Large systems such as manufacturing plants, hospitals, petrochemical refineries, airports, and amusement parks are characterized by processes, flows (material, patients, passengers, information), and capacity-constrained resources.",
+        "description": "Large systems s capacity-constrained resources.",
         "classes": [
             {
                 "slots": [
@@ -545,7 +537,7 @@
         "pillar": "ASD",
         "isCore": 0,
         "link": "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20318-creative-machine-learning",
-        "description": "The course provides an overview of today’s machine learning apparatus for generative design and in turn speculates on the ways in which architectural design process itself might be altered as a result of this epistemological shift towards a ‘Software 2.0’ paradigm.",
+        "description": "The course prov sps a result of this epistemological shift towards a ‘Software 2.0’ paradigm.",
         "classes": [
             {
                 "slots": [
@@ -579,7 +571,7 @@
         "pillar": "ASD",
         "isCore": 0,
         "link": "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20111-sustainable-design-option-studio-1",
-        "description": "The Sustainable Design Studio Option builds upon and continues the Architectural Core Studio sequence, and explores the multi-dimensional issues of sustainable design through a variety of lenses and at diverse temporal and spatial scales.",
+        "description": "The Sustalor temporal and spatial scales.",
         "classes": [
             {
                 "slots": [

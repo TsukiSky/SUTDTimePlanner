@@ -20,14 +20,14 @@ public class Course {
     @Column(name = "pillar")
     private String pillar;
 
-    @Column(name = "is_core")
-    private Integer isCore;
+    // @Column(name = "is_core")
+    // private Integer isCore;
 
     @Column(name = "link")
     private String link;
 
-    @Column(name = "description")
-    private String description;
+    // @Column(name = "description")
+    // private String description;
 
 //    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "prerequisite", referencedColumnName = "course_id")

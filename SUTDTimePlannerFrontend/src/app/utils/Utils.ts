@@ -107,7 +107,13 @@ export function storeData(name: string, ids: any) {
 }
 
 export function getData(itemName: string) {
-  return JSON.parse(localStorage.getItem(itemName) == null? "": localStorage.getItem(itemName)!);
+  let data;
+  try {
+    data = JSON.parse(localStorage.getItem(itemName) == null? "": localStorage.getItem(itemName)!);
+  } catch (e) {
+    data = "";
+  }
+  return data;
 }
 
 export function clearData() {

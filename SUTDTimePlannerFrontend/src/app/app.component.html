@@ -92,20 +92,20 @@
               </div>
             </div>
           </form>
-          <nz-table id="searchTable" nzSize="middle" [nzData]="filteredCourse" #searchTable nzShowPagination nzShowSizeChanger
+          <nz-table id="search-table" nzSize="middle" [nzData]="filteredCourse" #searchTable nzShowPagination nzShowSizeChanger
                     [nzPageSize]=pageSize [nzPageIndex]=currentPageIndex [nzTotal]="filteredCourse.length"
                     (nzPageIndexChange)="onPageIndexChange($event)" (nzPageSizeChange)="onPageSizeChange($event)"
                     [nzNoResult]="no_course_found_template" [nzLoading]="tableIsLoading">
             <thead>
               <tr>
                 <th nzWidth="60px"></th>
-                <th>Term</th>
-                <th>Pillar</th>
-                <th>Subject</th>
-                <th>Lecturers</th>
-                <th>Core/Elect</th>
+                <th nzWidth="20%">Term</th>
+                <th nzWidth="20%">Pillar</th>
+                <th nzWidth="40%">Subject</th>
+                <!-- <th>Lecturers</th> -->
+                <!-- <th>Core/Elect</th> -->
                 <!-- <th>Pre-requisites</th> -->
-                <th>Action</th>
+                <th nzWidth="20%">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -115,8 +115,8 @@
                   <td>{{ course.termsInString }}</td>
                   <td>{{ course.pillar }}</td>
                   <td>{{ course.name }}</td>
-                  <td>{{ course.classes[0].lecturersInString}}</td>
-                  <td>{{course.isCore? "Core": "Elective"}}</td>
+                  <!-- <td>{{ course.classes[0].lecturersInString}}</td> -->
+                  <!-- <td>{{course.isCore? "Core": "Elective"}}</td> -->
                   <!-- <td>{{ data.preRequisites }}</td> -->
                   <td>
                     <button nz-button nzType="link" (click)="enrollCourse(course)" [disabled]="enrolledCourseSet.has(course)">enroll</button>
@@ -135,7 +135,7 @@
                     </tbody>
                   </nz-table>
                   <p></p>
-                  <span>{{ course.description }}</span>
+                  <!-- <span>{{ course.description }}</span> -->
                   <p></p>
                 </tr>
               </ng-container>
@@ -153,18 +153,18 @@
         <div class="sidebar-container">
           <div class="sidebar-container-header">
             <b>Enrolled Courses</b>
-            <div class="sidebar-display-switch">
-              <span>card view </span>
-              <nz-switch [(ngModel)]="sideBarCardView"></nz-switch>
-            </div>
+<!--            <div class="sidebar-display-switch">-->
+<!--              <span>card view </span>-->
+<!--              <nz-switch [(ngModel)]="sideBarCardView"></nz-switch>-->
+<!--            </div>-->
           </div>
           <nz-card *ngIf="enrolledCourseSet.size!=0 && sideBarCardView">
             <div nz-card-grid class="course-card" *ngFor="let course of enrolledCourseSet" [style.background-color]="course.bgColor">
               <!-- <span class="course-card-title">{{ course.subject }}</span> -->
               <nz-descriptions nzTitle="{{course.name}}" nzSize="small" [nzColumn]="1">
                 <nz-descriptions-item nzTitle="Pillar">{{ course.pillar }}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Instructors">{{ course.classes[0].lecturersInString }}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Is Core"> {{course.isCore? "Yes": "No"}} </nz-descriptions-item>
+                <!-- <nz-descriptions-item nzTitle="Instructors">{{ course.classes[0].lecturersInString }}</nz-descriptions-item> -->
+                <!-- <nz-descriptions-item nzTitle="Is Core"> {{course.isCore? "Yes": "No"}} </nz-descriptions-item> -->
               </nz-descriptions>
               <button nz-button nzType="default" (click)="dropCourse(course.courseId, course.name)"><span nz-icon nzType="delete" nzTheme="outline"></span></button>
               <button nz-button nzType="default"><a [href]="course.link" target="_blank"><span nz-icon nzType="link" nzTheme="outline"></span></a></button>

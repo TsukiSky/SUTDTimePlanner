@@ -22,7 +22,7 @@ span {
 .course-box {
   border-style: solid;
   border-width: 3px 3px 3px 3px;
-  border-color: #E1E1E1;
+  border-color: var(--border-secondary);
   text-align: center;
   border-radius: 2px;
   min-height: 60px;
@@ -33,7 +33,7 @@ span {
 .date-cell {
   border-style: solid;
   border-width: 0 1px 0 1px;
-  border-color: #ddd;
+  border-color: var(--border-primary);
   display: flex;
   text-align: center;
   min-height: 60px;
@@ -41,12 +41,19 @@ span {
 
 .alterable-class {
   cursor: pointer;
+  transition: all 0.6s;
+}
+
+.alterable-class:hover {
+  transition: all 0.8s;
+  filter: brightness(108%);
+  transform: scale(1.05);
 }
 
 #time-cell .cell {
   border-style: solid;
   border-width: 0 0 0 1px;
-  border-color: #ddd;
+  border-color: var(--border-primary);
   display: flex;
   text-align: center;
   min-height: 60px;
@@ -54,6 +61,7 @@ span {
 
 .altering-class {
   opacity: 40%;
+  animation: zoomIn 0.2s ease;
 }
 
 #head-cell {
@@ -63,14 +71,14 @@ span {
 #timetable-container .row {
   border-style: solid;
   border-width: 1px 0 0 0;
-  border-color: #ddd;
+  border-color: var(--border-primary);
 }
 
 .row-courses {
-  background: linear-gradient(90deg, #F5F7F9 50%,transparent 0);
+  background: linear-gradient(90deg, var(--background-tertiary) 50%,transparent 0);
   background-size: 16.6666% 16.6666%;
   border-width: 0 1px 0 0;
-  border-color: #ddd;
+  border-color: var(--border-primary);
   border-style: solid;
 }
 
@@ -79,10 +87,30 @@ span {
   font-family: 'Trebuchet MS', Arial, sans-serif;
   width: 100%;
   border-width: 0 0 1px 0;
-  border-color: #ddd;
+  border-color: var(--border-primary);
   border-style: solid;
+  caret-color: transparent;
 }
 
 #timetable-container {
   position: relative;
+}
+
+.sync-icon {
+  padding-left: 6px;
+  padding-right: 10px;
+  width: 20px;
+  color: var(--text-primiary);
+}
+
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 40%;
+  }
 }

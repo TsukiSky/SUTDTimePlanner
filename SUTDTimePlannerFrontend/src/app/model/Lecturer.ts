@@ -1,4 +1,4 @@
-export interface Lecturer {
-  lecturerId: number;
-  name: string;
-}
+// export interface Lecturer {
+//   lecturerId: number;
+//   name: string;
+// }

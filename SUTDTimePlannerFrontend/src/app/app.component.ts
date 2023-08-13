@@ -72,7 +72,7 @@ export class AppComponent implements OnInit {
           course.isStarred = false;
           course.termsInString = course.terms.map(term => term.term).join(', ');  // set up termsInString
           for (let clas of course.classes) {
-            clas.lecturersInString = clas.lecturers.map(lecturer => lecturer.name).join(', ');
+            // clas.lecturersInString = clas.lecturers.map(lecturer => lecturer.name).join(', ');
             clas.timeInString = clas.slots.map(slot => `${slot.type}: ${slot.date} ${slot.startTime} to ${slot.endTime}`).join(' | ');
             clas.courseName = course.name;
             for (let slot of clas.slots) {
