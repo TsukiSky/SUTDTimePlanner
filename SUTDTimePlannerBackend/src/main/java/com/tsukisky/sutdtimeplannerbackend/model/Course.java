@@ -41,5 +41,8 @@ public class Course {
     @JoinColumn(name = "course_id", referencedColumnName = "course_id")
     private List<Term> terms;
 
+    @ManyToMany(mappedBy = "courses")
+    private List<User> users;
+
     public Course() {}
 }

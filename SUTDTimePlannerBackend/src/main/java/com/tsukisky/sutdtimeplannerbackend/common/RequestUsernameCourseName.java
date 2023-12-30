@@ -1,2 +1,9 @@
-package com.tsukisky.sutdtimeplannerbackend.common;public class RequestUsernameCourseName {
+package com.tsukisky.sutdtimeplannerbackend.common;
+
+import lombok.Data;
+
+@Data
+public class RequestUsernameCourseName {
+    private String username;
+    private String courseName;
 }
