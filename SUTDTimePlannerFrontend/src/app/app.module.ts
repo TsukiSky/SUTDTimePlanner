@@ -30,6 +30,12 @@ import { NzMenuModule } from "ng-zorro-antd/menu";
 import { NZ_CONFIG, NzConfig } from "ng-zorro-antd/core/config";
 import { NzDropDownModule } from "ng-zorro-antd/dropdown";
 import { NzModalModule } from "ng-zorro-antd/modal";
+import { AuthComponent } from './auth/auth.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './common/header/header.component';
+import { LoginformComponent } from './common/loginform/loginform.component';
+import { MaterialModule } from './material.module';
+import { RegisterformComponent } from './common/registerform/registerform.component';
 
 registerLocaleData(en);
 
@@ -40,7 +46,12 @@ const ngZorroConfig: NzConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    TimetableComponent
+    TimetableComponent,
+    AuthComponent,
+    HomeComponent,
+    HeaderComponent,
+    LoginformComponent,
+    RegisterformComponent
   ],
     imports: [
         BrowserModule,
@@ -65,12 +76,13 @@ const ngZorroConfig: NzConfig = {
         NzPaginationModule,
         NzMenuModule,
         NzDropDownModule,
-        NzModalModule
+        NzModalModule,
+        MaterialModule
     ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
     { provide: NZ_CONFIG, useValue: ngZorroConfig }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, AuthComponent]
 })
 export class AppModule { }

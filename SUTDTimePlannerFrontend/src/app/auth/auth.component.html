@@ -1,0 +1,5 @@
+<app-header></app-header>
+<div class="container">
+  <app-loginform *ngIf="isLogin" (switchView)="switchRegister()"></app-loginform>
+  <app-registerform *ngIf="!isLogin" (switchView)="switchLogin()"></app-registerform>
+</div>
