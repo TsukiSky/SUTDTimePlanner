@@ -27,6 +27,10 @@ export class RegisterformComponent implements OnInit {
 
   public async register(): Promise<void> {
     console.log("registering")
+    if (!this.validateEmail()) {
+      alert("Please use your sutd email")
+      return
+    }
     const user = {
       username: this.username,
       email: this.email,
@@ -45,6 +49,13 @@ export class RegisterformComponent implements OnInit {
     console.log(response)
     let data = await response.text()
     alert(data)
+  }
+
+  public validateEmail() {
+      const emailRegex = /^[\w-\.]+@mymail.sutd.edu.sg$/; // Basic email regex; adjust as needed
+      const valid = emailRegex.test(this.email);
+      console.log(valid)
+      return valid;
   }
 
 }
