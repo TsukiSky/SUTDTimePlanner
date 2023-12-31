@@ -2,7 +2,7 @@
     <nz-header class="header">
       <div id="logo">
         <img id="logo-img" src="../assets/logo.png" alt="logo">
-        <button nz-button [nzDropdownMenu]="menu" nz-dropdown nzType="primary" id="setting-icon" nzShape="circle" nzSize="large"><span nz-icon nzType="setting" nzTheme="outline" nzSpin="false" style="font-size: 24px"></span></button>
+        <button *ngIf="loggedIn" nz-button [nzDropdownMenu]="menu" nz-dropdown nzType="primary" id="setting-icon" nzShape="circle" nzSize="large"><span nz-icon nzType="setting" nzTheme="outline" nzSpin="false" style="font-size: 24px"></span></button>
         <nz-dropdown-menu #menu="nzDropdownMenu">
           <ul nz-menu>
 <!--    Theme Change - to be implemented in future      -->

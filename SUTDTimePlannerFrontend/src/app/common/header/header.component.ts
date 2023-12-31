@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GlobalStoreService } from 'src/app/global-store.service';
 import { User } from 'src/app/model/User';
 import { Router } from '@angular/router';
@@ -9,15 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.less']
 })
 export class HeaderComponent implements OnInit {
-  user?: User
+  @Input() loggedIn: boolean = false
+  
+  user?: User | null
 
   constructor(private globalStoreService: GlobalStoreService, private router: Router) { }
 
   ngOnInit(): void {
     this.globalStoreService.userInfo$.subscribe(user => {
-      if (user!=null) {
         this.user = user
-      }
     })
   }
 
