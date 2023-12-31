@@ -48,6 +48,7 @@ public class UserService {
             return null;
         }
         if (Objects.equals(checkUser.getPassword(), user.getPassword())){
+            System.out.println(checkUser.getEnrolCourseIds());
             return checkUser;
         } else {
             return null;
@@ -123,6 +124,7 @@ public class UserService {
                     .filter(obj -> !classIds.contains(obj))
                     .collect(Collectors.toList()));
             userRepository.save(user);
+            System.out.println(user.getEnrolCourseIds());
             return true;
         } catch (Exception e) {
             e.getStackTrace();
@@ -140,8 +142,6 @@ public class UserService {
             if (!user.getClassesIds().contains(newClassId)) {
                 user.getClassesIds().add(newClassId);
             }
-            System.out.println(oldClassId+" "+ newClassId);
-            System.out.println(user.getClassesIds());
             userRepository.save(user);
             return true;
         } catch (Exception e) {

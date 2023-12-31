@@ -139,6 +139,15 @@ export class TimetableComponent implements OnInit {
               })
             })
             let data = await response.text()
+            console.log(this.user?.classesIds)
+
+            if (this.user) {
+              this.user.classesIds.splice(this.user?.classesIds.indexOf(clas.classId), 1)
+              this.user.classesIds.push(newClass.classId)
+              console.log(this.user.classesIds)
+              this.globalStoreService.updateUserInfo({...this.user})
+            }
+            
             newAlterClasses = newAlterClasses.filter(element => element.classId != targetClass.classId);
             newAlterClasses.push(clas);
             classToDelete = newAlterClasses;

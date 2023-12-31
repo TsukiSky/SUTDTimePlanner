@@ -2,7 +2,22 @@
     <nz-header class="header">
       <div id="logo">
         <img id="logo-img" src="../assets/logo.png" alt="logo">
-
+        <button nz-button [nzDropdownMenu]="menu" nz-dropdown nzType="primary" id="setting-icon" nzShape="circle" nzSize="large"><span nz-icon nzType="setting" nzTheme="outline" nzSpin="false" style="font-size: 24px"></span></button>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+          <ul nz-menu>
+<!--    Theme Change - to be implemented in future      -->
+<!--          <li nz-submenu nzTitle="Theme">-->
+<!--            <ul>-->
+<!--              <li nz-menu-item>Ocean</li>-->
+<!--              <li nz-menu-item>Dark</li>-->
+<!--              <li nz-menu-item>Brightness</li>-->
+<!--              <li nz-menu-item>In The Mood</li>-->
+<!--            </ul>-->
+<!--          </li>-->
+<!--          <li nz-menu-divider></li>-->
+            <li nz-menu-item (click)="logout()">Logout</li>
+          </ul>
+        </nz-dropdown-menu>
       </div>
     </nz-header>
 

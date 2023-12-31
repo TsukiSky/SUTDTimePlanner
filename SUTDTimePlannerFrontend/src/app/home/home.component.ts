@@ -50,12 +50,11 @@ export class HomeComponent implements OnInit {
     let starredCourseIds = this.user?.starCourseIds!;
     let enrolledCourseIds = this.user?.enrolCourseIds!;
     let enrolledClassIds = this.user?.classesIds!;
-    console.log(this.courseList)
+    console.log(enrolledCourseIds)
     for (let course of this.courseList) {
       // load starred courses
       if (starredCourseIds.includes(course.courseId)) {
-        console.log("course: ", course)
-        this.onStar(course);
+        course.isStarred = true;
       }
 
       // load enrolled classes
@@ -64,7 +63,7 @@ export class HomeComponent implements OnInit {
         for (let i = 0; i < course.classes.length; i++) {
           if (enrolledClassIds.includes(course.classes[i].classId)) {
             // class is enrolled
-            this.enrollClass(course, i);
+            this.enrollClass(course, i, false);
             break;
           }
         }
@@ -193,6 +192,8 @@ export class HomeComponent implements OnInit {
           courseId: course.courseId
         })
       })
+      this.user?.starCourseIds?.splice(this.user?.starCourseIds?.indexOf(course.courseId), 1)
+      this.globalStateService.updateUserInfo({...this.user!})
     } else {
       this.message.success(`Starred course ${course.name}`, { nzDuration: 1200 });
       this.starredCourseSet.add(course);
@@ -206,9 +207,10 @@ export class HomeComponent implements OnInit {
           courseId: course.courseId
         })
       })
+      this.user?.starCourseIds?.push(course.courseId)
+      this.globalStateService.updateUserInfo({...this.user!})
     }
     course.isStarred = !course.isStarred;
-    // storeData("starredCourseSet", Array.from(this.starredCourseSet).map(course => course.courseId));
   }
 
   onReset(): void {
@@ -228,11 +230,11 @@ export class HomeComponent implements OnInit {
       this.message.error(`${selectedCourse.name} has multiple time slots available. Please choose a time slot to continue.`, { nzDuration: 6000 });
       this.onCourseExpandChange(selectedCourse.courseId, true);
     } else {
-      this.enrollClass(selectedCourse, 0);
+      this.enrollClass(selectedCourse, 0, true);
     }
   }
 
-  async enrollClass(course: Course, classIndex: number): Promise<void> {
+  async enrollClass(course: Course, classIndex: number, newEnrol: boolean): Promise<void> {
     let clas = course.classes[classIndex];
 
     this.updateTimeConflict(course, clas);
@@ -242,25 +244,30 @@ export class HomeComponent implements OnInit {
     this.enrolledCourseSet = new Set([...this.enrolledCourseSet]);
     this.enrolledClassSet = this.enrolledClassSet.add(clas);
     this.enrolledClassSet = new Set([...this.enrolledClassSet]);
-    this.message.success(`Enroll in Course: ${course.name}`, { nzDuration: 1200 });
 
-    // tell the backend to add the course and class
-    let response = await fetch(`${environment.apiUrl}/user/add_enrol_course`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        username: this.user?.username,
-        courseId: course.courseId,
-        classId: clas.classId
+    if (newEnrol) {
+      this.message.success(`Enroll in Course: ${course.name}`, { nzDuration: 1200 });
+
+      // tell the backend to add the course and class
+      let response = await fetch(`${environment.apiUrl}/user/add_enrol_course`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: this.user?.username,
+          courseId: course.courseId,
+          classId: clas.classId
+        })
       })
-    })
+  
+      console.log(response)
+      this.user?.enrolCourseIds?.push(course.courseId)
+      this.user?.classesIds?.push(clas.classId)
+      this.globalStateService.updateUserInfo({...this.user!})
+    }
+   
 
-    console.log(response)
-
-    // storeData("enrolledCourseSet", Array.from(this.enrolledCourseSet).map(course => course.courseId));
-    // storeData("enrolledClassSet", Array.from(this.enrolledClassSet).map(clas => clas.classId));
 
     if (this.expandCourseSet.has(course.courseId)) {
       this.onCourseExpandChange(course.courseId, false);
@@ -306,6 +313,12 @@ export class HomeComponent implements OnInit {
         classIds: deleteClassIds
       })
     })
+
+    if (this.user) {
+      this.user.enrolCourseIds = this.user.enrolCourseIds?.filter(element => !deleteCourseIds.includes(element));
+      this.user.classesIds = this.user.classesIds?.filter(element => !deleteClassIds.includes(element));
+      this.globalStateService.updateUserInfo({...this.user!})
+    }
 
     console.log(response)
 

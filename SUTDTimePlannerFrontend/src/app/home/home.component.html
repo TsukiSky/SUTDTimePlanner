@@ -1,15 +1,15 @@
 <app-header></app-header>
   <nz-layout>
     <nz-layout>
-  <!--  Left sidebar  -->
-  <!--    <nz-sider id="left-sidebar" [(nzCollapsed)]="!isCollapsed" [nzCollapsedWidth]="50" nzWidth="14%">-->
-  <!--      <ul nz-menu nzMode="inline">-->
-  <!--        <li nz-menu-item nzSelected>-->
-  <!--          <span nz-icon nzType="calendar" nzTheme="outline"></span>-->
-  <!--          <span>Timetable</span>-->
-  <!--        </li>-->
-  <!--      </ul>-->
-  <!--    </nz-sider>-->
+   <!-- Left sidebar  -->
+     <!-- <nz-sider id="left-sidebar" [(nzCollapsed)]="!isCollapsed" [nzCollapsedWidth]="50" nzWidth="14%">
+       <ul nz-menu nzMode="inline">
+         <li nz-menu-item nzSelected>
+           <span nz-icon nzType="calendar" nzTheme="outline"></span>
+           <span>Timetable</span>
+         </li>
+       </ul>
+     </nz-sider> -->
       <nz-content>
         <div id="body">
           <div class="container">
@@ -106,7 +106,7 @@
                       <tr *ngFor="let clas of classTable.data">
                         <td>{{ classTable.data.indexOf(clas) + 1 }}</td>
                         <td>{{ clas.timeInString }}</td>
-                        <td><a nz-button nzType="link" (click)="enrollClass(course, classTable.data.indexOf(clas))" [disabled]="enrolledCourseSet.has(course)">enroll</a></td>
+                        <td><a nz-button nzType="link" (click)="enrollClass(course, classTable.data.indexOf(clas), true)" [disabled]="enrolledCourseSet.has(course)">enroll</a></td>
                       </tr>
                       </tbody>
                     </nz-table>
