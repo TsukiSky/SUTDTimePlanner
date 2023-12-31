@@ -25,4 +25,8 @@ export class GlobalStoreService {
     }
     this._userInfo.next(userInfo);
   }
+
+  public getUserInfo(): User | null {
+    return this._userInfo.getValue();
+  }
 }
