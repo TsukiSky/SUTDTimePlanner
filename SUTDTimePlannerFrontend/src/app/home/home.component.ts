@@ -3,10 +3,13 @@ import { Course } from '../model/Course';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import {CourseService} from "../course.service";
+import { GlobalStoreService } from '../global-store.service';
 import {HttpErrorResponse} from "@angular/common/http";
 import {Class} from "../model/Class";
 import {clearData, downloadImage, getData, isOverlapped, storeData} from "../utils/Utils";
 import { NzModalService } from "ng-zorro-antd/modal";
+import { User } from '../model/User';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -40,13 +43,18 @@ export class HomeComponent implements OnInit {
   usedColors: Array<string> = [];
   alternativeClasses: Map<Class, Class[]> = new Map<Class, Class[]>();
 
-  loadLocalStorage() {
-    let starredCourseIds = getData("starredCourseSet");
-    let enrolledCourseIds = getData("enrolledCourseSet");
-    let enrolledClassIds = getData("enrolledClassSet");
+  user?: User;
+  
+
+  async requestCourseData() {
+    let starredCourseIds = this.user?.starCourseIds!;
+    let enrolledCourseIds = this.user?.enrolCourseIds!;
+    let enrolledClassIds = this.user?.classesIds!;
+    console.log(this.courseList)
     for (let course of this.courseList) {
       // load starred courses
       if (starredCourseIds.includes(course.courseId)) {
+        console.log("course: ", course)
         this.onStar(course);
       }
 
@@ -81,7 +89,8 @@ export class HomeComponent implements OnInit {
           }
         }
         this.filterCourse();
-        this.loadLocalStorage();
+        this.requestCourseData();
+        // this.loadLocalStorage();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
@@ -91,7 +100,8 @@ export class HomeComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private message: NzMessageService,
     private courseService: CourseService,
-    private modal: NzModalService) {}
+    private modal: NzModalService,
+    private globalStateService: GlobalStoreService) {}
 
   ngOnInit(): void {
     this.searchForm = this.formBuilder.group({
@@ -101,6 +111,15 @@ export class HomeComponent implements OnInit {
     });
     this.tableIsLoading = true;
     this.getAllCourses();
+    this.globalStateService.userInfo$.subscribe(
+      obj => {
+        if (obj) {
+          this.user = obj;
+          console.log(this.user)
+          console.log(obj)
+        }
+      }
+    )
   }
 
   onPageIndexChange(index: number) {
@@ -160,16 +179,36 @@ export class HomeComponent implements OnInit {
     this.expandCourseSet.clear();
   }
 
-  onStar(course: Course): void {
+  async onStar(course: Course): Promise<void> {
     if (course.isStarred) {
       this.message.warning(`Unstarred course ${course.name}`, { nzDuration: 1200 });
       this.starredCourseSet.delete(course);
+      let response = await fetch(`${environment.apiUrl}/user/remove_star_course`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: this.user?.username,
+          courseId: course.courseId
+        })
+      })
     } else {
       this.message.success(`Starred course ${course.name}`, { nzDuration: 1200 });
       this.starredCourseSet.add(course);
+      let response = await fetch(`${environment.apiUrl}/user/add_star_course`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: this.user?.username,
+          courseId: course.courseId
+        })
+      })
     }
     course.isStarred = !course.isStarred;
-    storeData("starredCourseSet", Array.from(this.starredCourseSet).map(course => course.courseId));
+    // storeData("starredCourseSet", Array.from(this.starredCourseSet).map(course => course.courseId));
   }
 
   onReset(): void {
@@ -193,7 +232,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  enrollClass(course: Course, classIndex: number): void {
+  async enrollClass(course: Course, classIndex: number): Promise<void> {
     let clas = course.classes[classIndex];
 
     this.updateTimeConflict(course, clas);
@@ -205,8 +244,23 @@ export class HomeComponent implements OnInit {
     this.enrolledClassSet = new Set([...this.enrolledClassSet]);
     this.message.success(`Enroll in Course: ${course.name}`, { nzDuration: 1200 });
 
-    storeData("enrolledCourseSet", Array.from(this.enrolledCourseSet).map(course => course.courseId));
-    storeData("enrolledClassSet", Array.from(this.enrolledClassSet).map(clas => clas.classId));
+    // tell the backend to add the course and class
+    let response = await fetch(`${environment.apiUrl}/user/add_enrol_course`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username: this.user?.username,
+        courseId: course.courseId,
+        classId: clas.classId
+      })
+    })
+
+    console.log(response)
+
+    // storeData("enrolledCourseSet", Array.from(this.enrolledCourseSet).map(course => course.courseId));
+    // storeData("enrolledClassSet", Array.from(this.enrolledClassSet).map(clas => clas.classId));
 
     if (this.expandCourseSet.has(course.courseId)) {
       this.onCourseExpandChange(course.courseId, false);
@@ -217,26 +271,47 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  dropCourse(id: number, subject: string): void {
+  async dropCourse(id: number, subject: string): Promise<void> {
     this.message.info(`Drop Course: ${subject}`, { nzDuration: 1200 });
+    let deleteCourseIds: number[] = [];
     this.enrolledCourseSet.forEach(course => {
       if (course.courseId == id) {
         this.dropTimeConflict(course);
         this.recoverColorFromCourse(course);
         this.enrolledCourseSet.delete(course);
+        deleteCourseIds.push(course.courseId);
       }
     });
     this.enrolledCourseSet = new Set([...this.enrolledCourseSet]);
 
+    let deleteClassIds: number[] = [];
     this.enrolledClassSet.forEach(clas => {
       if (clas.courseName == subject) {
         this.enrolledClassSet.delete(clas);
         this.alternativeClasses.delete(clas);
+        deleteClassIds.push(clas.classId);
       }
     });
     this.enrolledClassSet = new Set([...this.enrolledClassSet]);
-    storeData("enrolledCourseSet", Array.from(this.enrolledCourseSet).map(course => course.courseId));
-    storeData("enrolledClassSet", Array.from(this.enrolledClassSet).map(clas => clas.classId));
+
+    // tell the backend to delete the course and class
+    let response = await fetch(`${environment.apiUrl}/user/drop_course`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username: this.user?.username,
+        courseIds: deleteCourseIds,
+        classIds: deleteClassIds
+      })
+    })
+
+    console.log(response)
+
+
+    // storeData("enrolledCourseSet", Array.from(this.enrolledCourseSet).map(course => course.courseId));
+    // storeData("enrolledClassSet", Array.from(this.enrolledClassSet).map(clas => clas.classId));
   }
 
   assignColorToCourse(course: Course) {

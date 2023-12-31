@@ -1,5 +1,6 @@
 package com.tsukisky.sutdtimeplannerbackend.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -20,11 +21,16 @@ public class User {
     private String lastName;
     private String password;
 
-    @ManyToMany
-    @JoinTable(
-            name = "user_course",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "course_id")
-    )
-    private List<Course> courses;
+
+    @ElementCollection
+    private List<Integer> starCourseIds;
+
+    @ElementCollection
+    private List<Integer> enrolCourseIds;
+
+    @ElementCollection
+    private List<Integer> classesIds;
+
+
+
 }

@@ -1,5 +1,6 @@
 package com.tsukisky.sutdtimeplannerbackend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -41,8 +42,7 @@ public class Course {
     @JoinColumn(name = "course_id", referencedColumnName = "course_id")
     private List<Term> terms;
 
-    @ManyToMany(mappedBy = "courses")
-    private List<User> users;
-
     public Course() {}
+
+
 }

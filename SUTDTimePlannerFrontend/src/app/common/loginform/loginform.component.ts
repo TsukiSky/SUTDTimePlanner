@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
+import { GlobalStoreService } from 'src/app/global-store.service';
 
 @Component({
   selector: 'app-loginform',
@@ -12,7 +14,7 @@ export class LoginformComponent implements OnInit {
   public loginValid = true;
   public email = '';
   public password = '';
-  constructor() { }
+  constructor(private router: Router, private globalStateService: GlobalStoreService) { }
 
   ngOnInit(): void {
   }
@@ -36,7 +38,16 @@ export class LoginformComponent implements OnInit {
       body: JSON.stringify(user)
     })
     let data = await response.text()
-    alert(data)
+    if (response.status == 200) {
+      if (data) {
+        console.log(data)
+        this.globalStateService.updateUserInfo(JSON.parse(data))
+        this.router.navigate(['/'])
+      } else {
+        alert("Invalid email or password")
+      }
+    }
+    
   }
 
   public onSubmit(): void {

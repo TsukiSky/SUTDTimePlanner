@@ -3,7 +3,8 @@ package com.tsukisky.sutdtimeplannerbackend.common;
 import lombok.Data;
 
 @Data
-public class RequestUsernameCourseName {
+public class RequestOldClassIdNewClassId {
     private String username;
-    private String courseName;
+    private Integer oldClassId;
+    private Integer newClassId;
 }
