@@ -90,7 +90,7 @@
                     <td [nzExpand]="expandCourseSet.has(course.courseId)" (nzExpandChange)="onCourseExpandChange(course.courseId, $event)"></td>
                     <td>{{ course.termsInString }}</td>
                     <td>{{ course.pillar }}</td>
-                    <td>{{ course.name }}</td>
+                    <td><a [routerLink]="['/course', course.courseId]">{{ course.name }}</a></td>
                     <!-- <td>{{ course.classes[0].lecturersInString}}</td> -->
                     <!-- <td>{{course.isCore? "Core": "Elective"}}</td> -->
                     <!-- <td>{{ data.preRequisites }}</td> -->

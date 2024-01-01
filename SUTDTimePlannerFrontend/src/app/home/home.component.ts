@@ -47,6 +47,7 @@ export class HomeComponent implements OnInit {
   
 
   async requestCourseData() {
+    console.log(this.user)
     let starredCourseIds = this.user?.starCourseIds!;
     let enrolledCourseIds = this.user?.enrolCourseIds!;
     let enrolledClassIds = this.user?.classesIds!;
@@ -72,6 +73,7 @@ export class HomeComponent implements OnInit {
   }
 
   getAllCourses(): void {
+    console.log("get all courses")
     this.courseService.getAllCourses().subscribe(
       (response: Course[]) => {
         this.courseList = response;
@@ -109,13 +111,14 @@ export class HomeComponent implements OnInit {
       name: [null, null]
     });
     this.tableIsLoading = true;
-    this.getAllCourses();
     this.globalStateService.userInfo$.subscribe(
       obj => {
         if (obj) {
+          let flag = this.user === null || this.user === undefined;
           this.user = obj;
-          console.log(this.user)
-          console.log(obj)
+          if (flag) {
+            this.getAllCourses();
+          }
         }
       }
     )

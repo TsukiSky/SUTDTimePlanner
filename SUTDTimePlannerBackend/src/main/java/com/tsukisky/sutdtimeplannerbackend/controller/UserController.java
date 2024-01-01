@@ -1,9 +1,6 @@
 package com.tsukisky.sutdtimeplannerbackend.controller;
 
-import com.tsukisky.sutdtimeplannerbackend.common.RequestOldClassIdNewClassId;
-import com.tsukisky.sutdtimeplannerbackend.common.RequestUsernameCourseIdClassId;
-import com.tsukisky.sutdtimeplannerbackend.common.RequestUsernameCourseId;
-import com.tsukisky.sutdtimeplannerbackend.common.RequestUsernameCoursesClasses;
+import com.tsukisky.sutdtimeplannerbackend.common.*;
 import com.tsukisky.sutdtimeplannerbackend.model.User;
 import com.tsukisky.sutdtimeplannerbackend.service.UserService;
 import jakarta.annotation.Resource;

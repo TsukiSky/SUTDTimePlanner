@@ -36,6 +36,7 @@ import { HeaderComponent } from './common/header/header.component';
 import { LoginformComponent } from './common/loginform/loginform.component';
 import { MaterialModule } from './material.module';
 import { RegisterformComponent } from './common/registerform/registerform.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
 
 registerLocaleData(en);
 
@@ -51,7 +52,8 @@ const ngZorroConfig: NzConfig = {
     HomeComponent,
     HeaderComponent,
     LoginformComponent,
-    RegisterformComponent
+    RegisterformComponent,
+    CourseDetailComponent
   ],
     imports: [
         BrowserModule,

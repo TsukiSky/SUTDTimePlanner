@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuardService } from './auth-guard.service';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
 
 const routes: Routes = [
   {path:"", component: HomeComponent, canActivate: [AuthGuardService]},
+  {path:"course/:id", component: CourseDetailComponent, canActivate: [AuthGuardService]},
   {path:"auth", component: AuthComponent}
 ];
 

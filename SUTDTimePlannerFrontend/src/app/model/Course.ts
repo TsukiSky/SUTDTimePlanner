@@ -1,5 +1,6 @@
 import {Class} from "./Class";
 import {Term} from "./Term";
+import {Comment} from "./Comment";
 
 export interface Course {
   courseId: number;
@@ -11,6 +12,7 @@ export interface Course {
 
   classes: Class[];
   terms: Term[];
+  comments: Comment[];
 
   termsInString: string;
   bgColor: string;

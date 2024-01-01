@@ -42,6 +42,10 @@ public class Course {
     @JoinColumn(name = "course_id", referencedColumnName = "course_id")
     private List<Term> terms;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "course_id", referencedColumnName = "course_id")
+    private List<Comment> comments;
+
     public Course() {}
 
 

@@ -1,0 +1,38 @@
+
+<app-header [loggedIn]="true"></app-header>
+
+<main class="container">
+    <div class="flex-1">
+        <h1 class="title"><a href="{{course.link}}">{{ course.name }}  ({{ course.pillar }})</a></h1>
+    </div>
+
+    <section class="flex-4 comments">
+        <p class="comment-title">Comments</p>
+        <div class="comment-container">
+            <div class="comment" *ngFor="let comment of course.comments">
+                <div class="comment-main">
+                    <p class="comment-commenter">{{ comment.isAnonymous ? "anonymous" : comment.commenter }}</p>
+                    <p class="comment-content">{{ comment.content }}</p>
+                </div>
+                <div class="comment-date">
+                   {{ comment.time.split('T')[0] }}
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="flex-2 comment-area">
+        <p class="comment-title">Leave your comment</p>
+        <form class="example-form">
+            <textarea placeholder="Please leave your comment" id="comment-form" [(ngModel)]="comment" name="userComment"></textarea>
+        </form>
+        <button mat-button color="primary" (click)="onPost(true)" class="submit">Post (anonymous)</button>
+        <button mat-button color="primary" (click)="onPost(false)" class="submit">Post (public)</button>
+    </section>
+</main>
+
+
+
+
+
