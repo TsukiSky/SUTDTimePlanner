@@ -22,7 +22,8 @@ export class HomeComponent implements OnInit {
   termList = [1,2,3,4,5,6,7,8];
   pillarList = ["ASD", "CSD", "DAI", "EPD", "ESD", "HASS"];
   searchForm!: FormGroup;
-  isCollapsed = true;
+  isRightBarCollapsed = true;
+  isLeftBarCollapsed = true;
   sideBarCardView = false;
 
   courseList: Course[] = [];
@@ -44,7 +45,7 @@ export class HomeComponent implements OnInit {
   alternativeClasses: Map<Class, Class[]> = new Map<Class, Class[]>();
 
   user?: User;
-  
+
 
   async requestCourseData() {
     console.log(this.user)
@@ -263,13 +264,13 @@ export class HomeComponent implements OnInit {
           classId: clas.classId
         })
       })
-  
+
       console.log(response)
       this.user?.enrolCourseIds?.push(course.courseId)
       this.user?.classesIds?.push(clas.classId)
       this.globalStateService.updateUserInfo({...this.user!})
     }
-   
+
 
 
     if (this.expandCourseSet.has(course.courseId)) {

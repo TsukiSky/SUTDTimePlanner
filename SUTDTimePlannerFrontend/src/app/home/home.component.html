@@ -2,14 +2,18 @@
   <nz-layout>
     <nz-layout>
    <!-- Left sidebar  -->
-     <!-- <nz-sider id="left-sidebar" [(nzCollapsed)]="!isCollapsed" [nzCollapsedWidth]="50" nzWidth="14%">
+     <nz-sider id="left-sidebar" [nzCollapsible]="true" [(nzCollapsed)]="isLeftBarCollapsed" [nzCollapsedWidth]="50" nzWidth="14%" [nzTrigger]="leftSidebarTrigger">
        <ul nz-menu nzMode="inline">
          <li nz-menu-item nzSelected>
            <span nz-icon nzType="calendar" nzTheme="outline"></span>
            <span>Timetable</span>
          </li>
+         <li nz-menu-item>
+           <span nz-icon nzType="read" nzTheme="outline"></span>
+           <span>Courses</span>
+         </li>
        </ul>
-     </nz-sider> -->
+     </nz-sider>
       <nz-content>
         <div id="body">
           <div class="container">
@@ -123,8 +127,8 @@
           </div>
         </div>
       </nz-content>
-      <nz-sider [nzCollapsible]="true" [(nzCollapsed)]="isCollapsed" [nzCollapsedWidth]='0'
-                [nzZeroTrigger]="leftSidebarTrigger" [nzReverseArrow]="true" nzWidth="36%" id="sidebar">
+      <nz-sider [nzCollapsible]="true" [(nzCollapsed)]="isRightBarCollapsed" [nzCollapsedWidth]='0'
+                [nzZeroTrigger]="rightSidebarTrigger" [nzReverseArrow]="true" nzWidth="36%" id="sidebar">
         <div id="sidebar-main-container">
           <div class="sidebar-container">
             <div class="sidebar-container-header">
@@ -250,11 +254,16 @@
       </div>
     </nz-footer>
   </nz-layout>
-  
+
   <ng-template #leftSidebarTrigger>
     <div id="leftSidebarTrigger">
-      <span nz-icon nzType="double-left" nzTheme="outline" *ngIf="isCollapsed"></span>
-      <span nz-icon nzType="double-right" nzTheme="outline" *ngIf="!isCollapsed"></span>
+      <span nz-icon nzType="double-left" nzTheme="outline" *ngIf="!isLeftBarCollapsed"></span>
+      <span nz-icon nzType="double-right" nzTheme="outline" *ngIf="isLeftBarCollapsed"></span>
     </div>
   </ng-template>
-  
+<ng-template #rightSidebarTrigger>
+  <div id="rightSidebarTrigger">
+    <span nz-icon nzType="double-left" nzTheme="outline" *ngIf="isRightBarCollapsed"></span>
+    <span nz-icon nzType="double-right" nzTheme="outline" *ngIf="!isRightBarCollapsed"></span>
+  </div>
+</ng-template>
