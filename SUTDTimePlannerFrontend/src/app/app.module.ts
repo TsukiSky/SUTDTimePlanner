@@ -18,6 +18,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzNotificationModule } from 'ng-zorro-antd/notification';
+import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzCardModule } from 'ng-zorro-antd/card';
@@ -37,6 +38,7 @@ import { LoginformComponent } from './common/loginform/loginform.component';
 import { MaterialModule } from './material.module';
 import { RegisterformComponent } from './common/registerform/registerform.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { CoursesComponent } from './courses/courses.component';
 
 registerLocaleData(en);
 
@@ -53,7 +55,8 @@ const ngZorroConfig: NzConfig = {
     HeaderComponent,
     LoginformComponent,
     RegisterformComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
+    CoursesComponent
   ],
     imports: [
         BrowserModule,
@@ -79,6 +82,7 @@ const ngZorroConfig: NzConfig = {
         NzMenuModule,
         NzDropDownModule,
         NzModalModule,
+        NzCommentModule,
         MaterialModule
     ],
   providers: [

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-registerform',
@@ -12,7 +13,8 @@ export class RegisterformComponent implements OnInit {
   public username = '';
   public email = '';
   public password = '';
-  constructor() { }
+
+  constructor(private nzMessageService: NzMessageService) { }
 
   ngOnInit(): void {
   }
@@ -28,7 +30,7 @@ export class RegisterformComponent implements OnInit {
   public async register(): Promise<void> {
     console.log("registering")
     if (!this.validateEmail()) {
-      alert("Please use your sutd email")
+      this.nzMessageService.error("Please use your sutd email")
       return
     }
     const user = {
@@ -48,7 +50,13 @@ export class RegisterformComponent implements OnInit {
     
     console.log(response)
     let data = await response.text()
-    alert(data)
+    if (data === "success") {
+      this.nzMessageService.success("Registration successful")
+      this.switchLogin()
+    } else {
+      this.nzMessageService.error(data)
+    }
+
   }
 
   public validateEmail() {

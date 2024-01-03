@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { GlobalStoreService } from 'src/app/global-store.service';
-
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-loginform',
@@ -15,7 +15,8 @@ export class LoginformComponent implements OnInit {
   public loginValid = true;
   public email = '';
   public password = '';
-  constructor(private router: Router, private globalStateService: GlobalStoreService) { }
+  constructor(private router: Router, private globalStateService: GlobalStoreService,
+    private nzMessageService: NzMessageService) { }
 
   ngOnInit(): void {
   }
@@ -45,7 +46,7 @@ export class LoginformComponent implements OnInit {
         this.globalStateService.updateUserInfo(JSON.parse(data))
         this.router.navigate(['/'])
       } else {
-        alert("Invalid email or password")
+        this.nzMessageService.error("Invalid email or password")
       }
     }
     

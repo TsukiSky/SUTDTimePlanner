@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -18,4 +19,8 @@ public class Comment {
     private String commenter;
     private Boolean isAnonymous;
     private Date time = new Date();
+    @ElementCollection
+    private List<Integer> likes;
+    @ElementCollection
+    private List<Integer> dislikes;
 }
