@@ -1,7 +1,7 @@
 <nz-layout>
   <nz-header class="header">
     <div id="logo">
-      <img id="logo-img" src="../assets/logo.png" alt="logo">
+      <a href="/" id="logo-img-link"><img id="logo-img" src="../assets/logo.png" alt="logo"></a>
       <button *ngIf="loggedIn" nz-button [nzDropdownMenu]="menu" nz-dropdown nzType="primary" id="setting-icon"
               nzShape="circle" nzSize="large"><span nz-icon nzType="setting" nzTheme="outline" nzSpin="false" style="font-size: 24px"></span></button>
       <nz-dropdown-menu #menu="nzDropdownMenu">

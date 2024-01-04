@@ -51,7 +51,7 @@ export class RegisterformComponent implements OnInit {
     console.log(response)
     let data = await response.text()
     if (data === "success") {
-      this.nzMessageService.success("Registration successful")
+      this.nzMessageService.success("Registration successful, please check email for verification.")
       this.switchLogin()
     } else {
       this.nzMessageService.error(data)

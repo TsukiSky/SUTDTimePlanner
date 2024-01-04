@@ -5,39 +5,83 @@ import com.tsukisky.sutdtimeplannerbackend.repository.ClassRepository;
 import com.tsukisky.sutdtimeplannerbackend.repository.CourseRepository;
 import com.tsukisky.sutdtimeplannerbackend.repository.UserRepository;
 import jakarta.annotation.Resource;
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
 public class UserService {
     @Resource
     private UserRepository userRepository;
-    @Resource
-    private CourseRepository courseRepository;
-    @Resource
-    private ClassRepository classRepository;
 
-    public boolean checkUsernameExists(String username) {
-        User user = userRepository.findUserByUsername(username);
-        return user != null;
+    @Resource
+    private JavaMailSender javaMailSender;
+
+    @Value("${base_url}")
+    private String BASE_URL;
+
+    public User checkUsernameExists(String username) {
+        return userRepository.findUserByUsername(username);
     }
 
-    public boolean checkEmailExists(String email) {
-        User user = userRepository.findUserByEmail(email);
-        return user != null;
+    public User checkEmailExists(String email) {
+        return userRepository.findUserByEmail(email);
     }
 
-    public Integer addUser(User user) {
-        if (checkEmailExists(user.getEmail())){
+    public Integer addUser(User user) throws MessagingException {
+        User checkUser = checkEmailExists(user.getEmail());
+        if (checkUser!=null && checkUser.getEmailVerified()){
             return 1;
-        } else if (checkUsernameExists(user.getUsername())) {
+        } else if (checkUsernameExists(user.getUsername())!=null) {
             return 2;
         } else {
-            userRepository.save(user);
+//            send email verification to user
+            if (checkUser!=null) {
+                String token = UUID.randomUUID().toString();
+                checkUser.setVerificationToken(token);
+                MimeMessage mail = javaMailSender.createMimeMessage();
+                MimeMessageHelper helper = new MimeMessageHelper(mail, true);
+
+                helper.setTo(checkUser.getEmail());
+                helper.setSubject("Email verification for SUTD time planner");
+                String content = "<html><body>" +
+                        "<p>Please click the button below to verify your email:</p>" +
+                        "<a href='" + BASE_URL + "/user/verify?token=" + token + "' style='background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px;'>Verify Email</a>" +
+                        "</body></html>";
+                helper.setText(content, true);
+                javaMailSender.send(mail);
+                System.out.println("email sent");
+                userRepository.save(checkUser);
+
+            } else {
+                String token = UUID.randomUUID().toString();
+                user.setVerificationToken(token);
+                MimeMessage mail = javaMailSender.createMimeMessage();
+                MimeMessageHelper helper = new MimeMessageHelper(mail, true);
+
+                helper.setTo(user.getEmail());
+                helper.setSubject("Email verification for SUTD time planner");
+                String content = "<html><body>" +
+                        "<p>Please click the button below to verify your email:</p>" +
+                        "<a href='" + BASE_URL + "/user/verify?token=" + token + "' style='background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px;'>Verify Email</a>" +
+                        "</body></html>";
+                helper.setText(content, true);
+                javaMailSender.send(mail);
+                System.out.println("email sent");
+                userRepository.save(user);
+
+            }
+
             return 0;
         }
     }
@@ -47,7 +91,7 @@ public class UserService {
         if (checkUser==null) {
             return null;
         }
-        if (Objects.equals(checkUser.getPassword(), user.getPassword())){
+        if (Objects.equals(checkUser.getPassword(), user.getPassword()) && checkUser.getEmailVerified()){
             System.out.println(checkUser.getEnrolCourseIds());
             return checkUser;
         } else {
@@ -146,6 +190,24 @@ public class UserService {
             return true;
         } catch (Exception e) {
             e.getStackTrace();
+            return false;
+        }
+    }
+
+    public boolean verifyEmail(String token) {
+        User user = userRepository.findUserByVerificationToken(token);
+        if (user!=null) {
+            user.setEmailVerified(true);
+            userRepository.save(user);
+            SimpleMailMessage mailMessage = new SimpleMailMessage();
+            mailMessage.setTo(user.getEmail());
+            mailMessage.setSubject("Successful email verification");
+            String text = "Hi " + user.getUsername() + ", your email has been verified. Enjoy your "+
+                    "journey with SUTD Time Planner!";
+            mailMessage.setText(text);
+            javaMailSender.send(mailMessage);
+            return true;
+        } else {
             return false;
         }
     }

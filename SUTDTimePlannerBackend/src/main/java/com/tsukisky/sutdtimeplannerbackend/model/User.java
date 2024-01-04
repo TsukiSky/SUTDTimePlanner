@@ -20,6 +20,8 @@ public class User {
     private String firstName;
     private String lastName;
     private String password;
+    private Boolean emailVerified = false;
+    private String verificationToken;
 
 
     @ElementCollection

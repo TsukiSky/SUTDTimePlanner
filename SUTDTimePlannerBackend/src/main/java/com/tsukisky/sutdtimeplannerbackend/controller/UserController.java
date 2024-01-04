@@ -4,6 +4,7 @@ import com.tsukisky.sutdtimeplannerbackend.common.*;
 import com.tsukisky.sutdtimeplannerbackend.model.User;
 import com.tsukisky.sutdtimeplannerbackend.service.UserService;
 import jakarta.annotation.Resource;
+import jakarta.mail.MessagingException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<String> addUser(@RequestBody User user) {
+    public ResponseEntity<String> addUser(@RequestBody User user) throws MessagingException {
         System.out.println(user);
         int success = userService.addUser(user);
         if (success==0) {
@@ -63,6 +64,11 @@ public class UserController {
     @PostMapping("/alter_class")
     public boolean alterClass(@RequestBody RequestOldClassIdNewClassId requestOldClassIdNewClassId) {
         return userService.alterClass(requestOldClassIdNewClassId.getUsername(), requestOldClassIdNewClassId.getOldClassId(), requestOldClassIdNewClassId.getNewClassId());
+    }
+
+    @GetMapping("/verify")
+    public boolean verify(@RequestParam("token") String token) {
+        return userService.verifyEmail(token);
     }
 
 }
