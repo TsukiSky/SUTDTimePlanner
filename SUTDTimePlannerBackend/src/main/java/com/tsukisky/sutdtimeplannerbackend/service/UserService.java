@@ -25,7 +25,7 @@ public class UserService {
     private UserRepository userRepository;
 
     @Resource
-    private JavaMailSender javaMailSender;
+    private EmailService emailService;
 
     @Value("${base_url}")
     private String BASE_URL;
@@ -49,7 +49,7 @@ public class UserService {
             if (checkUser!=null) {
                 String token = UUID.randomUUID().toString();
                 checkUser.setVerificationToken(token);
-                MimeMessage mail = javaMailSender.createMimeMessage();
+                MimeMessage mail = emailService.createMimeMessage();
                 MimeMessageHelper helper = new MimeMessageHelper(mail, true);
 
                 helper.setTo(checkUser.getEmail());
@@ -59,14 +59,14 @@ public class UserService {
                         "<a href='" + BASE_URL + "/user/verify?token=" + token + "' style='background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px;'>Verify Email</a>" +
                         "</body></html>";
                 helper.setText(content, true);
-                javaMailSender.send(mail);
+                emailService.sendMail(mail);
                 System.out.println("email sent");
                 userRepository.save(checkUser);
 
             } else {
                 String token = UUID.randomUUID().toString();
                 user.setVerificationToken(token);
-                MimeMessage mail = javaMailSender.createMimeMessage();
+                MimeMessage mail = emailService.createMimeMessage();
                 MimeMessageHelper helper = new MimeMessageHelper(mail, true);
 
                 helper.setTo(user.getEmail());
@@ -76,7 +76,7 @@ public class UserService {
                         "<a href='" + BASE_URL + "/user/verify?token=" + token + "' style='background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px;'>Verify Email</a>" +
                         "</body></html>";
                 helper.setText(content, true);
-                javaMailSender.send(mail);
+                emailService.sendMail(mail);
                 System.out.println("email sent");
                 userRepository.save(user);
 
@@ -205,7 +205,7 @@ public class UserService {
             String text = "Hi " + user.getUsername() + ", your email has been verified. Enjoy your "+
                     "journey with SUTD Time Planner!";
             mailMessage.setText(text);
-            javaMailSender.send(mailMessage);
+            emailService.sendMail(mailMessage);
             return true;
         } else {
             return false;
