@@ -40,6 +40,7 @@ import { RegisterformComponent } from './common/registerform/registerform.compon
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { CoursesComponent } from './courses/courses.component';
 import { LeftSidebarComponent } from './common/left-sidebar/left-sidebar.component';
+import {NzDividerModule} from "ng-zorro-antd/divider";
 
 registerLocaleData(en);
 
@@ -60,33 +61,34 @@ const ngZorroConfig: NzConfig = {
     CoursesComponent,
     LeftSidebarComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        NzLayoutModule,
-        NzTableModule,
-        NzFormModule,
-        NzSelectModule,
-        NzButtonModule,
-        ReactiveFormsModule,
-        NzListModule,
-        NzMessageModule,
-        NzNotificationModule,
-        NzEmptyModule,
-        NzIconModule,
-        NzCardModule,
-        NzSwitchModule,
-        NzDescriptionsModule,
-        NzPaginationModule,
-        NzMenuModule,
-        NzDropDownModule,
-        NzModalModule,
-        NzCommentModule,
-        MaterialModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NzLayoutModule,
+    NzTableModule,
+    NzFormModule,
+    NzSelectModule,
+    NzButtonModule,
+    ReactiveFormsModule,
+    NzListModule,
+    NzMessageModule,
+    NzNotificationModule,
+    NzEmptyModule,
+    NzIconModule,
+    NzCardModule,
+    NzSwitchModule,
+    NzDescriptionsModule,
+    NzPaginationModule,
+    NzMenuModule,
+    NzDropDownModule,
+    NzModalModule,
+    NzCommentModule,
+    MaterialModule,
+    NzDividerModule
+  ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
     { provide: NZ_CONFIG, useValue: ngZorroConfig }
