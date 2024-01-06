@@ -1,271 +1,274 @@
-<app-header  [loggedIn]="true"></app-header>
-  <nz-layout>
-    <nz-layout>
-   <!-- Left sidebar  -->
-     <nz-sider id="left-sidebar" [nzCollapsible]="true" [(nzCollapsed)]="isLeftBarCollapsed" [nzCollapsedWidth]="50" nzWidth="14%" [nzTrigger]="leftSidebarTrigger">
-       <ul nz-menu nzMode="inline">
-         <li nz-menu-item nzSelected>
-          <a [routerLink]="['/']">
-            <span nz-icon nzType="calendar" nzTheme="outline"></span>
-            <span>Timetable</span>
-          </a>
-         </li>
-         <li nz-menu-item>
-          <a [routerLink]="['/courses']">
-            <span nz-icon nzType="read" nzTheme="outline"></span>
-            <span>Courses</span>
-          </a>
-           
-         </li>
-       </ul>
-     </nz-sider>
-      <nz-content>
-        <div id="body">
-          <div class="container">
-            <app-timetable (classSetChanged)="onClassSetChange($event)" [classSet]="enrolledClassSet" [alternativeClasses]="alternativeClasses" id="timetable"></app-timetable>
+<nz-layout>
+  <div id="body">
+    <div class="container">
+      <app-timetable (classSetChanged)="onClassSetChange($event)" [classSet]="enrolledClassSet"
+                     [alternativeClasses]="alternativeClasses" id="timetable"></app-timetable>
+    </div>
+    <div id="quote-container">
+      <p id="quotation-text">“But thoughts the slave of life, and life, Time’s fool, And Time, that takes survey of all
+        the world, Must have a stop.” ― William Shakespeare, King Henry IV, Part 1</p>
+    </div>
+    <div class="container">
+      <div id="function-btn-container">
+        <div id="time-info-box">
+          <b>2022-2023 Summer</b>
+        </div>
+        <button nz-button nzType="primary" class="function-btn" (click)="onDownload('16:9')"><span nz-icon
+                                                                                                   nzType="download"
+                                                                                                   nzTheme="outline"></span>Download
+          (16:9)
+        </button>
+        <button nz-button nzType="primary" class="function-btn" (click)="onDownload('2048×1080')"><span nz-icon
+                                                                                                        nzType="download"
+                                                                                                        nzTheme="outline"></span>Download
+          (2048×1080)
+        </button>
+      </div>
+    </div>
+    <div class="container">
+      <form nz-form [formGroup]="searchForm" nzLayout="horizontal">
+        <div nz-row nzGutter="24">
+          <div nz-col nzSpan="4">
+            <nz-form-item>
+              <nz-form-control>
+                <nz-select nzPlaceHolder="Term" nzAllowClear formControlName="term">
+                  <nz-option
+                    *ngFor="let term of termList" [nzLabel]="term" [nzValue]="term">
+                  </nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
           </div>
-          <div id="quote-container">
-            <p id="quotation-text">“But thoughts the slave of life, and life, Time’s fool, And Time, that takes survey of all the world, Must have a stop.” ― William Shakespeare, King Henry IV, Part 1</p>
+          <div nz-col nzSpan="4">
+            <nz-form-item>
+              <nz-form-control>
+                <nz-select nzPlaceHolder="Pillar" nzAllowClear formControlName="pillar">
+                  <nz-option
+                    *ngFor="let pillar of pillarList" [nzLabel]="pillar" [nzValue]="pillar">
+                  </nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
           </div>
-          <div class="container">
-            <div id="function-btn-container">
-            <div id="time-info-box">
-              <b>2022-2023 Summer</b>
-            </div>
-            <button nz-button nzType="primary" class="function-btn" (click)="onDownload('16:9')"><span nz-icon nzType="download" nzTheme="outline"></span>Download (16:9)</button>
-            <button nz-button nzType="primary" class="function-btn" (click)="onDownload('2048×1080')"><span nz-icon nzType="download" nzTheme="outline"></span>Download (2048×1080)</button>
-            </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-control>
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a course" formControlName="name">
+                  <nz-option
+                    *ngFor="let course of courseList" [nzLabel]="course.name" [nzValue]="course.name">
+                  </nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
           </div>
-          <div class="container">
-            <form nz-form [formGroup]="searchForm" nzLayout="horizontal">
-              <div nz-row nzGutter="24">
-                <div nz-col nzSpan="4">
-                  <nz-form-item>
-                    <nz-form-control>
-                      <nz-select nzPlaceHolder="Term" nzAllowClear formControlName="term">
-                        <nz-option
-                          *ngFor="let term of termList" [nzLabel]="term" [nzValue]="term">
-                        </nz-option>
-                      </nz-select>
-                    </nz-form-control>
-                  </nz-form-item>
-                </div>
-                <div nz-col nzSpan="4">
-                  <nz-form-item>
-                    <nz-form-control>
-                      <nz-select nzPlaceHolder="Pillar" nzAllowClear formControlName="pillar">
-                        <nz-option
-                          *ngFor="let pillar of pillarList" [nzLabel]="pillar" [nzValue]="pillar">
-                        </nz-option>
-                      </nz-select>
-                    </nz-form-control>
-                  </nz-form-item>
-                </div>
-                <div nz-col nzSpan="12">
-                  <nz-form-item>
-                    <nz-form-control>
-                      <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a course" formControlName="name">
-                        <nz-option
-                          *ngFor="let course of courseList" [nzLabel]="course.name" [nzValue]="course.name">
-                        </nz-option>
-                      </nz-select>
-                    </nz-form-control>
-                  </nz-form-item>
-                </div>
-                <div nz-col nzSpan="4">
-                  <button nz-button id="search-button" nzType="primary" nzSize="default" (click)="onSearch()">Search</button>
-                </div>
-              </div>
-            </form>
-            <nz-table id="search-table" nzSize="middle" [nzData]="filteredCourse" #searchTable nzShowPagination nzShowSizeChanger
-                      [nzPageSize]=pageSize [nzPageIndex]=currentPageIndex [nzTotal]="filteredCourse.length"
-                      (nzPageIndexChange)="onPageIndexChange($event)" (nzPageSizeChange)="onPageSizeChange($event)"
-                      [nzNoResult]="no_course_found_template" [nzLoading]="tableIsLoading">
-              <thead>
-                <tr>
-                  <th nzWidth="60px"></th>
-                  <th nzWidth="20%">Term</th>
-                  <th nzWidth="20%">Pillar</th>
-                  <th nzWidth="40%">Subject</th>
-                  <!-- <th>Lecturers</th> -->
-                  <!-- <th>Core/Elect</th> -->
-                  <!-- <th>Pre-requisites</th> -->
-                  <th nzWidth="20%">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <ng-container *ngFor="let course of currentPageCourse">
-                  <tr>
-                    <td [nzExpand]="expandCourseSet.has(course.courseId)" (nzExpandChange)="onCourseExpandChange(course.courseId, $event)"></td>
-                    <td>{{ course.termsInString }}</td>
-                    <td>{{ course.pillar }}</td>
-                    <td><a [routerLink]="['/course', course.courseId]">{{ course.name }}</a></td>
-                    <!-- <td>{{ course.classes[0].lecturersInString}}</td> -->
-                    <!-- <td>{{course.isCore? "Core": "Elective"}}</td> -->
-                    <!-- <td>{{ data.preRequisites }}</td> -->
-                    <td>
-                      <button nz-button nzType="link" (click)="enrollCourse(course)" [disabled]="enrolledCourseSet.has(course)">enroll</button>
-                      <span class="star-button main-table-star-button" nz-icon nzType="star" [nzTheme]="course.isStarred? 'fill': 'outline'" (click)="onStar(course)" [style.color] = "'#FAE746'"></span>
-                    </td>
-                    <span></span>
-                  </tr>
-                  <tr [nzExpand]="expandCourseSet.has(course.courseId)">
-                    <nz-table #classTable [nzData]="course.classes" nzSize="small" nzShowPagination="false">
-                      <tbody>
-                      <tr *ngFor="let clas of classTable.data">
-                        <td>{{ classTable.data.indexOf(clas) + 1 }}</td>
-                        <td>{{ clas.timeInString }}</td>
-                        <td><a nz-button nzType="link" (click)="enrollClass(course, classTable.data.indexOf(clas), true)" [disabled]="enrolledCourseSet.has(course)">enroll</a></td>
-                      </tr>
-                      </tbody>
-                    </nz-table>
-                    <p></p>
-                    <!-- <span>{{ course.description }}</span> -->
-                    <p></p>
-                  </tr>
-                </ng-container>
-              </tbody>
-            </nz-table>
-            <ng-template #no_course_found_template>
-              <nz-empty [nzNotFoundImage]="'../../assets/no-data.png'" nzNotFoundContent="Oops... No eligible course found"></nz-empty>
-            </ng-template>
+          <div nz-col nzSpan="4">
+            <button nz-button id="search-button" nzType="primary" nzSize="default" (click)="onSearch()">Search</button>
           </div>
         </div>
-      </nz-content>
-      <nz-sider [nzCollapsible]="true" [(nzCollapsed)]="isRightBarCollapsed" [nzCollapsedWidth]='0'
-                [nzZeroTrigger]="rightSidebarTrigger" [nzReverseArrow]="true" nzWidth="36%" id="sidebar">
-        <div id="sidebar-main-container">
-          <div class="sidebar-container">
-            <div class="sidebar-container-header">
-              <b>Enrolled Courses</b>
-  <!--            <div class="sidebar-display-switch">-->
-  <!--              <span>card view </span>-->
-  <!--              <nz-switch [(ngModel)]="sideBarCardView"></nz-switch>-->
-  <!--            </div>-->
-            </div>
-            <nz-card *ngIf="enrolledCourseSet.size!=0 && sideBarCardView">
-              <div nz-card-grid class="course-card" *ngFor="let course of enrolledCourseSet" [style.background-color]="course.bgColor">
-                <!-- <span class="course-card-title">{{ course.subject }}</span> -->
-                <nz-descriptions nzTitle="{{course.name}}" nzSize="small" [nzColumn]="1">
-                  <nz-descriptions-item nzTitle="Pillar">{{ course.pillar }}</nz-descriptions-item>
-                  <!-- <nz-descriptions-item nzTitle="Instructors">{{ course.classes[0].lecturersInString }}</nz-descriptions-item> -->
-                  <!-- <nz-descriptions-item nzTitle="Is Core"> {{course.isCore? "Yes": "No"}} </nz-descriptions-item> -->
-                </nz-descriptions>
-                <button nz-button nzType="default" (click)="dropCourse(course.courseId, course.name)"><span nz-icon nzType="delete" nzTheme="outline"></span></button>
-                <button nz-button nzType="default"><a [href]="course.link" target="_blank"><span nz-icon nzType="link" nzTheme="outline"></span></a></button>
-                <!--          <button nz-button nzType="default"><span class="star-button" nz-icon nzType="star" [nzTheme]="course.isStarred? 'fill': 'outline'" (click)="onStar(course)" [style.color] = "'#FAE746'"></span></button>-->
-              </div>
-            </nz-card>
-            <ul nz-list nzBordered nzSize="large" *ngIf="enrolledCourseSet.size!=0 && !sideBarCardView">
-              <li nz-list-item *ngFor="let course of enrolledCourseSet" [style.background-color]="course.bgColor" nzNoFlex>
-                <nz-row>
-                  <nz-col nzSpan="16">
-                    <span>{{ course.name }}</span>
-                  </nz-col>
-                  <nz-col nzSpan="8" class="list-item-bar-container">
-                    <ul nz-list-item-actions>
-                      <nz-list-item-action>
-                        <a (click)="dropCourse(course.courseId, course.name)">drop</a>
-                      </nz-list-item-action>
-                      <nz-list-item-action>
-                        <a [href]="course.link" target="_blank">more info</a>
-                      </nz-list-item-action>
-                    </ul>
-                  </nz-col>
-                </nz-row>
-              </li>
-            </ul>
-            <nz-empty *ngIf="enrolledCourseSet.size==0" [nzNotFoundImage]="'../../assets/no-course-enrolled.png'" [nzNotFoundContent]="no_course_enrolled_template">
-              <ng-template #no_course_enrolled_template>
+      </form>
+      <nz-table id="search-table" nzSize="middle" [nzData]="filteredCourse" #searchTable nzShowPagination
+                nzShowSizeChanger
+                [nzPageSize]=pageSize [nzPageIndex]=currentPageIndex [nzTotal]="filteredCourse.length"
+                (nzPageIndexChange)="onPageIndexChange($event)" (nzPageSizeChange)="onPageSizeChange($event)"
+                [nzNoResult]="no_course_found_template" [nzLoading]="tableIsLoading">
+        <thead>
+        <tr>
+          <th nzWidth="60px"></th>
+          <th nzWidth="20%">Term</th>
+          <th nzWidth="20%">Pillar</th>
+          <th nzWidth="40%">Subject</th>
+          <!-- <th>Lecturers</th> -->
+          <!-- <th>Core/Elect</th> -->
+          <!-- <th>Pre-requisites</th> -->
+          <th nzWidth="20%">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <ng-container *ngFor="let course of currentPageCourse">
+          <tr>
+            <td [nzExpand]="expandCourseSet.has(course.courseId)"
+                (nzExpandChange)="onCourseExpandChange(course.courseId, $event)"></td>
+            <td>{{ course.termsInString }}</td>
+            <td>{{ course.pillar }}</td>
+            <td><a [routerLink]="['/course', course.courseId]">{{ course.name }}</a></td>
+            <!-- <td>{{ course.classes[0].lecturersInString}}</td> -->
+            <!-- <td>{{course.isCore? "Core": "Elective"}}</td> -->
+            <!-- <td>{{ data.preRequisites }}</td> -->
+            <td>
+              <button nz-button nzType="link" (click)="enrollCourse(course)" [disabled]="enrolledCourseSet.has(course)">
+                enroll
+              </button>
+              <span class="star-button main-table-star-button" nz-icon nzType="star"
+                    [nzTheme]="course.isStarred? 'fill': 'outline'" (click)="onStar(course)"
+                    [style.color]="'#FAE746'"></span>
+            </td>
+            <span></span>
+          </tr>
+          <tr [nzExpand]="expandCourseSet.has(course.courseId)">
+            <nz-table #classTable [nzData]="course.classes" nzSize="small" nzShowPagination="false">
+              <tbody>
+              <tr *ngFor="let clas of classTable.data">
+                <td>{{ classTable.data.indexOf(clas) + 1 }}</td>
+                <td>{{ clas.timeInString }}</td>
+                <td><a nz-button nzType="link" (click)="enrollClass(course, classTable.data.indexOf(clas), true)"
+                       [disabled]="enrolledCourseSet.has(course)">enroll</a></td>
+              </tr>
+              </tbody>
+            </nz-table>
+            <p></p>
+            <!-- <span>{{ course.description }}</span> -->
+            <p></p>
+          </tr>
+        </ng-container>
+        </tbody>
+      </nz-table>
+      <ng-template #no_course_found_template>
+        <nz-empty [nzNotFoundImage]="'../../assets/no-data.png'"
+                  nzNotFoundContent="Oops... No eligible course found"></nz-empty>
+      </ng-template>
+    </div>
+  </div>
+  <nz-sider [nzCollapsible]="true" [(nzCollapsed)]="isRightBarCollapsed" [nzCollapsedWidth]='0'
+            [nzZeroTrigger]="rightSidebarTrigger" [nzReverseArrow]="true" nzWidth="36%" id="sidebar">
+    <div id="sidebar-main-container">
+      <div class="sidebar-container">
+        <div class="sidebar-container-header">
+          <b>Enrolled Courses</b>
+          <!--            <div class="sidebar-display-switch">-->
+          <!--              <span>card view </span>-->
+          <!--              <nz-switch [(ngModel)]="sideBarCardView"></nz-switch>-->
+          <!--            </div>-->
+        </div>
+        <nz-card *ngIf="enrolledCourseSet.size!=0 && sideBarCardView">
+          <div nz-card-grid class="course-card" *ngFor="let course of enrolledCourseSet"
+               [style.background-color]="course.bgColor">
+            <!-- <span class="course-card-title">{{ course.subject }}</span> -->
+            <nz-descriptions nzTitle="{{course.name}}" nzSize="small" [nzColumn]="1">
+              <nz-descriptions-item nzTitle="Pillar">{{ course.pillar }}</nz-descriptions-item>
+              <!-- <nz-descriptions-item nzTitle="Instructors">{{ course.classes[0].lecturersInString }}</nz-descriptions-item> -->
+              <!-- <nz-descriptions-item nzTitle="Is Core"> {{course.isCore? "Yes": "No"}} </nz-descriptions-item> -->
+            </nz-descriptions>
+            <button nz-button nzType="default" (click)="dropCourse(course.courseId, course.name)"><span nz-icon
+                                                                                                        nzType="delete"
+                                                                                                        nzTheme="outline"></span>
+            </button>
+            <button nz-button nzType="default"><a [href]="course.link" target="_blank"><span nz-icon nzType="link"
+                                                                                             nzTheme="outline"></span></a>
+            </button>
+            <!--          <button nz-button nzType="default"><span class="star-button" nz-icon nzType="star" [nzTheme]="course.isStarred? 'fill': 'outline'" (click)="onStar(course)" [style.color] = "'#FAE746'"></span></button>-->
+          </div>
+        </nz-card>
+        <ul nz-list nzBordered nzSize="large" *ngIf="enrolledCourseSet.size!=0 && !sideBarCardView">
+          <li nz-list-item *ngFor="let course of enrolledCourseSet" [style.background-color]="course.bgColor"
+              nzNoFlex>
+            <nz-row>
+              <nz-col nzSpan="16">
+                <span>{{ course.name }}</span>
+              </nz-col>
+              <nz-col nzSpan="8" class="list-item-bar-container">
+                <ul nz-list-item-actions>
+                  <nz-list-item-action>
+                    <a (click)="dropCourse(course.courseId, course.name)">drop</a>
+                  </nz-list-item-action>
+                  <nz-list-item-action>
+                    <a [href]="course.link" target="_blank">more info</a>
+                  </nz-list-item-action>
+                </ul>
+              </nz-col>
+            </nz-row>
+          </li>
+        </ul>
+        <nz-empty *ngIf="enrolledCourseSet.size==0" [nzNotFoundImage]="'../../assets/no-course-enrolled.png'"
+                  [nzNotFoundContent]="no_course_enrolled_template">
+          <ng-template #no_course_enrolled_template>
             <span>
               No course enrolled
             </span>
-              </ng-template>
-            </nz-empty>
-          </div>
-          <div class="sidebar-container">
-            <div class="sidebar-container-header">
-              <b>Course Conflicts</b>
-            </div>
-            <ul nz-list class="course-conflict-list" nzBordered nzSize="large" *ngFor="let courseCroup of conflictCourseGroups">
-              <li nz-list-item *ngFor="let course of courseCroup" [style.background-color]="course.bgColor" nzNoFlex>
-                <nz-row>
-                  <nz-col nzSpan="16">
-                    <span>{{ course.name }}</span>
-                  </nz-col>
-                  <nz-col nzSpan="8" class="list-item-bar-container">
-                    <ul nz-list-item-actions>
-                      <nz-list-item-action>
-                        <a (click)="dropCourse(course.courseId, course.name)">drop</a>
-                      </nz-list-item-action>
-                      <nz-list-item-action>
-                        <a [href]="course.link" target="_blank">more info</a>
-                      </nz-list-item-action>
-                    </ul>
-                  </nz-col>
-                </nz-row>
-              </li>
-            </ul>
-            <nz-empty *ngIf="conflictCourseGroups.length==0" [nzNotFoundImage]="'../../assets/no-course-conflicts.png'" [nzNotFoundContent]="no_course_conflicts_template">
-              <ng-template #no_course_conflicts_template>
+          </ng-template>
+        </nz-empty>
+      </div>
+      <div class="sidebar-container">
+        <div class="sidebar-container-header">
+          <b>Course Conflicts</b>
+        </div>
+        <ul nz-list class="course-conflict-list" nzBordered nzSize="large"
+            *ngFor="let courseCroup of conflictCourseGroups">
+          <li nz-list-item *ngFor="let course of courseCroup" [style.background-color]="course.bgColor" nzNoFlex>
+            <nz-row>
+              <nz-col nzSpan="16">
+                <span>{{ course.name }}</span>
+              </nz-col>
+              <nz-col nzSpan="8" class="list-item-bar-container">
+                <ul nz-list-item-actions>
+                  <nz-list-item-action>
+                    <a (click)="dropCourse(course.courseId, course.name)">drop</a>
+                  </nz-list-item-action>
+                  <nz-list-item-action>
+                    <a [href]="course.link" target="_blank">more info</a>
+                  </nz-list-item-action>
+                </ul>
+              </nz-col>
+            </nz-row>
+          </li>
+        </ul>
+        <nz-empty *ngIf="conflictCourseGroups.length==0" [nzNotFoundImage]="'../../assets/no-course-conflicts.png'"
+                  [nzNotFoundContent]="no_course_conflicts_template">
+          <ng-template #no_course_conflicts_template>
             <span>
               No conflicts!
             </span>
-              </ng-template>
-            </nz-empty>
-          </div>
-          <div class="sidebar-container">
-            <div class="sidebar-container-header">
-              <b>Starred Courses</b>
-            </div>
-            <ul nz-list nzBordered nzSize="large" *ngIf="starredCourseSet.size!=0">
-              <li nz-list-item *ngFor="let course of starredCourseSet" [style.background-color]="course.bgColor" nzNoFlex>
-                <nz-row>
-                  <nz-col nzSpan="12">
-                    <span>{{ course.name }}</span>
-                  </nz-col>
-                  <nz-col nzSpan="12" class="list-item-bar-container">
-                    <ul nz-list-item-actions>
-                      <nz-list-item-action>
-                        <button nz-button class="sidebar-enroll-btn" nzType="link" (click)="enrollCourse(course)" [disabled]="enrolledCourseSet.has(course)">enroll</button>
-                      </nz-list-item-action>
-                      <nz-list-item-action>
-                        <span class="star-button" nz-icon nzType="star" [nzTheme]="course.isStarred? 'fill': 'outline'" (click)="onStar(course)" [style.color] = "'#FAE746'"></span>
-                      </nz-list-item-action>
-                      <nz-list-item-action>
-                        <a [href]="course.link" target="_blank">more info</a>
-                      </nz-list-item-action>
-                    </ul>
-                  </nz-col>
-                </nz-row>
-              </li>
-            </ul>
-            <nz-empty *ngIf="starredCourseSet.size==0" [nzNotFoundImage]="'../../assets/no-course-starred.png'" [nzNotFoundContent]="no_course_starred_template">
-              <ng-template #no_course_starred_template>
+          </ng-template>
+        </nz-empty>
+      </div>
+      <div class="sidebar-container">
+        <div class="sidebar-container-header">
+          <b>Starred Courses</b>
+        </div>
+        <ul nz-list nzBordered nzSize="large" *ngIf="starredCourseSet.size!=0">
+          <li nz-list-item *ngFor="let course of starredCourseSet" [style.background-color]="course.bgColor" nzNoFlex>
+            <nz-row>
+              <nz-col nzSpan="12">
+                <span>{{ course.name }}</span>
+              </nz-col>
+              <nz-col nzSpan="12" class="list-item-bar-container">
+                <ul nz-list-item-actions>
+                  <nz-list-item-action>
+                    <button nz-button class="sidebar-enroll-btn" nzType="link" (click)="enrollCourse(course)"
+                            [disabled]="enrolledCourseSet.has(course)">enroll
+                    </button>
+                  </nz-list-item-action>
+                  <nz-list-item-action>
+                  <span class="star-button" nz-icon nzType="star" [nzTheme]="course.isStarred? 'fill': 'outline'"
+                        (click)="onStar(course)" [style.color]="'#FAE746'"></span>
+                  </nz-list-item-action>
+                  <nz-list-item-action>
+                    <a [href]="course.link" target="_blank">more info</a>
+                  </nz-list-item-action>
+                </ul>
+              </nz-col>
+            </nz-row>
+          </li>
+        </ul>
+        <nz-empty *ngIf="starredCourseSet.size==0" [nzNotFoundImage]="'../../assets/no-course-starred.png'"
+                  [nzNotFoundContent]="no_course_starred_template">
+          <ng-template #no_course_starred_template>
             <span>
               No star course
             </span>
-              </ng-template>
-            </nz-empty>
-          </div>
-        </div>
-      </nz-sider>
-    </nz-layout>
-    <nz-footer>
-      <div class="footer-container">
-        <a class="footer-text" href="https://github.com/TsukiSky/SUTDTimePlanner" target="_blank"><b>Github</b></a>
-        <b>&nbsp;|&nbsp;</b>
-        <a class="footer-text" (click)="onAboutTimePlanner()"><b>About SUTDTimePlanner</b></a>
+          </ng-template>
+        </nz-empty>
       </div>
-    </nz-footer>
-  </nz-layout>
-
-  <ng-template #leftSidebarTrigger>
-    <div id="leftSidebarTrigger">
-      <span nz-icon nzType="double-left" nzTheme="outline" *ngIf="!isLeftBarCollapsed"></span>
-      <span nz-icon nzType="double-right" nzTheme="outline" *ngIf="isLeftBarCollapsed"></span>
     </div>
-  </ng-template>
+  </nz-sider>
+</nz-layout>
+
+
+<ng-template #leftSidebarTrigger>
+  <div id="leftSidebarTrigger">
+    <span nz-icon nzType="double-left" nzTheme="outline" *ngIf="!isLeftBarCollapsed"></span>
+    <span nz-icon nzType="double-right" nzTheme="outline" *ngIf="isLeftBarCollapsed"></span>
+  </div>
+</ng-template>
 <ng-template #rightSidebarTrigger>
   <div id="rightSidebarTrigger">
     <span nz-icon nzType="double-left" nzTheme="outline" *ngIf="isRightBarCollapsed"></span>

@@ -1,11 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Course } from './model/Course';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import {CourseService} from "./course.service";
-import {HttpErrorResponse} from "@angular/common/http";
-import {Class} from "./model/Class";
-import {clearData, downloadImage, getData, isOverlapped, storeData} from "./utils/Utils";
 import { NzModalService } from "ng-zorro-antd/modal";
 
 @Component({
@@ -15,8 +8,25 @@ import { NzModalService } from "ng-zorro-antd/modal";
 })
 
 export class AppComponent implements OnInit {
-
+  isLeftBarCollapsed = false
   ngOnInit(): void {
+  }
+
+  constructor(private modal: NzModalService,) {
+  }
+
+  onAboutTimePlanner() {
+    this.modal.info({
+      nzTitle: '<i>About SUTD Time Planner</i>',
+      nzContent: "<span><b><i>SUTD Time Planner</i></b> is a web application designed to assist SUTD students streamlining their course selection process and make informed decisions about academic schedules in a semester. <br><br>"
+        + "This web tool is developed in collaboration with <b>SUTD Admin Office</b>, leveraging their direct provision of course data. We extend our sincere appreciation for their invaluable support and assistance. Their contribution has been instrumental in making this tool possible.<br><br>"
+        + "For more information or to contribute, please see <a href='https://github.com/TsukiSky/SUTDTimePlanner' target=\"_blank\">https://github.com/TsukiSky/SUTDTimePlanner</a></span>",
+
+      nzStyle: {
+        top: '30%',
+        width: '600px'
+      }
+    })
   }
 
 }

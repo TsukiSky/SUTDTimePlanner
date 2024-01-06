@@ -1,61 +1,9 @@
-<app-header  [loggedIn]="true"></app-header>
-  <nz-layout class="main">
-    <nz-layout>
-   <!-- Left sidebar  -->
-        <nz-sider id="left-sidebar" [nzCollapsible]="true" [(nzCollapsed)]="isLeftBarCollapsed" [nzCollapsedWidth]="50" nzWidth="14%" [nzTrigger]="leftSidebarTrigger">
-            <ul nz-menu nzMode="inline">
-            <li nz-menu-item>
-            <a [routerLink]="['/']">
-                <span nz-icon nzType="calendar" nzTheme="outline"></span>
-                <span>Timetable</span>
-            </a>
-            </li>
-            <li nz-menu-item nzSelected>
-            <a [routerLink]="['/courses']">
-                <span nz-icon nzType="read" nzTheme="outline"></span>
-                <span>Courses</span>
-            </a>
-                
-            </li>
-            </ul>
-        </nz-sider>
+<div id="body">
+  <nz-list nzItemLayout="vertical">
+    <nz-list-item>
+      <nz-list-item-meta>
 
-        <nz-content>
-            <nz-header class="sub-nav">
-                <ul nz-menu nzMode="horizontal">
-                  <li nz-menu-item nzSelected (click)="setAllCourseSelected(true)">All Courses</li>
-                  <li nz-menu-item (click)="setAllCourseSelected(false)">Courses Chosen</li>
-                </ul>
-              </nz-header>
-
-              <div class="header-place-holder">
-
-              </div>
-             
-            <div *ngFor="let pillar of PILLARS">
-                <div *ngIf="getPillarCourses(pillar, allCourseSelected).length > 0" class="pillar">
-                    <h2>{{pillar}}</h2>
-                    <div *ngFor="for let row of getPillarCourses(pillar, allCourseSelected)" nz-row [nzGutter]="10" class="course-card-row">
-                        <div *ngFor="for let course of row" nz-col [nzSpan]="10" class="course-card">
-                            <a [routerLink]="['/course',course.courseId]">
-                                <nz-card nzTitle="{{course.name}}"  [nzHoverable]="true">
-                                    <p>{{course.description}}</p>
-                                  </nz-card>
-                            </a>
-                        </div>
-                      </div>
-                </div>
-            </div>
-
-        </nz-content>
-
-    </nz-layout>
-  </nz-layout>
-
-  <ng-template #leftSidebarTrigger>
-    <div id="leftSidebarTrigger">
-      <span nz-icon nzType="double-left" nzTheme="outline" *ngIf="!isLeftBarCollapsed"></span>
-      <span nz-icon nzType="double-right" nzTheme="outline" *ngIf="isLeftBarCollapsed"></span>
-    </div>
-
-</ng-template>
+      </nz-list-item-meta>
+    </nz-list-item>
+  </nz-list>
+</div>

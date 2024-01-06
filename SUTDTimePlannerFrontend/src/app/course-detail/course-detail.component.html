@@ -1,30 +1,28 @@
-
-<app-header [loggedIn]="true"></app-header>
-
 <main class="container">
-    <div class="flex-1">
-        <h1 class="title"><a href="{{course.link}}">{{ course.name }}  ({{ course.pillar }})</a></h1>
-    </div>
+  <div class="flex-1">
+    <h1 class="title"><a href="{{course.link}}">{{ course.name }}  ({{ course.pillar }})</a></h1>
+  </div>
 
-    <section class="flex-2 info">
-      <nz-descriptions nzTitle="Course Info" nzBordered>
-        <nz-descriptions-item nzTitle="Description">{{course.description}}</nz-descriptions-item>
-        <nz-descriptions-item nzTitle="Term">{{terms}}</nz-descriptions-item>
-      </nz-descriptions>
-    </section>
+  <section class="flex-2 info">
+    <nz-descriptions nzTitle="Course Info" nzBordered>
+      <nz-descriptions-item nzTitle="Description">{{course.description}}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Term">{{terms}}</nz-descriptions-item>
+    </nz-descriptions>
+  </section>
 
-    <section class="flex-4 comments">
-        <p class="comment-title">Comments</p>
-        <div class="comment-container">
-            <div class="comment" *ngFor="let comment of course.comments">
+  <section class="flex-4 comments">
+    <p class="comment-title">Comments</p>
+    <div class="comment-container">
+      <div class="comment" *ngFor="let comment of course.comments">
 
-                <nz-comment nzAuthor="{{comment.isAnonymous ? 'anonymous' : comment.commenter}}" [nzDatetime]="calcTimeDist(comment.time)">
-                    <nz-comment-content>
-                      <p>
-                        {{ comment.content }}
-                      </p>
-                    </nz-comment-content>
-                    <nz-comment-action>
+        <nz-comment nzAuthor="{{comment.isAnonymous ? 'anonymous' : comment.commenter}}"
+                    [nzDatetime]="calcTimeDist(comment.time)">
+          <nz-comment-content>
+            <p>
+              {{ comment.content }}
+            </p>
+          </nz-comment-content>
+          <nz-comment-action>
                       <span
                         nz-tooltip
                         nzTitle="Like"
@@ -33,9 +31,9 @@
                         [nzTheme]="comment.likes.includes(user!.id) ? 'twotone' : 'outline'"
                         (click)="like(comment)"
                       ></span>
-                      <span class="count like">{{ comment.likes.length }}</span>
-                    </nz-comment-action>
-                    <nz-comment-action>
+            <span class="count like">{{ comment.likes.length }}</span>
+          </nz-comment-action>
+          <nz-comment-action>
                       <span
                         nz-tooltip
                         nzTitle="Dislike"
@@ -44,22 +42,23 @@
                         [nzTheme]="comment.dislikes.includes(user!.id) ? 'twotone' : 'outline'"
                         (click)="dislike(comment)"
                       ></span>
-                      <span class="count dislike">{{ comment.dislikes.length }}</span>
-                    </nz-comment-action>
-                  </nz-comment>
-            </div>
-        </div>
-        
-    </section>
+            <span class="count dislike">{{ comment.dislikes.length }}</span>
+          </nz-comment-action>
+        </nz-comment>
+      </div>
+    </div>
 
-    <section class="flex-2 comment-area">
-        <p class="comment-title">Leave your comment</p>
-        <form class="example-form">
-            <textarea placeholder="Please leave your comment" id="comment-form" [(ngModel)]="comment" name="userComment"></textarea>
-        </form>
-        <button mat-button color="primary" (click)="onPost(true)" class="submit">Post (anonymous)</button>
-        <button mat-button color="primary" (click)="onPost(false)" class="submit">Post (public)</button>
-    </section>
+  </section>
+
+  <section class="flex-2 comment-area">
+    <p class="comment-title">Leave your comment</p>
+    <form class="example-form">
+      <textarea placeholder="Please leave your comment" id="comment-form" [(ngModel)]="comment"
+                name="userComment"></textarea>
+    </form>
+    <button mat-button color="primary" (click)="onPost(true)" class="submit">Post (anonymous)</button>
+    <button mat-button color="primary" (click)="onPost(false)" class="submit">Post (public)</button>
+  </section>
 </main>
 
 
