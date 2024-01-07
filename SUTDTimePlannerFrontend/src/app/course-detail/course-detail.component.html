@@ -1,6 +1,9 @@
 <div id="body">
   <div class="container">
-    <h1 class="title"><a href="{{course.link}}">{{ course.name }}  ({{ course.pillar }})</a></h1>
+    <h1 class="title">
+      <span nz-icon nzType="left" style="margin-right: 20px; color: var(--background-header); cursor: pointer;" (click)="goBack()"></span>
+      <a href="{{course.link}}">{{ course.name }}  ({{ course.pillar }})</a>
+    </h1>
   </div>
   <div class="container">
     <nz-descriptions nzTitle="COURSE INFORMATION" nzBordered>

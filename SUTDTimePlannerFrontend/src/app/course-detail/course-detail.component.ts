@@ -9,6 +9,7 @@ import {formatDistance} from 'date-fns';
 import {Comment} from '../model/Comment';
 import {NzMessageService} from 'ng-zorro-antd/message';
 import {NzModalService} from "ng-zorro-antd/modal";
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -73,7 +74,8 @@ export class CourseDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private courseService: CourseService,
               private globalStoreService: GlobalStoreService, private nzMessageService: NzMessageService,
-              private message: NzMessageService,) {
+              private message: NzMessageService,
+              private location: Location) {
   }
 
   ngOnInit(): void {
@@ -91,6 +93,10 @@ export class CourseDetailComponent implements OnInit {
   }
 
   public async onPost(isAnonymous: boolean): Promise<void> {
+    if (this.comment === '') {
+      this.nzMessageService.error("The comment can't be empty.");
+      return
+    }
     let payload = {
       username: this.user?.username,
       courseId: this.course.courseId,
@@ -133,6 +139,10 @@ export class CourseDetailComponent implements OnInit {
     this.commentsShown = this.course.comments.slice(0, this.endCommentIndex);
     this.loadingMore = false;
     this.message.success("More comments are loaded.");
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }
 

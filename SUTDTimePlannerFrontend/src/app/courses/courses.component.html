@@ -49,9 +49,17 @@
     <nz-list nzItemLayout="vertical">
       <nz-list-item *ngFor="let course of shownCourses">
         <nz-list-item-meta>
-          <nz-list-item-meta-title>
-            {{course.name}}
-          </nz-list-item-meta-title>
+
+
+            <nz-list-item-meta-title>
+              <a [routerLink]="['/course', course.courseId]">
+
+              {{course.name}}
+            </a>
+
+            </nz-list-item-meta-title>
+
+
           <nz-list-item-meta-description>
             {{course.description}}
           </nz-list-item-meta-description>
