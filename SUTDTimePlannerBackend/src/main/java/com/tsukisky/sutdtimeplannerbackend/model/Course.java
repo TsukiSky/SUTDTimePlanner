@@ -1,5 +1,6 @@
 package com.tsukisky.sutdtimeplannerbackend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -26,8 +27,8 @@ public class Course {
     @Column(name = "link")
     private String link;
 
-    // @Column(name = "description")
-    // private String description;
+     @Column(name = "description")
+     private String description;
 
 //    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "prerequisite", referencedColumnName = "course_id")
@@ -41,5 +42,11 @@ public class Course {
     @JoinColumn(name = "course_id", referencedColumnName = "course_id")
     private List<Term> terms;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "course_id", referencedColumnName = "course_id")
+    private List<Comment> comments;
+
     public Course() {}
+
+
 }

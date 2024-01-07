@@ -3,6 +3,7 @@ import {NzTableQueryParams} from "ng-zorro-antd/table";
 import {HttpParams} from "@angular/common/http";
 import {Slot} from "../model/Slot";
 import html2canvas from "html2canvas";
+import { environment } from "src/environments/environment";
 
 export function toTimeStamp(time: string): TimeStamp {
   let hour: string = time.split(':')[0];
@@ -106,12 +107,36 @@ export function storeData(name: string, ids: any) {
     localStorage.setItem(name, dataArray);
 }
 
-export function getData(itemName: string) {
+export async function getData(itemName: string, username: string) {
   let data;
-  try {
-    data = JSON.parse(localStorage.getItem(itemName) == null? "": localStorage.getItem(itemName)!);
-  } catch (e) {
-    data = "";
+  // try {
+  //   data = JSON.parse(localStorage.getItem(itemName) == null? "": localStorage.getItem(itemName)!);
+  // } catch (e) {
+  //   data = "";
+  // }
+
+  if (itemName == "starredCourseSet") {
+    let response = await fetch(`${environment.apiUrl}/user/get_star_course`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: username
+        })
+    })
+    data = await response.json()
+  } else if (itemName == "enrolledCourseSet") {
+    let response = await fetch(`${environment.apiUrl}/user/get_enrol_course`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: username
+        })
+    })
+    data = await response.json()
   }
   return data;
 }

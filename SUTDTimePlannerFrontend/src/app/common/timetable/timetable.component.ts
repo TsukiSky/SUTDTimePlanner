@@ -3,6 +3,9 @@ import { Slot } from 'src/app/model/Slot';
 import { TimeStamp } from 'src/app/model/TimeStamp';
 import { isOverlapped, toTimeStamp } from "../../utils/Utils";
 import {Class} from "../../model/Class";
+import { environment } from 'src/environments/environment';
+import { GlobalStoreService } from 'src/app/global-store.service';
+import { User } from 'src/app/model/User';
 
 @Component({
   selector: 'app-timetable',
@@ -20,8 +23,9 @@ export class TimetableComponent implements OnInit {
   @Output() classSetChanged = new EventEmitter<Class>();
   slotByDate: Map<string, Array<Slot[]>> = new Map();
   alteringSlots: Slot[] = [];
+  user?: User
 
-  constructor() {}
+  constructor(private globalStoreService: GlobalStoreService) {}
 
   refreshRow(row: Slot[]):void {
     row.sort((a: Slot, b: Slot) => {return toTimeStamp(a.endTime).gapInMinute(this.startTimeStamp) - toTimeStamp(b.startTime).gapInMinute(this.startTimeStamp)});
@@ -103,9 +107,14 @@ export class TimetableComponent implements OnInit {
 
   ngOnInit() {
     // this.refreshTimetable();
+    this.globalStoreService.userInfo$.subscribe(user => {
+      if (user != null) {
+        this.user = user
+      }
+    })
   }
 
-  onSlotClick(slot: Slot) {
+  async onSlotClick(slot: Slot) {
     if (this.isAltering(slot)) {
       // change slots
       let newClass: Class;
@@ -117,6 +126,28 @@ export class TimetableComponent implements OnInit {
           if (targetClass.slots.includes(slot)) {
             newClass = targetClass;
             newAlterClasses = this.alternativeClasses.get(clas)!;
+            // console.log("old: ", newClass.classId, "new: ", clas.classId, "username: ", this.user?.username)
+            let response = await fetch(`${environment.apiUrl}/user/alter_class`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                username: this.user?.username,
+                oldClassId: clas.classId,
+                newClassId: newClass.classId
+              })
+            })
+            let data = await response.text()
+            console.log(this.user?.classesIds)
+
+            if (this.user) {
+              this.user.classesIds.splice(this.user?.classesIds.indexOf(clas.classId), 1)
+              this.user.classesIds.push(newClass.classId)
+              console.log(this.user.classesIds)
+              this.globalStoreService.updateUserInfo({...this.user})
+            }
+            
             newAlterClasses = newAlterClasses.filter(element => element.classId != targetClass.classId);
             newAlterClasses.push(clas);
             classToDelete = newAlterClasses;

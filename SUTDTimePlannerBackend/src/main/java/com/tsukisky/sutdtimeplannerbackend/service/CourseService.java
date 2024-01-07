@@ -1,9 +1,13 @@
 package com.tsukisky.sutdtimeplannerbackend.service;
 
 import com.tsukisky.sutdtimeplannerbackend.exception.CourseNotFoundException;
+import com.tsukisky.sutdtimeplannerbackend.model.Comment;
 import com.tsukisky.sutdtimeplannerbackend.model.Course;
 import com.tsukisky.sutdtimeplannerbackend.model.Term;
+import com.tsukisky.sutdtimeplannerbackend.model.User;
 import com.tsukisky.sutdtimeplannerbackend.repository.CourseRepository;
+import com.tsukisky.sutdtimeplannerbackend.repository.UserRepository;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,6 +46,28 @@ public class CourseService {
     public void addCourses(List<Course> courses) {
         for (Course course: courses) {
             addCourse(course);
+        }
+    }
+
+    public boolean addComment(String username, String content, Integer courseId, boolean isAnonymous) {
+        try {
+            Course c = courseRepository.findCourseByCourseId(courseId);
+            if (c.getComments()==null){
+                c.setComments(new ArrayList<>());
+            }
+            System.out.println(content);
+            System.out.println(isAnonymous);
+            Comment comment = new Comment();
+            comment.setCommenter(username);
+            comment.setContent(content);
+            comment.setIsAnonymous(isAnonymous);
+            c.getComments().add(comment);
+            System.out.println(c.getComments());
+            courseRepository.save(c);
+            return true;
+        } catch (Exception e) {
+            e.getStackTrace();
+            return false;
         }
     }
 }

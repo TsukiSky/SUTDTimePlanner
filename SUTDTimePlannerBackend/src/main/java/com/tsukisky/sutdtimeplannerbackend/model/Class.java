@@ -1,5 +1,6 @@
 package com.tsukisky.sutdtimeplannerbackend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -17,6 +18,7 @@ public class Class {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "class_id", referencedColumnName = "class_id")
     private List<Slot> slots;
+
 
     // @OneToMany(cascade = CascadeType.ALL)
     // @JoinColumn(name = "class_id", referencedColumnName = "class_id")

@@ -1,5 +1,6 @@
 package com.tsukisky.sutdtimeplannerbackend.controller;
 
+import com.tsukisky.sutdtimeplannerbackend.common.RequestCourseIdComment;
 import com.tsukisky.sutdtimeplannerbackend.model.Course;
 import com.tsukisky.sutdtimeplannerbackend.service.CourseService;
 import org.springframework.http.HttpStatus;
@@ -52,5 +53,11 @@ public class CourseController {
     public ResponseEntity<List<Course>> addCourses(@RequestBody List<Course> courses) {
         courseService.addCourses(courses);
         return new ResponseEntity<>(courses, HttpStatus.OK);
+    }
+
+    @PostMapping("/add_comment")
+    public boolean addComment(@RequestBody RequestCourseIdComment requestCourseIdComment) {
+        System.out.println(requestCourseIdComment);
+        return courseService.addComment(requestCourseIdComment.getUsername(), requestCourseIdComment.getContent(), requestCourseIdComment.getCourseId(), requestCourseIdComment.getIsAnonymous());
     }
 }

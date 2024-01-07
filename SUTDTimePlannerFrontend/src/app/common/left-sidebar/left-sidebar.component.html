@@ -1,0 +1,26 @@
+<nz-sider id="left-sidebar" [nzCollapsible]="true" [(nzCollapsed)]="isLeftBarCollapsed" [nzCollapsedWidth]="50" nzWidth="14%" [nzTrigger]="leftSidebarTrigger">
+    <ul nz-menu nzMode="inline">
+    <li nz-menu-item>
+    <a [routerLink]="['/']">
+        <span nz-icon nzType="calendar" nzTheme="outline"></span>
+        <span>Timetable</span>
+    </a>
+    </li>
+    <li nz-menu-item nzSelected>
+    <a [routerLink]="['/courses']">
+        <span nz-icon nzType="read" nzTheme="outline"></span>
+        <span>Courses</span>
+    </a>
+        
+    </li>
+    </ul>
+</nz-sider>
+
+
+<ng-template #leftSidebarTrigger>
+    <div id="leftSidebarTrigger">
+      <span nz-icon nzType="double-left" nzTheme="outline" *ngIf="!isLeftBarCollapsed"></span>
+      <span nz-icon nzType="double-right" nzTheme="outline" *ngIf="isLeftBarCollapsed"></span>
+    </div>
+
+</ng-template>
