@@ -41,6 +41,8 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { CoursesComponent } from './courses/courses.component';
 import { LeftSidebarComponent } from './common/left-sidebar/left-sidebar.component';
 import {NzDividerModule} from "ng-zorro-antd/divider";
+import {NzAvatarModule} from "ng-zorro-antd/avatar";
+import {NzInputModule} from "ng-zorro-antd/input";
 
 registerLocaleData(en);
 
@@ -87,7 +89,9 @@ const ngZorroConfig: NzConfig = {
     NzModalModule,
     NzCommentModule,
     MaterialModule,
-    NzDividerModule
+    NzDividerModule,
+    NzAvatarModule,
+    NzInputModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

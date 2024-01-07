@@ -8,6 +8,7 @@ export interface Course {
   pillar: string;
   link: string;
   description: string;
+  instructors: string;
 
   classes: Class[];
   terms: Term[];

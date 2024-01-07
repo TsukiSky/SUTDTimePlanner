@@ -1,67 +1,64 @@
-<main class="container">
-  <div class="flex-1">
+<div id="body">
+  <div class="container">
     <h1 class="title"><a href="{{course.link}}">{{ course.name }}  ({{ course.pillar }})</a></h1>
   </div>
-
-  <section class="flex-2 info">
-    <nz-descriptions nzTitle="Course Info" nzBordered>
-      <nz-descriptions-item nzTitle="Description">{{course.description}}</nz-descriptions-item>
-      <nz-descriptions-item nzTitle="Term">{{terms}}</nz-descriptions-item>
+  <div class="container">
+    <nz-descriptions nzTitle="COURSE INFORMATION" nzBordered>
+      <nz-descriptions-item nzTitle="Course" nzSpan="2">{{course.name}}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Pillar" nzSpan="1">{{course.pillar}}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Description" nzSpan="3">{{course.description}}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Term" nzSpan="1">{{terms}}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Instructors" nzSpan="2">{{course.instructors}}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Link" nzSpan="3">{{course.link}}</nz-descriptions-item>
     </nz-descriptions>
-  </section>
+  </div>
 
-  <section class="flex-4 comments">
-    <p class="comment-title">Comments</p>
+  <div class="container">
+    <p class="comment-title">STUDENT'S COMMENTS<span id="comment-number">&nbsp;&nbsp;&nbsp;&nbsp;# total comments: {{course.comments.length}} #</span></p>
     <div class="comment-container">
-      <div class="comment" *ngFor="let comment of course.comments">
-
-        <nz-comment nzAuthor="{{comment.isAnonymous ? 'anonymous' : comment.commenter}}"
-                    [nzDatetime]="calcTimeDist(comment.time)">
-          <nz-comment-content>
-            <p>
-              {{ comment.content }}
-            </p>
-          </nz-comment-content>
-          <nz-comment-action>
-                      <span
-                        nz-tooltip
-                        nzTitle="Like"
-                        nz-icon
-                        nzType="like"
-                        [nzTheme]="comment.likes.includes(user!.id) ? 'twotone' : 'outline'"
-                        (click)="like(comment)"
+      <nz-list>
+        <nz-list-item *ngFor="let comment of commentsShown">
+          <nz-comment nzAuthor="{{comment.isAnonymous ? 'anonymous' : comment.commenter}}"
+                      [nzDatetime]="calcTimeDist(comment.time)">
+            <nz-avatar nz-comment-avatar nzIcon="user" nzSrc="../assets/student-icon.png">
+            </nz-avatar>
+            <nz-comment-content>
+              <p>
+                {{ comment.content }}
+              </p>
+            </nz-comment-content>
+            <nz-comment-action>
+                      <span nz-tooltip nzTitle="Like" nz-icon nzType="like"
+                            [nzTheme]="comment.likes.includes(user!.id) ? 'twotone' : 'outline'"
+                            (click)="like(comment)"
                       ></span>
-            <span class="count like">{{ comment.likes.length }}</span>
-          </nz-comment-action>
-          <nz-comment-action>
-                      <span
-                        nz-tooltip
-                        nzTitle="Dislike"
-                        nz-icon
-                        nzType="dislike"
-                        [nzTheme]="comment.dislikes.includes(user!.id) ? 'twotone' : 'outline'"
-                        (click)="dislike(comment)"
+              <span class="count like">{{ comment.likes.length }}</span>
+            </nz-comment-action>
+            <nz-comment-action>
+                      <span nz-tooltip nzTitle="Dislike" nz-icon nzType="dislike"
+                            [nzTheme]="comment.dislikes.includes(user!.id) ? 'twotone' : 'outline'"
+                            (click)="dislike(comment)"
                       ></span>
-            <span class="count dislike">{{ comment.dislikes.length }}</span>
-          </nz-comment-action>
-        </nz-comment>
+              <span class="count dislike">{{ comment.dislikes.length }}</span>
+            </nz-comment-action>
+          </nz-comment>
+        </nz-list-item>
+        <nz-divider [nzText]="loadmore"></nz-divider>
+        <ng-template #loadmore>
+          <div class="loadmore">
+            <button nz-button *ngIf="!loadingMore" (click)="onLoadMore()">loading more</button>
+          </div>
+        </ng-template>
+      </nz-list>
+      <p class="comment-title">PUBLISH YOUR COMMENT</p>
+      <div id="comment-area">
+        <nz-textarea-count [nzMaxCharacterCount]="500">
+        <textarea nz-input placeholder="Please leave your comment" [(ngModel)]="comment"
+                  name="userComment" rows="4"></textarea>
+        </nz-textarea-count>
       </div>
+      <button nz-button nzType="primary" (click)="onPost(true)">Publish - anonymous</button>
+      <button nz-button nzType="primary" (click)="onPost(false)" [style.margin-left]="'10px'">Publish - public</button>
     </div>
-
-  </section>
-
-  <section class="flex-2 comment-area">
-    <p class="comment-title">Leave your comment</p>
-    <form class="example-form">
-      <textarea placeholder="Please leave your comment" id="comment-form" [(ngModel)]="comment"
-                name="userComment"></textarea>
-    </form>
-    <button mat-button color="primary" (click)="onPost(true)" class="submit">Post (anonymous)</button>
-    <button mat-button color="primary" (click)="onPost(false)" class="submit">Post (public)</button>
-  </section>
-</main>
-
-
-
-
-
+  </div>
+</div>
