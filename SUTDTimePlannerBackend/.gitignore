@@ -3,6 +3,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+!target/SUTDTimePlannerBackend-0.0.1-SNAPSHOT.jar
 
 ### STS ###
 .apt_generated
