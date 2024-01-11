@@ -1,23 +1,6 @@
-<app-header  [loggedIn]="true"></app-header>
 <nz-layout>
   <nz-layout>
     <!-- Left sidebar  -->
-    <nz-sider id="left-sidebar" [nzCollapsible]="true" [(nzCollapsed)]="isLeftBarCollapsed" [nzCollapsedWidth]="50" nzWidth="14%" [nzTrigger]="leftSidebarTrigger">
-      <ul nz-menu nzMode="inline">
-        <li nz-menu-item nzSelected>
-          <a [routerLink]="['/']">
-            <span nz-icon nzType="calendar" nzTheme="outline"></span>
-            <span>Timetable</span>
-          </a>
-        </li>
-        <li nz-menu-item>
-          <a [routerLink]="['/courses']">
-            <span nz-icon nzType="read" nzTheme="outline"></span>
-            <span>Courses</span>
-          </a>
-        </li>
-      </ul>
-    </nz-sider>
     <nz-content>
       <router-outlet></router-outlet>
     </nz-content>
@@ -31,10 +14,3 @@
   </div>
 </nz-footer>
 
-
-<ng-template #leftSidebarTrigger>
-  <div id="leftSidebarTrigger">
-    <span nz-icon nzType="double-left" nzTheme="outline" *ngIf="!isLeftBarCollapsed"></span>
-    <span nz-icon nzType="double-right" nzTheme="outline" *ngIf="isLeftBarCollapsed"></span>
-  </div>
-</ng-template>
