@@ -15,6 +15,7 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     private Long id;
+    @Column(name = "content", length = 1000)
     private String content;
     private String commenter;
     private Boolean isAnonymous;
