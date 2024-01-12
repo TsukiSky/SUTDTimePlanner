@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Course} from '../model/Course';
+import {Course} from '../dto/Course';
 import {CourseService} from '../course.service';
-import {User} from '../model/User';
+import {User} from '../dto/User';
 import {GlobalStoreService} from '../global-store.service';
 import {FormBuilder, FormGroup} from "@angular/forms";
 

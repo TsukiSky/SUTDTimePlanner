@@ -1,7 +1,7 @@
 package com.tsukisky.sutdtimeplannerbackend.controller;
 
 import com.tsukisky.sutdtimeplannerbackend.common.RequestCourseIdComment;
-import com.tsukisky.sutdtimeplannerbackend.model.Course;
+import com.tsukisky.sutdtimeplannerbackend.dto.Course;
 import com.tsukisky.sutdtimeplannerbackend.service.CourseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

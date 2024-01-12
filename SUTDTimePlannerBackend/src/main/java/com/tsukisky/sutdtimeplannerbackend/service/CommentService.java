@@ -1,6 +1,6 @@
 package com.tsukisky.sutdtimeplannerbackend.service;
 
-import com.tsukisky.sutdtimeplannerbackend.model.Comment;
+import com.tsukisky.sutdtimeplannerbackend.dto.Comment;
 import com.tsukisky.sutdtimeplannerbackend.repository.CommentRepository;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;

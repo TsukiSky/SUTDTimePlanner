@@ -1,8 +1,6 @@
 package com.tsukisky.sutdtimeplannerbackend.common;
 
 
-import com.tsukisky.sutdtimeplannerbackend.model.Class;
-import com.tsukisky.sutdtimeplannerbackend.model.Course;
 import lombok.Data;
 
 import java.util.List;

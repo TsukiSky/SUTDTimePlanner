@@ -16,11 +16,9 @@ export class AuthComponent implements OnInit {
 
   public switchRegister(): void {
     this.isLogin = false;
-    // this.cdr.detectChanges();
   }
 
   public switchLogin(): void {
-    console.log("switchLogin")
     this.isLogin = true;
   }
 

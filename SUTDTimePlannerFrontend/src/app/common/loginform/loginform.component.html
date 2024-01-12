@@ -1,24 +1,25 @@
-<mat-card>
-    <mat-card-content>
-      <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
-        <h2>Log In</h2>
-        <mat-error *ngIf="!loginValid">
-          The username and password were not recognized
-        </mat-error>
-        <mat-form-field>
-          <input matInput placeholder="Email" [(ngModel)]="email" name="email" required>
-          <mat-error>
-            Please provide a valid email address
-          </mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
-          <mat-error>
-            Please provide a valid password
-          </mat-error>
-        </mat-form-field>
-        <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid" (click)="login()">Login</button>
-        <span color="primary" (click)="switchRegister()" class="switch">Register</span>
-      </form>
-    </mat-card-content>
-  </mat-card>
+<div id="login_card">
+  <div id="content">
+    <form nz-form [formGroup]="validateForm">
+      <h2 id="login-head">Log In</h2>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your SUTD email">
+          <nz-input-group nzAddOnAfter="@mymail.sutd.edu.sg" nzPrefixIcon="user">
+            <input [type]="'text'" nz-input formControlName="email" placeholder="Email" [(ngModel)]="email" name="email" required>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your password">
+          <nz-input-group nzPrefixIcon="lock">
+            <input nz-input [type]="'password'" formControlName="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <button class="control-btn" nz-button nzType="primary" (click)="login()">
+        Login
+      </button>
+      <button class="control-btn" nz-button nzType="default" (click)="switchRegister()">Register</button>
+    </form>
+  </div>
+</div>

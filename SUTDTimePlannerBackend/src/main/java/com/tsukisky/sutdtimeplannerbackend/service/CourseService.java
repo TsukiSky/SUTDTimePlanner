@@ -1,13 +1,8 @@
 package com.tsukisky.sutdtimeplannerbackend.service;
 
-import com.tsukisky.sutdtimeplannerbackend.exception.CourseNotFoundException;
-import com.tsukisky.sutdtimeplannerbackend.model.Comment;
-import com.tsukisky.sutdtimeplannerbackend.model.Course;
-import com.tsukisky.sutdtimeplannerbackend.model.Term;
-import com.tsukisky.sutdtimeplannerbackend.model.User;
+import com.tsukisky.sutdtimeplannerbackend.dto.Comment;
+import com.tsukisky.sutdtimeplannerbackend.dto.Course;
 import com.tsukisky.sutdtimeplannerbackend.repository.CourseRepository;
-import com.tsukisky.sutdtimeplannerbackend.repository.UserRepository;
-import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

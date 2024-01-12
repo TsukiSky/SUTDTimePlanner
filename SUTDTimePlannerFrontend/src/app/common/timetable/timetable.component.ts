@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChange } from '@angular/core';
-import { Slot } from 'src/app/model/Slot';
-import { TimeStamp } from 'src/app/model/TimeStamp';
+import { Slot } from 'src/app/dto/Slot';
+import { TimeStamp } from 'src/app/dto/TimeStamp';
 import { isOverlapped, toTimeStamp } from "../../utils/Utils";
-import {Class} from "../../model/Class";
+import {Class} from "../../dto/Class";
 import { environment } from 'src/environments/environment';
 import { GlobalStoreService } from 'src/app/global-store.service';
-import { User } from 'src/app/model/User';
+import { User } from 'src/app/dto/User';
 
 @Component({
   selector: 'app-timetable',
@@ -126,7 +126,6 @@ export class TimetableComponent implements OnInit {
           if (targetClass.slots.includes(slot)) {
             newClass = targetClass;
             newAlterClasses = this.alternativeClasses.get(clas)!;
-            // console.log("old: ", newClass.classId, "new: ", clas.classId, "username: ", this.user?.username)
             let response = await fetch(`${environment.apiUrl}/user/alter_class`, {
               method: 'POST',
               headers: {
@@ -139,15 +138,13 @@ export class TimetableComponent implements OnInit {
               })
             })
             let data = await response.text()
-            console.log(this.user?.classesIds)
 
             if (this.user) {
               this.user.classesIds.splice(this.user?.classesIds.indexOf(clas.classId), 1)
               this.user.classesIds.push(newClass.classId)
-              console.log(this.user.classesIds)
               this.globalStoreService.updateUserInfo({...this.user})
             }
-            
+
             newAlterClasses = newAlterClasses.filter(element => element.classId != targetClass.classId);
             newAlterClasses.push(clas);
             classToDelete = newAlterClasses;

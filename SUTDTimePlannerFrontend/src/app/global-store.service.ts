@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { User } from './model/User';
+import { User } from './dto/User';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ export class GlobalStoreService {
   private _userInfo = new BehaviorSubject<User | null>(null);
   public readonly userInfo$ = this._userInfo.asObservable();
 
-  constructor() { 
+  constructor() {
     const userInfo = localStorage.getItem('userInfo');
     if (userInfo) {
       this._userInfo.next(JSON.parse(userInfo));

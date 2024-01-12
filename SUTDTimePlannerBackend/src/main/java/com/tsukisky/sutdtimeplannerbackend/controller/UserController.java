@@ -1,7 +1,7 @@
 package com.tsukisky.sutdtimeplannerbackend.controller;
 
 import com.tsukisky.sutdtimeplannerbackend.common.*;
-import com.tsukisky.sutdtimeplannerbackend.model.User;
+import com.tsukisky.sutdtimeplannerbackend.dto.User;
 import com.tsukisky.sutdtimeplannerbackend.service.UserService;
 import jakarta.annotation.Resource;
 import jakarta.mail.MessagingException;

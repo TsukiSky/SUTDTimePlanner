@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { GlobalStoreService } from 'src/app/global-store.service';
-import { User } from 'src/app/model/User';
+import { User } from 'src/app/dto/User';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   @Input() loggedIn: boolean = false
-  
+
   user?: User | null
 
   constructor(private globalStoreService: GlobalStoreService, private router: Router) { }

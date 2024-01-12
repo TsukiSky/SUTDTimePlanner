@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { NzMessageService } from 'ng-zorro-antd/message';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {environment} from 'src/environments/environment';
+import {NzMessageService} from 'ng-zorro-antd/message';
+import {FormControl, FormGroup, NonNullableFormBuilder, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-registerform',
@@ -9,12 +10,22 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 })
 export class RegisterformComponent implements OnInit {
   @Output() switchView = new EventEmitter<void>();
-  public loginValid = true;
   public username = '';
   public email = '';
   public password = '';
 
-  constructor(private nzMessageService: NzMessageService) { }
+  validateForm: FormGroup<{
+    email: FormControl<string>;
+    username: FormControl<string>;
+    password: FormControl<string>;
+  }> = this.fb.group({
+    email: ['', [Validators.required]],
+    username: ['', [Validators.required]],
+    password: ['', [Validators.required]],
+  });
+
+  constructor(private nzMessageService: NzMessageService, private fb: NonNullableFormBuilder) {
+  }
 
   ngOnInit(): void {
   }
@@ -23,47 +34,46 @@ export class RegisterformComponent implements OnInit {
     this.switchView.emit();
   }
 
-  public onSubmit(): void {
-
-  }
-
   public async register(): Promise<void> {
-    console.log("registering")
-    if (!this.validateEmail()) {
+    if (!this.validateForm.valid) {
+      Object.values(this.validateForm.controls).forEach(control => {
+        if (control.invalid) {
+          control.markAsDirty();
+          control.updateValueAndValidity({onlySelf: true});
+        }
+      });
+    } else if (!this.validateEmail()) {
       this.nzMessageService.error("Please use your SUTD email to register")
       return
-    }
-    const user = {
-      username: this.username,
-      email: this.email,
-      password: this.password
-    }
-    console.log(user)
-    // send to backend
-    let response = await fetch(`${environment.apiUrl}/user/register`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(user)
-    })
-
-    console.log(response)
-    let data = await response.text()
-    if (data === "success") {
-      this.nzMessageService.success("Registration successful, please check your email for verification")
-      this.switchLogin()
     } else {
-      this.nzMessageService.error(data)
+      const user = {
+        username: this.username,
+        email: this.email + "@mymail.sutd.edu.sg",
+        password: this.password
+      }
+      // send to backend
+      let response = await fetch(`${environment.apiUrl}/user/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+      })
+
+      let data = await response.text()
+      if (data === "success") {
+        this.nzMessageService.success("Registration successful, please check your email for verification")
+        this.switchLogin()
+      } else {
+        this.nzMessageService.error(data)
+      }
     }
 
   }
 
   public validateEmail() {
-      const emailRegex = /^[\w-\.]+@mymail.sutd.edu.sg$/; // Basic email regex; adjust as needed
-      const valid = emailRegex.test(this.email);
-      console.log(valid)
-      return valid;
+    const emailRegex = /^[\w-\.]+@mymail.sutd.edu.sg$/; // Basic email regex; adjust as needed
+    const valid = emailRegex.test(this.email + "@mymail.sutd.edu.sg");
+    return valid;
   }
-
 }

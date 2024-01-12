@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Course } from '../model/Course';
+import { Course } from '../dto/Course';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import {CourseService} from "../course.service";
 import { GlobalStoreService } from '../global-store.service';
 import {HttpErrorResponse} from "@angular/common/http";
-import {Class} from "../model/Class";
+import {Class} from "../dto/Class";
 import {clearData, downloadImage, getData, isOverlapped, storeData} from "../utils/Utils";
 import { NzModalService } from "ng-zorro-antd/modal";
-import { User } from '../model/User';
+import { User } from '../dto/User';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -48,11 +48,9 @@ export class HomeComponent implements OnInit {
 
 
   async requestCourseData() {
-    console.log(this.user)
     let starredCourseIds = this.user?.starCourseIds!;
     let enrolledCourseIds = this.user?.enrolCourseIds!;
     let enrolledClassIds = this.user?.classesIds!;
-    console.log(enrolledCourseIds)
     for (let course of this.courseList) {
       // load starred courses
       if (starredCourseIds.includes(course.courseId)) {
@@ -74,7 +72,6 @@ export class HomeComponent implements OnInit {
   }
 
   getAllCourses(): void {
-    console.log("get all courses")
     this.courseService.getAllCourses().subscribe(
       (response: Course[]) => {
         this.courseList = response;
@@ -265,7 +262,6 @@ export class HomeComponent implements OnInit {
         })
       })
 
-      console.log(response)
       this.user?.enrolCourseIds?.push(course.courseId)
       this.user?.classesIds?.push(clas.classId)
       this.globalStateService.updateUserInfo({...this.user!})
@@ -323,12 +319,6 @@ export class HomeComponent implements OnInit {
       this.user.classesIds = this.user.classesIds?.filter(element => !deleteClassIds.includes(element));
       this.globalStateService.updateUserInfo({...this.user!})
     }
-
-    console.log(response)
-
-
-    // storeData("enrolledCourseSet", Array.from(this.enrolledCourseSet).map(course => course.courseId));
-    // storeData("enrolledClassSet", Array.from(this.enrolledClassSet).map(clas => clas.classId));
   }
 
   assignColorToCourse(course: Course) {

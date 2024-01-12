@@ -1,7 +1,7 @@
-import {TimeStamp} from "../model/TimeStamp";
+import {TimeStamp} from "../dto/TimeStamp";
 import {NzTableQueryParams} from "ng-zorro-antd/table";
 import {HttpParams} from "@angular/common/http";
-import {Slot} from "../model/Slot";
+import {Slot} from "../dto/Slot";
 import html2canvas from "html2canvas";
 import { environment } from "src/environments/environment";
 

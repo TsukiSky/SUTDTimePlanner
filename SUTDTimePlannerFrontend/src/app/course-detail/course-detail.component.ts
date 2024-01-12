@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {Course} from '../model/Course';
+import {Course} from '../dto/Course';
 import {CourseService} from '../course.service';
 import {environment} from 'src/environments/environment';
-import {User} from '../model/User';
+import {User} from '../dto/User';
 import {GlobalStoreService} from '../global-store.service';
 import {formatDistance} from 'date-fns';
-import {Comment} from '../model/Comment';
+import {Comment} from '../dto/Comment';
 import {NzMessageService} from 'ng-zorro-antd/message';
 import {NzModalService} from "ng-zorro-antd/modal";
 import { Location } from '@angular/common';

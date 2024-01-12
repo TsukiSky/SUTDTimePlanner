@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../environments/environment";
 import {Observable, of, tap} from "rxjs";
-import {Course} from "./model/Course";
+import {Course} from "./dto/Course";
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,6 @@ export class CourseService {
   public requestAllCourse(): Observable<Course[]> {
     return this.http.get<Course[]>(`${this.apiUrl}/course/find/all`).pipe(
       tap(courses => {
-        console.log(courses);
         this.courses = courses;
       })
     );
