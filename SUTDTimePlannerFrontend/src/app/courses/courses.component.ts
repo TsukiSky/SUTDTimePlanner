@@ -4,7 +4,6 @@ import {CourseService} from '../course.service';
 import {User} from '../model/User';
 import {GlobalStoreService} from '../global-store.service';
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {marginLeft} from "html2canvas/dist/types/css/property-descriptors/margin";
 
 @Component({
   selector: 'app-courses',
@@ -22,6 +21,7 @@ export class CoursesComponent implements OnInit {
   startCourseIndex = 0;
   endCourseIndex = 10;
   currentPage = 1;
+  isLeftBarCollapsed = true;
 
   constructor(private courseService: CourseService,
               private formBuilder: FormBuilder,

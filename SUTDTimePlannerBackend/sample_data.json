@@ -1,6 +1,301 @@
 [
     {
-        "name": "50.021 Artificial Intelligence",
+        "name": "50.001 Information Systems and Programming",
+        "pillar": "CSD",
+        "isCore": 1,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50001-information-systems-programming",
+        "description": "This course is an introduction to the design and programming of information systems. Topics include object oriented programming, data structures, mobile system and programming, design pattern and use of software libraries. Sample applications include Internet of Things, Android app and data analytics.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "13:00:00",
+                        "endTime": "15:00:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "14:30:00",
+                        "endTime": "16:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "16:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Fredy Tantri"},
+                    {"name":  "LEE Tiong Seng Norman"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "13:00:00",
+                        "endTime": "15:00:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "14:30:00",
+                        "endTime": "16:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "WED",
+                        "startTime": "08:30:00",
+                        "endTime": "10:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Fredy Tantri"},
+                    {"name":  "LEE Tiong Seng Norman"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "13:00:00",
+                        "endTime": "15:00:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "14:30:00",
+                        "endTime": "16:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "WED",
+                        "startTime": "11:00:00",
+                        "endTime": "13:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Fredy Tantri"},
+                    {"name":  "LEE Tiong Seng Norman"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "13:00:00",
+                        "endTime": "15:00:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "14:30:00",
+                        "endTime": "16:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "13:30:00",
+                        "endTime": "15:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Fredy Tantri"},
+                    {"name":  "LEE Tiong Seng Norman"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "13:00:00",
+                        "endTime": "15:00:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "14:30:00",
+                        "endTime": "16:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "WED",
+                        "startTime": "16:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Fredy Tantri"},
+                    {"name":  "LEE Tiong Seng Norman"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 4,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "50.002 Computation Structures",
+        "pillar": "CSD",
+        "isCore": 1,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50002-computation-structures",
+        "description": "This course introduces architecture of digital systems, emphasising structural principles common to a wide range of technologies. Topics include Multilevel implementation strategies; definition of new primitives (e.g., gates, instructions, procedures, and processes) and their mechanisation using lower-level elements. Analysis of potential concurrency; precedence constraints and performance measures; pipelined and multidimensional systems; instruction set design issues; architectural support for contemporary software structures.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "13:00:00",
+                        "endTime": "14:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "16:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "AGUS Natalie"},
+                    {"name": "Felix Loh"},
+                    {"name": "WANG Bo"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "13:00:00",
+                        "endTime": "14:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "WED",
+                        "startTime": "08:30:00",
+                        "endTime": "10:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "AGUS Natalie"},
+                    {"name": "Felix Loh"},
+                    {"name": "WANG Bo"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "13:00:00",
+                        "endTime": "14:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "WED",
+                        "startTime": "11:00:00",
+                        "endTime": "13:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "AGUS Natalie"},
+                    {"name": "Felix Loh"},
+                    {"name": "WANG Bo"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "13:00:00",
+                        "endTime": "14:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "13:30:00",
+                        "endTime": "15:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "AGUS Natalie"},
+                    {"name": "Felix Loh"},
+                    {"name": "WANG Bo"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "13:00:00",
+                        "endTime": "14:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "15:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "AGUS Natalie"},
+                    {"name": "Felix Loh"},
+                    {"name": "WANG Bo"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 4,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "50.004 Algorithms",
         "pillar": "CSD",
         "isCore": 0,
         "link": "https://istd.sutd.edu.sg/undergraduate/courses/50021-artificial-intelligence/",
@@ -11,65 +306,208 @@
                     {
                         "type": "lecture",
                         "date": "MON",
-                        "startTime": "08:30:00",
+                        "startTime": "09:00:00",
                         "endTime": "10:30:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "14:00:00",
+                        "endTime": "16:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "CHONG Kai Fong Ernest"},
+                    {"name": "Cyrille Pierre Joseph"},
+                    {"name": "Dileepa"},
+                    {"name": "SOH De Wen"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "09:00:00",
+                        "endTime": "10:30:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "16:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "CHONG Kai Fong Ernest"},
+                    {"name": "Cyrille Pierre Joseph"},
+                    {"name": "Dileepa"},
+                    {"name": "SOH De Wen"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "09:00:00",
+                        "endTime": "10:30:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
                     },
                     {
                         "type": "Class",
                         "date": "WED",
                         "startTime": "08:30:00",
-                        "endTime": "10:00:00"
-                    },
-                    {
-                        "type": "Class",
-                        "date": "FRI",
-                        "startTime": "09:00:00",
                         "endTime": "10:30:00"
                     }
                 ],
                 "lecturers": [
-                    {"name": "Alexander Binder"}
+                    {"name": "CHONG Kai Fong Ernest"},
+                    {"name": "Cyrille Pierre Joseph"},
+                    {"name": "Dileepa"},
+                    {"name": "SOH De Wen"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "09:00:00",
+                        "endTime": "10:30:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "CHONG Kai Fong Ernest"},
+                    {"name": "Cyrille Pierre Joseph"},
+                    {"name": "Dileepa"},
+                    {"name": "SOH De Wen"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "09:00:00",
+                        "endTime": "10:30:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "13:30:00",
+                        "endTime": "15:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "CHONG Kai Fong Ernest"},
+                    {"name": "Cyrille Pierre Joseph"},
+                    {"name": "Dileepa"},
+                    {"name": "SOH De Wen"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "09:00:00",
+                        "endTime": "10:30:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "WED",
+                        "startTime": "16:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "CHONG Kai Fong Ernest"},
+                    {"name": "Cyrille Pierre Joseph"},
+                    {"name": "Dileepa"},
+                    {"name": "SOH De Wen"}
                 ]
             }
         ],
         "terms": [
             {
-                "term": 6,
-                "period": "summer"
+                "term": 4,
+                "period": ""
             }
         ]
     },
     {
         "name": "50.007 Machine Learning",
         "pillar": "CSD",
-        "isCore": 1,
+        "isCore": 0,
         "link": "https://istd.sutd.edu.sg/undergraduate/courses/50007-machine-learning/",
-        "description": "Machine leence.",
+        "description": "Machine learning is the study of algorithms that improve their performance at some task with experience. In this course, students will learn how machine learning has led to many innovative real-world applications. The students will also gain an in-depth understanding of a broad range of machine learning algorithms from basic to state-of-the-art, such as: naïve Bayes, logistic regression, neural networks, clustering, probabilistic graphical models, reinforcement learning and SVMs.",
         "classes": [
             {
                 "slots": [
                     {
                         "type": "lecture",
                         "date": "WED",
-                        "startTime": "12:30:00",
-                        "endTime": "13:30:00"
+                        "startTime": "09:30:00",
+                        "endTime": "10:30:00"
                     },
                     {
                         "type": "Class",
                         "date": "TUE",
-                        "startTime": "13:00:00",
-                        "endTime": "15:00:00"
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
                     },
                     {
                         "type": "Class",
-                        "date": "FRI",
+                        "date": "THU",
                         "startTime": "11:30:00",
                         "endTime": "13:30:00"
                     }
                 ],
                 "lecturers": [
-                    {"name": "Malika Meghjani"},
-                    {"name": "Zhou Na"}
+                    {"name": "Lu Wei"},
+                    {"name": "Zhao Na"}
                 ]
             },
             {
@@ -77,112 +515,36 @@
                     {
                         "type": "lecture",
                         "date": "WED",
-                        "startTime": "12:30:00",
-                        "endTime": "13:30:00"
+                        "startTime": "09:30:00",
+                        "endTime": "10:30:00"
                     },
                     {
                         "type": "Class",
                         "date": "TUE",
-                        "startTime": "18:00:00",
-                        "endTime": "20:00:00"
+                        "startTime": "16:00:00",
+                        "endTime": "18:00:00"
                     },
                     {
                         "type": "Class",
                         "date": "THU",
-                        "startTime": "18:00:00",
-                        "endTime": "20:00:00"
+                        "startTime": "16:00:00",
+                        "endTime": "18:00:00"
                     }
                 ],
                 "lecturers": [
-                    {"name": "Malika Meghjani"},
-                    {"name": "Zhou Na"}
+                    {"name": "Lu Wei"},
+                    {"name": "Zhao Na"}
                 ]
             }
         ],
         "terms": [
             {
                 "term": 6,
-                "period": "summer"
-            }
-        ]
-    },
-    {
-        "name": "50.039 Theory and Practice of Deep Learning",
-        "pillar": "CSD",
-        "isCore": 0,
-        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50039-theory-and-practice-of-deep-learning",
-        "description": "The cof.",
-        "classes": [
+                "period": ""
+            },
             {
-                "slots": [
-                    {
-                        "type": "Class",
-                        "date": "MON",
-                        "startTime": "10:30:00",
-                        "endTime": "12:00:00"
-                    },
-                    {
-                        "type": "Class",
-                        "date": "TUE",
-                        "startTime": "10:30:00",
-                        "endTime": "12:00:00"
-                    },
-                    {
-                        "type": "Class",
-                        "date": "WED",
-                        "startTime": "10:00:00",
-                        "endTime": "12:00:00"
-                    }
-                ],
-                "lecturers": [
-                    {"name": "Matthieu De Mari"}
-                ]
-            }
-        ],
-        "terms": [
-            {
-                "term": 6,
-                "period": "summer"
-            }
-        ]
-    },
-    {
-        "name": "50.017 Graphics and Visualisation",
-        "pillar": "CSD",
-        "isCore": 0,
-        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50017-graphics-and-visualisation/",
-        "description": "Introduction to computer graphics algorithms, software and hardware.",
-        "classes": [
-            {
-                "slots": [
-                    {
-                        "type": "Class",
-                        "date": "MON",
-                        "startTime": "10:30:00",
-                        "endTime": "12:00:00"
-                    },
-                    {
-                        "type": "Class",
-                        "date": "TUE",
-                        "startTime": "10:30:00",
-                        "endTime": "12:00:00"
-                    },
-                    {
-                        "type": "Class",
-                        "date": "WED",
-                        "startTime": "10:00:00",
-                        "endTime": "12:00:00"
-                    }
-                ],
-                "lecturers": [
-                    {"name": "Peng Song"}
-                ]
-            }
-        ],
-        "terms": [
-            {
-                "term": 6,
-                "period": "summer"
+                "term": 8,
+                "period": ""
             }
         ]
     },
@@ -190,8 +552,8 @@
         "name": "50.038 Computational Data Science",
         "pillar": "CSD",
         "isCore": 0,
-        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50038-computational-data-science",
-        "description": "This course poncepts.",
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50002-computation-structures",
+        "description": "This course provides students the necessary background and experience in data science technology and concepts. Students will gain experience with tackling a complete data science project, from data gathering and preprocessing to data analysis through machine learning tools. Students will learn to apply fundamental concepts in machine learning to data storage and distributed processing as a foundation for their project.",
         "classes": [
             {
                 "slots": [
@@ -203,10 +565,14 @@
                     },
                     {
                         "type": "Class",
-                        "date": "THU",
-                        "startTime": "11:30:00",
-                        "endTime": "13:30:00"
+                        "date": "TUE",
+                        "startTime": "12:00:00",
+                        "endTime": "14:00:00"
                     }
+                ],
+                "lecturers": [
+                    {"name": "Dorien Herremans"},
+                    {"name": "Soujanya Poria"}
                 ]
             },
             {
@@ -220,45 +586,53 @@
                     {
                         "type": "Class",
                         "date": "THU",
-                        "startTime": "14:00:00",
-                        "endTime": "16:00:00"
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
                     }
+                ],
+                "lecturers": [
+                    {"name": "Dorien Herremans"},
+                    {"name": "Soujanya Poria"}
                 ]
             }
         ],
         "terms": [
             {
                 "term": 6,
-                "period": "summer"
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
             }
         ]
     },
     {
         "name": "50.012 Networks",
         "pillar": "CSD",
-        "isCore": 1,
+        "isCore": 0,
         "link": "https://istd.sutd.edu.sg/undergraduate/courses/50012-networks/",
-        "description": "This coure Internet.",
+        "description": "This course will introduce the principles and practice of computer networking, with emphasis on the Internet. Students will learn concepts, principles, protocols, and applications of computer networks, including packet switching, layered architectures, TCP/IP, physical layer, error control, window flow control, local area networks (Ethernet, Token Ring; FDDI), network layer, congestion control, quality of service, multicast, network programming interfaces, networked applications.",
         "classes": [
             {
                 "slots": [
                     {
                         "type": "Class",
                         "date": "MON",
-                        "startTime": "18:00:00",
-                        "endTime": "19:30:00"
-                    },
-                    {
-                        "type": "Class",
-                        "date": "TUE",
-                        "startTime": "13:30:00",
-                        "endTime": "15:00:00"
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
                     },
                     {
                         "type": "Class",
                         "date": "WED",
-                        "startTime": "11:30:00",
-                        "endTime": "13:30:00"
+                        "startTime": "11:00:00",
+                        "endTime": "12:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "FRI",
+                        "startTime": "09:00:00",
+                        "endTime": "11:00:00"
                     }
                 ],
                 "lecturers": [
@@ -269,19 +643,103 @@
         "terms": [
             {
                 "term": 6,
-                "period": "summer"
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
             }
         ]
     },
     {
-        "name": "50.051 Programming Language Concepts",
+        "name": "50.044 System Security",
         "pillar": "CSD",
         "isCore": 0,
-        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50051-programming-language-concepts",
-        "description": "In this module, students will learn about data representation, programming and compilation.",
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50044-system-security/",
+        "description": "This course covers the security of users, individual computer systems, including personal computers, smart cards and embedded platforms. The course starts with considerations of common security flaws in a computer system, security of widely used computer platforms and user authentication. Then, topics such as physical‐layer attacks and tamper resistant hardware are discussed. Finally, the course ends with a set of selected security topics like biometrics, computer forensics, and Bitcoin.",
         "classes": [
             {
                 "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "12:00:00",
+                        "endTime": "15:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "12:00:00",
+                        "endTime": "14:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Dileepa Fernando"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "50.055 Special Topic: Machine Learning Operations",
+        "pillar": "CSD",
+        "isCore": 0,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50055-special-topic-machine-learning-operations/",
+        "description": "In this course, students will learn the concepts and practice of machine learning operations (“MLOps”). The course does not teach the fundamentals of machine learning. Instead it focuses on building machine learning products. Students will learn how to identify viable use cases for machine learning, how to develop, test, deploy and monitor machine applications, how to manage machine learning projects and how to identify legal, ethical and data protection risks. Students will get hands-on experience on the complete machine learning development process, from experiments to deployment through course assignments and projects. The focus will be on deep learning and generative AI.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "09:00:00",
+                        "endTime": "10:30:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "13:30:00",
+                        "endTime": "15:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "13:30:00",
+                        "endTime": "15:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Daniel Dahlmeie"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "50.017 Graphics & Visualisation",
+        "pillar": "CSD",
+        "isCore": 0,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50017-graphics-and-visualisation/",
+        "description": "Introduction to computer graphics algorithms, software and hardware. Topics include ray tracing, the graphics pipeline, transformations, texture mapping, shadows, sampling, global illumination, splines, animation, color, fundamentals of virtual and augmented reality (VR and AR).",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "18:00:00",
+                        "endTime": "19:30:00"
+                    },
                     {
                         "type": "Class",
                         "date": "TUE",
@@ -290,9 +748,405 @@
                     },
                     {
                         "type": "Class",
-                        "date": "WED",
-                        "startTime": "12:00:00",
+                        "date": "THU",
+                        "startTime": "18:00:00",
+                        "endTime": "20:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Peng Song"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "50.021 Artificial Intelligence",
+        "pillar": "CSD",
+        "isCore": 0,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50051-programming-language-concepts",
+        "description": "In this module, students will learn about data representation, programming and compilation.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "15:00:00",
+                        "endTime": "18:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "09:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Lim Kwan Hui"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "15:00:00",
+                        "endTime": "18:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "13:30:00",
+                        "endTime": "15:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Lim Kwan Hui"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "15:00:00",
+                        "endTime": "18:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "18:00:00",
+                        "endTime": "20:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Lim Kwan Hui"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "50.039 Theory and Practice of Deep Learning",
+        "pillar": "CSD",
+        "isCore": 0,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50039-theory-and-practice-of-deep-learning/",
+        "description": "The primary aim of this course is to equip students with a comprehensive understanding of the mathematical foundations and practical implementations of deep learning for various modalities like vision, text, reinforcement learning, and multimodal combinations. Deep learning, in the context of this course, pertains to the training and application of neural networks as prediction models for various scenarios.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "09:00:00",
+                        "endTime": "10:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "09:00:00",
+                        "endTime": "10:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "FRI",
+                        "startTime": "11:30:00",
                         "endTime": "13:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Matthieu De Mari"},
+                    {"name": "Cheung Ngai Man"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "18:00:00",
+                        "endTime": "17:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "18:00:00",
+                        "endTime": "19:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "18:00:00",
+                        "endTime": "20:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Matthieu De Mari"},
+                    {"name": "Cheung Ngai Man"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "50.043 Database Systems",
+        "pillar": "CSD",
+        "isCore": 0,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50043-database-systems",
+        "description": "Database systems manage data which is at the heart of modern computing applications. We are in the era of big data, in which data is generated from many sources, in high velocity and with great variety. This poses numerous challenges in using and improving database technologies. Big data systems designed to support analytics are maturing and are becoming increasingly important to many applications.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "09:00:00",
+                        "endTime": "10:30:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "13:30:00",
+                        "endTime": "15:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Dorien Herremans"},
+                    {"name": "LU Zhuoming Kenny"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "09:00:00",
+                        "endTime": "10:30:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "16:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Dorien Herremans"},
+                    {"name": "LU Zhuoming Kenny"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "09:00:00",
+                        "endTime": "10:30:00"
+                    },
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Dorien Herremans"},
+                    {"name": "LU Zhuoming Kenny"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "50.047 Mobile Robotics",
+        "pillar": "CSD",
+        "isCore": 0,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50047-mobile-robotics/",
+        "description": "The mobile robotics course is an introductory course on intelligent robots and systems. It is a course at the intersection of machine learning, artificial intelligence, computer vision and control theory. The course will introduce fundamentals of developing systems which can sense, plan and act in the world based on various topics from the aforementioned domains. The emphasis will be on algorithm design, probabilistic reasoning, decision making under uncertainty and learning to improve behaviours using data.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "12:00:00",
+                        "endTime": "13:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "13:00:00",
+                        "endTime": "15:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Malika Meghjani"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": "summer"
+            }
+        ]
+    },
+    {
+        "name": "50.050 Discrete Mathematics and Algorithm Design",
+        "pillar": "CSD",
+        "isCore": 0,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50050-discrete-mathematics-and-algorithm-design",
+        "description": "An in-depth understanding of Computer Science requires strong mathematical foundations. In this course, students will learn the foundations of discrete mathematics and other mathematical areas, with an emphasis on understanding the underlying mathematics for algorithms beyond those covered in 50.004 Algorithms. Through this course, students will appreciate the wide applicability of mathematics for algorithms in artificial intelligence, communications, computer graphics, cybersecurity, data analytics, robotics, etc. Topics include: Counting methods, logic and proof methods, graph theory (incl. graph colorings, matchings, Ramsey theory), graph algorithms (e.g. Fleury’s algorithm, Kosaraju’s algorithm, Kruskal’s algorithm, Prim’s algorithm), number theory (e.g. modular arithmetic, Euclidean algorithm), coding theory (e.g. Huffman coding, Hamming codes), convex geometry (e.g. polytopes, Voronoi diagrams), computational geometry (e.g. Fortune’s algorithm, Gilbert-Johnson-Keerthi algorithm).",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "18:00:00",
+                        "endTime": "19:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "18:00:00",
+                        "endTime": "19:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "18:00:00",
+                        "endTime": "20:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "CHONG Kai Fong Ernest"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "50.051 Programming Language Concepts",
+        "pillar": "ASD",
+        "isCore": 0,
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50051-programming-language-concepts/",
+        "description": "In this module, students will learn about data representation, programming and compilation. In the first part, we will learn how binary is used to encode values (data) and instructions (code). We will then learn how to create complex data types and how object oriented programming works behind the scenes. In the second part, we will work on the different aspects of compilation, including lexical and syntaxic analysis, parsing and programming language design. Students will complete four small projects (2 individual and 2 group assignments) about memory management in C, C++, and compilation (lexical and syntaxic analysis and parsing). By gaining this knowledge, students will be able to understand how programming languages are designed.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "13:30:00",
+                        "endTime": "15:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Simon Perrault"},
+                    {"name": "Matthieu De Mari"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "10:30:00",
+                        "endTime": "12:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "16:30:00",
+                        "endTime": "18:00:00"
                     },
                     {
                         "type": "Class",
@@ -310,292 +1164,55 @@
         "terms": [
             {
                 "term": 6,
-                "period": "summer"
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
             }
         ]
     },
     {
-        "name": "50.043 Database Systems",
+        "name": "50.053 Software Testing and Verification",
         "pillar": "CSD",
         "isCore": 0,
-        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50043-database-systems",
-        "description": "Database systems manage data which is at the heart of modern computing applications.",
+        "link": "https://istd.sutd.edu.sg/undergraduate/courses/50053-software-testing-and-verification/",
+        "description": "The course will introduce the fundamental concepts behind various automated testing algorithms and introduce basic concepts behind verification (specifically, model checking). The focus of the\ncourse will be more on the design of test algorithms than the usage of testing tools. At the end of the course, students are expected to gain knowledge on how to test arbitrarily complex systems. The course will provide a brief recap on the testing introduced earlier e.g., coverage-based testing and unit testing. Subsequently, it will dive deep into the systematic test generation strategies. The concluding week of the course will involve discussion of some selected and impactful recent research on software testing and draw an unusual synergy between the model checking (verification) and testing. The course will involve the development of a medium scale software project prototype from scratch (w/o libraries, w/o plugins) and the software prototype will be tested via the systematic testing mechanisms learned in the course. The software prototypes will be exchanged among different groups to mimic the testing culture in industry.",
         "classes": [
             {
                 "slots": [
                     {
-                        "type": "lecture",
-                        "date": "TUE",
-                        "startTime": "15:00:00",
-                        "endTime": "18:00:00"
-                    },
-                    {
                         "type": "Class",
-                        "date": "THU",
-                        "startTime": "18:00:00",
-                        "endTime": "20:00:00"
-                    }
-                ],
-                "lecturers": [
-                    {"name": "Dorien Herremans"},
-                    {"name": "Kenny Lu"}
-                ]
-            },
-            {
-                "slots": [
-                    {
-                        "type": "lecture",
                         "date": "TUE",
-                        "startTime": "15:00:00",
-                        "endTime": "18:00:00"
-                    },
-                    {
-                        "type": "Class",
-                        "date": "FRI",
-                        "startTime": "09:00:00",
-                        "endTime": "11:00:00"
-                    }
-                ],
-                "lecturers": [
-                    {"name": "Dorien Herremans"},
-                    {"name": "Kenny Lu"}
-                ]
-            },
-            {
-                "slots": [
-                    {
-                        "type": "lecture",
-                        "date": "TUE",
-                        "startTime": "15:00:00",
-                        "endTime": "18:00:00"
-                    },
-                    {
-                        "type": "Class",
-                        "date": "FRI",
-                        "startTime": "11:30:00",
+                        "startTime": "12:00:00",
                         "endTime": "13:30:00"
-                    }
-                ],
-                "lecturers": [
-                    {"name": "Dorien Herremans"},
-                    {"name": "Kenny Lu"}
-                ]
-            }
-        ],
-        "terms": [
-            {
-                "term": 6,
-                "period": "summer"
-            }
-        ]
-    },
-    {
-        "name": "60.001 Applied Deep Learning",
-        "pillar": "DAI",
-        "isCore": 1,
-        "link": "https://dai.sutd.edu.sg/courses/60001-applied-deep-learning/",
-        "description": "Deep neural networks have revolutionized the landscape of modern day AI.",
-        "classes": [
-            {
-                "slots": [
-                    {
-                        "type": "Class",
-                        "date": "MON",
-                        "startTime": "11:30:00",
-                        "endTime": "14:30:00"
-                    },
-                    {
-                        "type": "Class",
-                        "date": "TUE",
-                        "startTime": "11:30:00",
-                        "endTime": "13:30:00"
-                    }
-                ],
-                "lecturers": [
-                    {"name": "Roy Lee"}
-                ]
-            }
-        ],
-        "terms": [
-            {
-                "term": 6,
-                "period": "summer"
-            }
-        ]
-    },
-    {
-        "name": "60.007 Interaction Design for Cyber-Physical Artifacts",
-        "pillar": "DAI",
-        "isCore": 1,
-        "link": "https://dai.sutd.edu.sg/courses/60007-interaction-design-for-cyber-physical-artifacts/",
-        "description": "This course focusesal artifacts through a variety of user study and interaction prototyping techniques.",
-        "classes": [
-            {
-                "slots": [
-                    {
-                        "type": "Class",
-                        "date": "TUE",
-                        "startTime": "11:30:00",
-                        "endTime": "13:30:00"
-                    },
-                    {
-                        "type": "Class",
-                        "date": "THU",
-                        "startTime": "11:30:00",
-                        "endTime": "13:30:00"
-                    },
-                    {
-                        "type": "Consultation",
-                        "date": "FRI",
-                        "startTime": "10:30:00",
-                        "endTime": "11:30:00"
-                    }
-                ],
-                "lecturers": [
-                    {"name": "Wang Yixiao"}
-                ]
-            }
-        ],
-        "terms": [
-            {
-                "term": 6,
-                "period": "summer"
-            }
-        ]
-    },
-    {
-        "name": "60.008 Systems Design Studio",
-        "pillar": "DAI",
-        "isCore": 1,
-        "link": "https://dai.sutd.edu.sg/courses/60008-systems-design-studio/",
-        "description": "Large systems s capacity-constrained resources.",
-        "classes": [
-            {
-                "slots": [
-                    {
-                        "type": "Class",
-                        "date": "TUE",
-                        "startTime": "14:00:00",
-                        "endTime": "17:00:00"
-                    },
-                    {
-                        "type": "Class",
-                        "date": "THU",
-                        "startTime": "14:30:00",
-                        "endTime": "17:30:00"
-                    }
-                ],
-                "lecturers": [
-                    {"name": "Yue Mu"},
-                    {"name": "Francisco Benita"}
-                ]
-            }
-        ],
-        "terms": [
-            {
-                "term": 6,
-                "period": "summer"
-            }
-        ]
-    },
-    {
-        "name": "20.320 Project Management in the Built Environment",
-        "pillar": "ASD",
-        "isCore": 0,
-        "link": "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20320-project-management-in-the-built-environment",
-        "description": "Project Management is a course set in the context of Singapore’s Building Construction industry.",
-        "classes": [
-            {
-                "slots": [
-                    {
-                        "type": "Class",
-                        "date": "TUE",
-                        "startTime": "09:30:00",
-                        "endTime": "11:30:00"
-                    },
-                    {
-                        "type": "Lab",
-                        "date": "THU",
-                        "startTime": "09:30:00",
-                        "endTime": "11:30:00"
-                    }
-                ],
-                "lecturers": [
-                    {"name": "Zheng Kai"}
-                ]
-            }
-        ],
-        "terms": [
-            {
-                "term": 6,
-                "period": "summer"
-            }
-        ]
-    },
-    {
-        "name": "20.318 Creative Machine Learning",
-        "pillar": "ASD",
-        "isCore": 0,
-        "link": "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20318-creative-machine-learning",
-        "description": "The course prov sps a result of this epistemological shift towards a ‘Software 2.0’ paradigm.",
-        "classes": [
-            {
-                "slots": [
-                    {
-                        "type": "lecture",
-                        "date": "TUE",
-                        "startTime": "11:00:00",
-                        "endTime": "12:00:00"
                     },
                     {
                         "type": "Class",
                         "date": "WED",
-                        "startTime": "10:00:00",
-                        "endTime": "13:00:00"
-                    }
-                ],
-                "lecturers": [
-                    {"name": "Immanuel Koh"}
-                ]
-            }
-        ],
-        "terms": [
-            {
-                "term": 6,
-                "period": "summer"
-            }
-        ]
-    },
-    {
-        "name": "20.111 Sustainable Design Option Studio 1",
-        "pillar": "ASD",
-        "isCore": 0,
-        "link": "https://asd.sutd.edu.sg/programme/bachelor-of-science-architecture-and-sustainable-design/courses/20111-sustainable-design-option-studio-1",
-        "description": "The Sustalor temporal and spatial scales.",
-        "classes": [
-            {
-                "slots": [
-                    {
-                        "type": "Studio",
-                        "date": "TUE",
-                        "startTime": "13:00:00",
-                        "endTime": "18:00:00"
+                        "startTime": "09:00:00",
+                        "endTime": "10:30:00"
                     },
                     {
-                        "type": "Studio",
-                        "date": "THU",
-                        "startTime": "13:00:00",
-                        "endTime": "18:00:00"
+                        "type": "Class",
+                        "date": "WED",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
                     }
                 ],
                 "lecturers": [
+                    {"name": "Sudipta Chattopadhyay"}
                 ]
             }
         ],
         "terms": [
             {
                 "term": 6,
-                "period": "summer"
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
             }
         ]
     }

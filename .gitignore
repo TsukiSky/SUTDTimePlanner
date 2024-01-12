@@ -1,7 +1,6 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
-/SUTDTimePlannerFrontend/dist
 /SUTDTimePlannerFrontend/tmp
 /SUTDTimePlannerFrontend/out-tsc
 /SUTDTimePlannerFrontend/bazel-out
@@ -45,3 +44,6 @@ SUTDTimePlannerFrontend/!.vscode/launch.json
 
 .vscode
 .metals
+.idea
+/SUTDTimePlannerFrontend/.idea
+/SUTDTimePlannerBackend/.idea

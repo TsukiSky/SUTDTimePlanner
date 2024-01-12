@@ -24,13 +24,13 @@ export class RegisterformComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    
+
   }
 
   public async register(): Promise<void> {
     console.log("registering")
     if (!this.validateEmail()) {
-      this.nzMessageService.error("Please use your sutd email")
+      this.nzMessageService.error("Please use your SUTD email to register")
       return
     }
     const user = {
@@ -47,11 +47,11 @@ export class RegisterformComponent implements OnInit {
       },
       body: JSON.stringify(user)
     })
-    
+
     console.log(response)
     let data = await response.text()
     if (data === "success") {
-      this.nzMessageService.success("Registration successful, please check email for verification.")
+      this.nzMessageService.success("Registration successful, please check your email for verification")
       this.switchLogin()
     } else {
       this.nzMessageService.error(data)

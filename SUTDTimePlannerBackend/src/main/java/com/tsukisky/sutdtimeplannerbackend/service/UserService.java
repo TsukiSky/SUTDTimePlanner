@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ import java.util.stream.Collectors;
 public class UserService {
     @Resource
     private UserRepository userRepository;
-
+    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
     @Resource
     private EmailService emailService;
 
@@ -66,6 +67,7 @@ public class UserService {
             } else {
                 String token = UUID.randomUUID().toString();
                 user.setVerificationToken(token);
+                user.setPassword(passwordEncoder.encode(user.getPassword()));
                 MimeMessage mail = emailService.createMimeMessage();
                 MimeMessageHelper helper = new MimeMessageHelper(mail, true);
 
@@ -79,7 +81,6 @@ public class UserService {
                 emailService.sendMail(mail);
                 System.out.println("email sent");
                 userRepository.save(user);
-
             }
 
             return 0;
@@ -91,8 +92,9 @@ public class UserService {
         if (checkUser==null) {
             return null;
         }
-        if (Objects.equals(checkUser.getPassword(), user.getPassword()) && checkUser.getEmailVerified()){
-            System.out.println(checkUser.getEnrolCourseIds());
+        if (passwordEncoder.matches(user.getPassword(), checkUser.getPassword()) && checkUser.getEmailVerified()){
+//            System.out.println(checkUser.getEnrolCourseIds());
+            checkUser.setPassword(null);
             return checkUser;
         } else {
             return null;
