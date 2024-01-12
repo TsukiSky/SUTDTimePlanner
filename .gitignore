@@ -45,3 +45,6 @@ SUTDTimePlannerFrontend/!.vscode/launch.json
 
 .vscode
 .metals
+.idea
+/SUTDTimePlannerFrontend/.idea
+/SUTDTimePlannerBackend/.idea

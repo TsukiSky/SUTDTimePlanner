@@ -7,7 +7,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
   public isLogin: boolean = true;
-  constructor(private cdr: ChangeDetectorRef) { 
+  constructor(private cdr: ChangeDetectorRef) {
     this.cdr = cdr;
   }
 
@@ -15,9 +15,7 @@ export class AuthComponent implements OnInit {
   }
 
   public switchRegister(): void {
-    console.log("switchRegister")
     this.isLogin = false;
-    console.log(this.cdr)
     // this.cdr.detectChanges();
   }
 

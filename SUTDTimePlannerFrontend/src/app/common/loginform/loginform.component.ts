@@ -22,12 +22,10 @@ export class LoginformComponent implements OnInit {
   }
 
   public switchRegister(): void {
-    console.log("emmittin")
     this.switchView.emit();
   }
 
   public async login(): Promise<void> {
-    console.log("logging in")
     const user = {
       email: this.email,
       password: this.password
@@ -49,11 +47,10 @@ export class LoginformComponent implements OnInit {
         this.nzMessageService.error("Invalid email or password")
       }
     }
-    
+
   }
 
   public onSubmit(): void {
 
   }
-
 }
