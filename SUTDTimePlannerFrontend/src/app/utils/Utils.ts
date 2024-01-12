@@ -109,11 +109,6 @@ export function storeData(name: string, ids: any) {
 
 export async function getData(itemName: string, username: string) {
   let data;
-  // try {
-  //   data = JSON.parse(localStorage.getItem(itemName) == null? "": localStorage.getItem(itemName)!);
-  // } catch (e) {
-  //   data = "";
-  // }
 
   if (itemName == "starredCourseSet") {
     let response = await fetch(`${environment.apiUrl}/user/get_star_course`, {

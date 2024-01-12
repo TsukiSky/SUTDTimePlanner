@@ -91,6 +91,5 @@ export class CoursesComponent implements OnInit {
     this.endCourseIndex = 10;
     this.shownCourses = this.selectedCourses!.slice(this.startCourseIndex, this.endCourseIndex)
     this.currentPage = 1;
-
   }
 }

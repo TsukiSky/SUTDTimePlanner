@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {environment} from 'src/environments/environment';
 import {Router} from '@angular/router';
 import {GlobalStoreService} from 'src/app/global-store.service';

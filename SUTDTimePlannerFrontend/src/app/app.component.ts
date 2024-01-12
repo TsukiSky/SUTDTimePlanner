@@ -8,8 +8,6 @@ import {NzModalService} from "ng-zorro-antd/modal";
 })
 
 export class AppComponent implements OnInit {
-  isLeftBarCollapsed = false
-
   ngOnInit(): void {
   }
 

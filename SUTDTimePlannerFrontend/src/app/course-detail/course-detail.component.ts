@@ -8,7 +8,6 @@ import {GlobalStoreService} from '../global-store.service';
 import {formatDistance} from 'date-fns';
 import {Comment} from '../dto/Comment';
 import {NzMessageService} from 'ng-zorro-antd/message';
-import {NzModalService} from "ng-zorro-antd/modal";
 import { Location } from '@angular/common';
 
 

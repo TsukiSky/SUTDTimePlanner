@@ -1,6 +1,3 @@
-import { Class } from "./Class";
-import { Course } from "./Course";
-
 export interface User {
     id: number;
     username: string;

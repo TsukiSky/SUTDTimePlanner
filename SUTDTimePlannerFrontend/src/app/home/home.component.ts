@@ -6,7 +6,7 @@ import {CourseService} from "../course.service";
 import { GlobalStoreService } from '../global-store.service';
 import {HttpErrorResponse} from "@angular/common/http";
 import {Class} from "../dto/Class";
-import {clearData, downloadImage, getData, isOverlapped, storeData} from "../utils/Utils";
+import {clearData, downloadImage, isOverlapped} from "../utils/Utils";
 import { NzModalService } from "ng-zorro-antd/modal";
 import { User } from '../dto/User';
 import { environment } from 'src/environments/environment';
