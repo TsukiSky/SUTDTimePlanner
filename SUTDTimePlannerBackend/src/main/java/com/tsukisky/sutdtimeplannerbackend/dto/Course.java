@@ -26,7 +26,8 @@ public class Course {
     @Column(name = "link")
     private String link;
 
-     @Column(name = "description", length = 2000)
+    @Lob
+     @Column(name = "description", length = 1000)
      private String description;
 
 //    @OneToMany(cascade = CascadeType.ALL)
