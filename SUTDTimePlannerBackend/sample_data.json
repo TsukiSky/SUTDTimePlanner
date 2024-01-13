@@ -1173,6 +1173,44 @@
         ]
     },
     {
+        "name": "02.115DH Global Shakespeares",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-115-global-shakespeares",
+        "description": "In this class, we'll be reading four of Shakespeare's plays alongside modern global adaptations for stage and film. In our first unit, we'll read Shakespeare's The Merchant of Venice alongside the 2004 film adaptation by the Indian-born English director Michael Radford. In doing so, we'll explore what it means to be a racial and religious outsider—both in Shakespeare's era and in our own. In our second unit, we'll read Shakespeare's Twelfth Night alongside a Hawaii-based adaptation of the play by the actor and standup comic James Grant Benton. As we read, we'll think about what Shakespeare's plays mean for communities who speak a range of global Englishes, including Singlish speakers living in Singapore. In our third unit, we'll read The Tempest alongside an English translation of the Martinican poet and playwright Aimé Césaire's Une Tempête, which reimagines the setting of the play in a postcolonial Caribbean context. We'll also consider questions of gender and power in the play in the American director Julie Taymore's 2010 film The Tempest, which reimagines the lead character Prospero as a woman. In our final unit, we'll read Shakespeare's otherworldly tragedy Macbeth alongside Joel Coen's 2021 The Tragedy of Macbeth, which stars Denzel Washington as Macbeth and was one of President Obama's picks for best films of 2021. As with think about Shakespeare in global adaptation on stage and in film, you'll have the opportunity to creatively adapt sections of Shakespeare. In addition to traditional argumentative essay options, you'll be able to opt to do a creative translation project, or a creative dramaturgy or cinematic adaption for stage or film. Working either individually or in groups, you'll get to reimagine a section of Shakespeare's original play text within a global context of your own choosing.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "16:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "08:30:00",
+                        "endTime": "10:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Rhema Hokama"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
         "name": "50.053 Software Testing and Verification",
         "pillar": "CSD",
         "isCore": 0,
@@ -1202,6 +1240,1087 @@
                 ],
                 "lecturers": [
                     {"name": "Sudipta Chattopadhyay"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.121DH The Question of Being",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-121-question",
+        "description": "This course is centered on the question of being. What do we mean when we say that something “is”? Or more abstractly, what is being? This question has been at the center of philosophical enquiry since the inception of Greek thought, and is the basis upon which Plato's and later Aristotle's speculations developed, which then served as an unavoidable point of reference and confrontation for any subsequent thinker. The question regarding being and the possibility of knowing it through our mental categories is the backbone of Western philosophy. For, it is on the basis of this question that the concept of truth as “adequation of thing and intellect” has been shaped in Western philosophical tradition. This particular understanding of what truth is finds its inceptions in Aristotle's investigation of being to then reach its most mature formulation at the dawn of modern philosophy: it is then that the reciprocal relation of man to being as one of subject to objects comes to the fore. This concept of truth has since Descartes served and still serves as the ground for the sciences and their approach to reality. The 20th century, however, has seen a challenging questioning of the subject-objects relation of man to being as handed down by tradition: the works of Martin Heidegger represent a provoking re-proposition of the question of being and hence of the question of the essence of truth. Is the relation between man and being reducible to the scheme of subject-objects? What does it mean to truly know what being is? This course aims at guiding the students through the history of this central question – “what is being?” – which, given its pivotal role in the subsequent development of Western thought, can serve as an introduction to the history of philosophy specifically, while more generally at the same time as an opportunity to pose some questions regarding the understanding of reality that guides our techno-scientifically minded world.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Paolo Di Leo"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.124DH The Modern East Asian Nexus A History",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-124-modern-east-asian-nexus-history",
+        "description": "In 2012, President Obama called for a “pivot to East Asia” to much fanfare. Chairman Xi Jinping revealed a “One Belt, one Road” a year later.  While students are familiar with such buzzwords, our airwaves are being saturated by numerous talking heads expounding on such issues, what do they really mean? How has this come about? What is the historical back ground for such broad policy doctrines?  Indeed, what shapes the Asia Pacific historically is not well understood. It stands to reason that an elective on the history of International relations in the Asia Pacific- East Asia should be taught in SUTD. To appreciate these complexities in East Asia IR, students will be introduced to key events, personages, and documents. Students will also be provided with an “inside perspective,” cultivating a detailed understanding, based on current secondary sources, of the evolution of contemporary East Asia. In addition, students will be further guided along theories and concepts that will help them analyze East Asian International Relations history. Finally, students will be familiarized with past and current scholarships on East Asia IR, with due consideration for the debates about the nature of East Asia's IR historical developments.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "16:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "08:30:00",
+                        "endTime": "10:30:00"
+                    }
+                ],
+                
+                "lecturers": [
+                    {"name": "Pang Yang Huei"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "16:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "FRI",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    }
+                ],
+                
+                "lecturers": [
+                    {"name": "Pang Yang Huei"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.136DH Lyric Poetry",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-136-lyric-poetry",
+        "description":"In this class, we'll read short poems spanning 500 years of modernity—from the Renaissance sonnet to the 21st century Twitter poem. The focus of this class is tripartite: first, it provides students with an opportunity to explore the role that poetry has played in modern society and culture. To this end, we'll read practicing poets on the purposes of poetry—from Sir Philip Sidney to contemporary Singaporean poets. Additionally, we'll also look at the way poets from a range of cultures and historical moments have used poetry to comment upon questions of perennial importance. Can poems help us think about what it means to create a well-run city? And how we can live a flourishing life? In weekly modules, we will read about three to five poets on topics such as the roles of children and parents, an individual's place within the family and the city, love, religion, politics, and technology. The majority of these poems will be written in English, with a few in translation from Chinese, Malay, Tamil, and other languages. Finally, we'll also discuss the formal features of poetry—with lessons on prosody, form, meter, rhyme, tone, and imagery. These features constitute what an engineering student might term the “architectural and design studies” of poetry. We'll study the formal structures and techniques that enable poems to convey meaning—what the poet Marianne Moore calls “a place for the genuine.”",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "16:30:00",
+                        "endTime": "18:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "10:00:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Rhema Hokama"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.137DH Introduction to Digital Humanities",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-137-introduction-digital-humanities",
+        "description":"This course is an introduction to the principles and methods of digital humanities, an emerging interdisciplinary field that seeks to apply digital and computational methods to investigations in the humanities. The course will focus on how computational methods and tools can contribute to the interpretive activities that typically constitute humanistic inquiry, especially to the reading of textual matter as literature. Students will be acquainted with the history of the emergence of the digital humanities and will learn about the leading methodological and epistemological issues in this emerging field. They will also learn about a few classic case studies in the field. They will also learn about the capabilities as well as limitations of computational tools for interpretation, and carry out a hands-on collaborative project as part of coursework using some of the methods that they will learn about.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "08:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Setsuko Yokoyama"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "08:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Setsuko Yokoyama"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.145TS Surveys and Experiments in the Social Sciences",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-145-surveys-and-experiments-in-the-social-sciences",
+        "description":"There is a growing demand for insights derived from social scientific research among governmental and commercial organizations around the world. Regardless of one's choice of career, developing skills necessary to understand and evaluate survey and experimental research is essential for us as informed citizens and consumers, so that we can better understand public discourse, policy debates, and commercial activities that draw on the findings of such research studies. Furthermore, having the knowledge and skills to conduct and oversee research projects is critical in some careers, especially in policymaking, data science, product and software design, and for those who want to pursue postgraduate studies. This course introduces students to the fundamentals of quantitative social science research (focusing on surveys and experiments), including its epistemological assumptions, and the basics of surveys and experiments in research. Some questions we will tackle include: What is research? What kinds of questions can we ask? What makes good survey and experimental research? This course does not require an in-depth understanding of statistics, although some basic statistical principles and concepts relevant to social science research will be introduced. Participants who take this course will be expected to complete a small research project, which is demanding in terms of workload, but an extremely enriching experience.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Andrew Yee"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "08:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Andrew Yee"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.147TS Interventions in Design, Technology, and Society",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-147ts-interventions-in-design-technology-and-society",
+        "description":"In recent years, growing attention has been given to the social, cultural, political and economic consequences of design by both practitioners and social scientists who study technology. However, concern about social impacts usually appear very late in the design process, or only after unexpected consequences occur. “Interventions in Design, Technology, and Society” hopes to change this by introducing students to important theoretical tools and conceptual frameworks developed in the social sciences. Students will use these tools to uncover the economic, political, and other forces that shape the design process, explore how values and norms are built into technologies, track the effects of technologies on society, and use these insights to experiment with, and hopefully improve, design practices and outcomes. The goal is to enable social scientific reflection on and redirection of design practices at an early stage of technological production. Accordingly, the course is organised along important social scientific concepts, for example ‘network’ and ‘audience,’ each of which will be covered in two phases. First, students will study and evaluate key social scientific ideas that explain the social dimensions of technological design through readings, class discussions, and written assignments. Second, they will use those concepts to make experimental interventions, for example through archival research or fieldwork, video and image-based documentation, and creative experiments with design, in an effort to “design for a better world.”",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "16:00:00",
+                        "endTime": "17:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "08:30:00",
+                        "endTime": "10:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Gabriel Tusinski"},
+                    {"name": "Lyle Fearnley"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                    "type": "lecture",
+                    "date": "MON",
+                    "startTime": "16:00:00",
+                    "endTime": "17:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "FRI",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Gabriel Tusinski"},
+                    {"name": "Lyle Fearnley"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.151HT Digital Worlds, Space and Spatialities: Geographical Perspectives on Digitalisation",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-151ts-digital-worlds-space-and-spatialities-geographical-perspectives-on-digitalisation",
+        "description":"Contemporary life is increasingly being digitalized. The global information and communications technology (ICT) infrastructure forms the network of Information flows that underpin the knowledge economy. Our experiences in the real world are complemented (or even replaced) by those in the virtual world. The explosion of informational and social media tools has shaped relational geography by changing how trust and authority are constructed in online spaces. Big Data analytics often include locational data that are used by both companies and governments, raising issues of surveillance, privacy and data monetization. How has this explosion of the “virtual” changed the ways we perceive spaces and places? This course addresses this key question through the emerging field of digital geographies, focusing on the dimensions of space and spatialities. The first few weeks will provide historical overview of the development of the field and early theories. The remaining weeks will survey a broad range of popular digital topics, including Big Data, smart cities, privacy and surveillance, the gig economy, love and affect, among others. These topics are chosen to highlight the variety of phenomena in which the “digital” is manifested, and to draw students into a critical discussion of the attendant issues.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "08:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Gordon Tan"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.156DH Games of Histories",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-156dh-games-of-histories",
+        "description":"History often serves as the dramatic backdrop for many popular computer games we play today. Yet such historical representations are often riddled with misrepresentations and inaccuracies. This course aims at enabling students to acquire the historical knowledge necessary to build a credible and coherent history based story for video‐games through the lenses of some significant periods in European history such as the history of the rise and fall of the Roman Empire until Charlemagne and notable historical figures including Julius Caesar, Constantine the Great, Attila and Theoderic. To do so, the course will focus on some already existing and very successful video‐games, namely the three versions of the Total War video‐game: “Rome: Total War” ﴾2004﴿, “Rome: Total War” ﴾2005﴿, “Attila: Total War” ﴾2015﴿. Through a better understanding of history, students will acquire a firmer grasp of the value of historical knowledge and its rich potential for storytelling and the creation of compelling virtual worlds and online experiences.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "08:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Paolo Di Leo"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "08:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Paolo Di Leo"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.158DH Kings, monks, and merchants: A history of Asia before 1750",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-158dh-kings-monks-and-merchants-a-history-of-asia-before-1750",
+        "description":"This course is a connected and comparative history of Asia before 1750 that introduces students to the region’s major political, economic, and intellectual contours prior to British colonisation. The course focuses, in particular, on tracing the history of premodern Asia through three types of transregional cultural formation: large empires, trading zones, and religious ecumene. We will explore and discuss how these formations unfolded across Central and Eastern Asia and South and Southeast Asia, and use them as a lens for thinking critically about the scope of ‘Asia’ as a geographical, political, economic, and cultural category in premodern history.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "15:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Alastair Gornall"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.159HT Equitable Tech: Reimagining Our Digital Infrastructures",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/equitable-tech-reimagining-our-digital-infrastructures",
+        "description":"he course invites students to investigate how geopolitical conditions shape our differing relations to the Internet and its promises of the wireless, borderless world. Starting with the Internet scavenger hunt in their local communities, students will explore how the Internet is not an entirely virtual space floating in the ether but is where idiosyncratic technologies converge, reflecting their various material, institutional, and historical conditions. Each week, students will learn about social aspects of the digital infrastructures such as undersea cable networks, DSL, WiFi, blockchain, and data centers. In particular, the course illuminates how the legacy of colonialism and other historical global power relations configure today’s wireless world. Questions students will probe into include: How does the legacy of colonialism in the Pacific Islands shape the labor conditions of undersea cable technicians, who maintain most of our transoceanic online communication? How does the relationship between Palestine and Israel define the cellular coverage of the region today, and what roles does geography play for the state government to control access to the Internet? How does the idea of connectivity shape the development project in Mali and in turn enrich the U.S. market? By examining global case studies, students will learn analytical frameworks to examine ethical implications of the technologies they help develop within a larger geopolitical context of the IT industries. Additionally, students will learn how to practice accountability as aspiring engineers and designers by learning communication strategies through midterm and final projects. Students will first analyze, for the midterm, critical artwork designed to enhance the digital literacy of the public audience. By examining how artists shine a light on what lies beyond the obvious—a hip domain name “.io” or the seemingly innocuous IP address—students will gain an appreciation for multimodal composition techniques. For the final project, students will identify and analyze the material and political configurations of Singaporean digital infrastructures. By expanding on the map from the initial Internet scavenger hunt with their own multimodal composition strategies, students will test how best to communicate their research findings as well as their visions for more equitable digital infrastructures in Singapore.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Setsuko Yokoyama"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.163 International Trade: Free Trade, Governance and Technology",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/international-trade-free-trade-governance-and-technology",
+        "description":"Trade is an essential human activity that dates back to the early days of civilization. In this globalized era, the production of goods and services has become much more internationalized, with countries specializing in the production of certain goods and services. With greater liberalization of trade, people can enjoy a greater variety of goods and services that arise from trade. As political and economic relationships are shaped by trade flows among countries, it has become ever more important to learn about trade as a highly internationalized, technologized and networked activity. This course covers the basics of international trade. Topics range from the economic rationale for trade i.e. the conditions that facilitate trade, debates surrounding free trade, protectionism and other factors that impede the flow of goods and services, multilateral organizations governing free trade (e.g. the World Trade Organization), trade agreements, global production networks, the politics of trade, and sustainability and ethical issues arising from trade. Industry and market sectors covered include electronics (e.g. semiconductors), agriculture, apparel, among others.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Gordon Tan"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.164DH Performance: Design, Dramaturgy, and Interpretation",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-164dh-performance-design-dramaturgy-and-interpretation",
+        "description":"This introductory course explores the ways we make meaning in theatre, performance and everyday life, including the domains of technology and design. We will consider closely how ‘sign-systems’ – spatial design, lighting, sound, multimedia, movement, objects and other production elements – guide the process of meaning-making and shape any performance’s dramaturgy. Importantly, this process is also embodied. This course ultimately brings semiotic methods of analysis (interpreting signs and symbols) into dialogue with phenomenological perspectives (being aware of embodied experience). These tools and skills enable one to understand how meaning is created, communicated, and felt in both art and life. We will explore how they can be used in myriad design and technology contexts within and outside of the theatre: engineering user interfaces, human-machine interactions, gaming dramaturgies, robotics, AR/VR experiences, and more.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "16:30:00",
+                        "endTime": "17:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "08:30:00",
+                        "endTime": "10:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Cheng Nien Yuan"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "16:30:00",
+                        "endTime": "17:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "FRI",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Cheng Nien Yuan"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.165TS Empathy: An interdisciplinary concept (Special Topics)",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-165ts-special-topics-empathy-an-interdisciplinary-concept",
+        "description":"Empathy is a valued trait in professional and social life, and is fundamental to healthy interpersonal relationships in both professional and social contexts. Learning about empathy is advantageous for students of design and engineering in promoting more effective interpersonal communication through cognitive and affective perspective taking, as well as a deeper consideration of end user needs and challenges. This subject explores this specific dimension of human behaviour from an interdisciplinary perspective, fostering an understanding of the main issues and debates surrounding the phenomenon of empathy. Through understanding the role of empathy in diverse settings such as healthcare, research work, and corporate culture, students will better appreciate the importance of the ability to take multiple perspectives. Discussion of the current issues surrounding this topic aims to provoke reflection on the application of empathy and its challenges in different situations. The course will involve case studies, role play, presentations and sharing of personal experience. In addition, the readings, reflections and project work in the course are directed at encouraging critical and independent thinking about a facet of social life that is often acknowledged and invoked, but rarely examined as an object of study.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Evelyn Chew (Adjunct)"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "08:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Evelyn Chew (Adjunct)"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "08:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Evelyn Chew (Adjunct)"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.167HT Fashion: East and West (Special Topics)",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/fashion-east-and-west-special-topics",
+        "description":"This course introduces a revisionist fashion history that de-centres the West (Europe and North America) and places the East as its equal counterpart. Sartorial cultures in Asia are studied in their own right and on their own terms. Students will explore the history of global cultural exchange through the lens of fashion, understand the differences and similarities between Eastern and Western sartorial cultures, and gain critical insights into contemporary fashion consumption and industry. The course follows a chronological and thematic approach that examines fashion’s intersections with other domains of social life such as class, identity, power, and politics. In particular, students will be introduced to the most pressing issues and debates animating today’s fashion world, i.e., cultural appropriation, sustainability, and its future on Web3. The course’ emphasis on the socio-cultural aspects of fashion’s multi-faceted problems in different parts of the value chain is critical to devising creative solutions that often require cross-disciplinary collaborations.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "16:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "16:30:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Courtney Fu (Adjunct)"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "16:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "08:30:00",
+                        "endTime": "10:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Courtney Fu (Adjunct)"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "16:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "10:00:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Courtney Fu (Adjunct)"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.171 Special Topic: Religion & Society in Southeast Asia",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/special-topic-religion-society-in-southeast-asia",
+        "description":"Southeast Asia is located at the historical crossroads of world religious traditions, where religions play a more prominent role in the society as compared to most other parts of the world. This introductory course exposes students to the diverse and vibrant religious traditions of Southeast Asia. It is also an avenue to explore the past and present of Southeast Asian societies. Through the lens of social science theories, students will learn about the religions of Southeast Asia through the themes of ritual, festival, material culture, gender, and networks. We will also examine how and why religious traditions influence the everyday life in the region.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "16:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "16:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Dean Wang (Adjunct)"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "16:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "09:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Dean Wang (Adjunct)"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "16:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Dean Wang (Adjunct)"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.172DH Imagine Dragons: Monsters and Outcasts in Literature, from Beowulf to Murakami",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/dh-imagine-dragons-monsters-and-outcasts-in-literature-from-beowulf-to-murakami",
+        "description":"Why do we find “monster” characters so fascinating? How do such figures blur the boundaries between human and non-human; citizen and outcast; familiar and unfamiliar; hero and outsider? Why is difference unsettling yet alluring? How do advancements in technology––from Frankenstein’s feats of engineering, to uses of weapon technologies in Beowulf, to mediums of travel in Chaucer, Lovecraft, and Carroll (travelling through space, time, and dreams)––facilitate new kinds of creation, new kinds of otherness, and new kinds of community? This course examines literary entities who are at odds with community, or who reside outside of community altogether. The readings and viewing assignments cover a range of genres, contexts, and mediums; they include classic works of literature as well as more recent ones, and film, dance, and music in addition to written texts. We will explore how isolated existences can be both blessing and bane; how concepts of belonging (and not belonging) figure into societies that are structured around race, gender, sexuality, custom, ideology, and religious belief; and how anxieties about monsters often, in fact, conceal underlying anxieties about what it means to be human.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "08:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Melissa Tu"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.173DH The Medium and the Message: An Introduction to Media Theory",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/dh-the-medium-and-the-message-an-introduction-to-media-theory",
+        "description":"In the digital age, the term 'media' has become all but synonymous with forms of mass communication like social media and the news media. But, as the field of media theory explores, media forms have always encompassed far more than these. Since the dawn of homo sapiens, media of all different kinds––tools, elements, inventions, bodies, voices, technologies, creations––have shaped how human beings live; understand themselves; relate to one another; interface with the world around them; and formulate identities, whether personal, racial, religious, gendered, political, or national. Throughout the epochs, media have dreamed of (and sometimes succeeded in) conquering the bounds of space and time. In this course, we will traverse diverse landscapes of media objects, technologies, and infrastructures to consider fundamental questions about the human condition. How do the things we use to preserve, express, enhance, and define ourselves end up influencing the ways we think and behave, at both personal and societal levels? How do the designs of media objects and technologies actively shape their functions? The readings for each week comprise short literary texts, mostly stories or poems, that develop insight into the week’s intellectual concepts. These will be paired with excerpts from media theorists exploring key conceptual ideas and/or media models.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "08:30:00",
+                        "endTime": "10:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "FRI",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Melissa Tu"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.202 Organizational Processes",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-202-organizational-processes",
+        "description":"Work organizations are complex social systems that students will experience during internships and after graduation. This course is designed to build an understanding of how organizations behave and change by analyzing the workplace through different perspectives (or lenses).",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "09:00:00",
+                        "endTime": "10:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "09:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Grace Dixon"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "TUE",
+                        "startTime": "09:00:00",
+                        "endTime": "10:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "FRI",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Grace Dixon"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.217 Gender Sexuality and Society",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-217-gender-sexuality-society",
+        "description":"This course introduces students to the variety of ways in which people experience gender and sexuality and what it means to be a man or a woman in a range of social and cultural contexts examined through relevant concepts and theoretical constructs. We will explore how gender and sexuality are embedded in social institutions including the nation-state, identities, family, local and global work, relationships, technology, body image and consumption.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "16:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "09:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Nilanjan Raghunath"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "16:30:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "FRI",
+                        "startTime": "11:30:00",
+                        "endTime": "13:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Nilanjan Raghunath"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.218 Introduction to Psychology",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-218-introduction-psychology",
+        "description":"This course is an introduction to the study of psychology.  It is designed for students with a limited background in psychological studies and may serve as a foundation for more advanced level courses in psychology; however, it also serves students for whom this knowledge is a general contribution to a broad-based undergraduate education. Topics include research methods, biological basis of mind, learning, memory, thinking, language, intelligence, emotion, social influence, social cognition, altruism, human development, personality, and psychopathology.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "16:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "16:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Yow Wei Quin"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "lecture",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "16:00:00"
+                    },
+                    {
+                        "type": "Class",
+                        "date": "TUE",
+                        "startTime": "08:30:00",
+                        "endTime": "10:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Yow Wei Quin"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.226 Leaders & Followers",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-226-leaders-followers",
+        "description":"This course is part of a suite of three electives in management studies taught by Dr Grace Dixon (the other two being Organizational Process and Critical Management Studies). Students who have completed these courses recommend starting with Organizational Process before considering Leaders and Followers. It can, nevertheless, be taken as a standalone module.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Dr. Grace Dixon"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.228TS Design in the Anthropocene",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-228-design-anthropocene",
+        "description":"The 'Anthropocene' refers to '(the) Age of Mankind' the subsequent geological age after the Holocene that denotes the significant and unprecedented impacts of human actions on different global systems. The world in the Anthropocene is quintessentially, a 'world as design'. Yet design studies have yet to be connected to, or contextualized within, the novel conditions that accompany the onset of the Anthropocene, when artificial design has unprecedentedly become the background, as well as the approach, for coordinating and supporting everyday life. What are the new categories for design in the Anthropocene? Furthermore, how do these categories and concepts modify, or even confound, what we already understand in design theory? What then are the new issues and challenges for design in the Anthropocene? In this course, existing design theory will be introduced, and explicated in relation to the Anthropocene condition through seven emerging topical issues: (i) designing with living systems 1 (human-beings); (ii) designing with living systems 2 (more-than-human agencies and other ecosystems); (iii) open systems and incomplete design; (iv) large-scale sociotechnical systems 1: Smart Cities; (v) large-scale sociotechnical systems 2: Artificial Intelligence; (vi) large-scale sociotechnical systems 3: Climate change adaptations; (vii) design ethics.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Jeffrey Chan"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "08:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Jeffrey Chan"}
+                ]
+            }
+        ],
+        "terms": [
+            {
+                "term": 6,
+                "period": ""
+            },
+            {
+                "term": 8,
+                "period": ""
+            }
+        ]
+    },
+    {
+        "name": "02.231TS Transportation Technology and Policy in Urban Progress",
+        "pillar": "HASS",
+        "isCore": 0,
+        "link": "https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-231-transportation-technology-policy-urban-progress",
+        "description":"This course introduces a conceptual framework for understanding real-world topics related to transportation technology and urban policy applications by examining a variety of international cases and development practices, including Singapore and other emerging economies in Asia, in a comparative manner. Particularly, the course tries to inspect and explain the dynamic and complex interplays between (i) evolving transportation technology, (ii) entrepreneurial state policy, and (iii) urban market progress/shrinkage on different network levels and/or geographic scales – macro, mezzo, and micro – in contemporary development and even prospect management contexts. Therefore, the “technologies” covered by this course are not only typical urban travel modes within cities (e.g., private automobile, public transit, and non-motorized transportation) but also extensive and unconventional interregional passenger, freight, and communication systems across cities (e.g., aviation, high-speed rail, worldwide e-commerce and e-logistics, and emerging smart applications). The urban influences of various transportation technologies in globalization as well as localization are widely reviewed from engineering, financial, economic, environmental, and social standpoints, and technological potentials and policy challenges are proactively discussed for upcoming applications in Asia’s urban development and management contexts.",
+        "classes": [
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "MON",
+                        "startTime": "15:00:00",
+                        "endTime": "18:00:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Jin Murakami"}
+                ]
+            },
+            {
+                "slots": [
+                    {
+                        "type": "Class",
+                        "date": "THU",
+                        "startTime": "08:30:00",
+                        "endTime": "11:30:00"
+                    }
+                ],
+                "lecturers": [
+                    {"name": "Jin Murakami"}
                 ]
             }
         ],
